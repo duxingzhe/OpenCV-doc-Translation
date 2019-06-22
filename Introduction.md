@@ -6,10 +6,16 @@ OpenCV提供了一个模块化的结构，也就说，OpenCV是由几个动态�
 
 图像处理库 （imgproc） ：一个包含了线性和非线性图形滤镜、图形的几何变换（放缩、放射、透视、基于通用表的重映射），色彩空间转换，直方图等功能的图像处理库。
 
-Video Analysis (video) - a video analysis module that includes motion estimation, background subtraction, and object tracking algorithms.
-Camera Calibration and 3D Reconstruction (calib3d) - basic multiple-view geometry algorithms, single and stereo camera calibration, object pose estimation, stereo correspondence algorithms, and elements of 3D reconstruction.
-2D Features Framework (features2d) - salient feature detectors, descriptors, and descriptor matchers.
-Object Detection (objdetect) - detection of objects and instances of the predefined classes (for example, faces, eyes, mugs, people, cars, and so on).
-High-level GUI (highgui) - an easy-to-use interface to simple UI capabilities.
-Video I/O (videoio) - an easy-to-use interface to video capturing and video codecs.
-... some other helper modules, such as FLANN and Google test wrappers, Python bindings, and others.
+视频分析（Video）：包含了运动预测，背景提取和物体轨迹描述算法的模块。
+
+摄像机校准和3D重建（calib3d）:基本多视图几何算法，简单的立体相机校准，物体形态预测，立体匹配算法和3d重建元素绘制。
+
+2D特征框架（features 2d）：突出特征检测装置、描述器和特征描述匹配。
+
+物体检测（objdetect）：对物体和预先设置的类（如，脸，眼睛，大杯子，人，车等）进行检测。
+
+高阶图形用户界面（highgui）：对用户非常友好的简单界面设计程序
+
+视频I/O：提供简单易用的视频捕捉和视频解析接口
+
+另外，还有一些帮助模块，例如FLANN和Google test封装接口，Python绑定模块和其他的一些接口。
