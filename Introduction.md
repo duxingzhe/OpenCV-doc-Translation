@@ -106,3 +106,7 @@ Ptr<T> ptr = makePtr<T>(...);
 ```
 
 Ptr<T> encapsulates a pointer to a T instance and a reference counter associated with the pointer. See the cv::Ptr description for details.
+
+Automatic Allocation of the Output Data
+
+OpenCV deallocates the memory automatically, as well as automatically allocates the memory for output function parameters most of the time. So, if a function has one or more input arrays (cv::Mat instances) and some output arrays, the output arrays are automatically allocated or reallocated. The size and type of the output arrays are determined from the size and type of input arrays. If needed, the functions take extra parameters that help to figure out the output array properties.
