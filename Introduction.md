@@ -109,9 +109,9 @@ Ptr<T> 封装了一个指向T实例的指针和一个与指针相关的引用计
 
 对输出数据自动进行内存分配
 
-OpenCV deallocates the memory automatically, as well as automatically allocates the memory for output function parameters most of the time. So, if a function has one or more input arrays (cv::Mat instances) and some output arrays, the output arrays are automatically allocated or reallocated. The size and type of the output arrays are determined from the size and type of input arrays. If needed, the functions take extra parameters that help to figure out the output array properties.
+OpenCV会自动回收内存，同样的，也会在大部分情况下为输出的函数变量自动分配内存。因此，如果一个函数有一个或者多个输入数组（cv::Mat实例）和一些输出数组，输出数组会自动分配或重分配。输出数组的大小和类型取决于输入数组的大小和类型。在需要的情况下，函数可以提供额外的变量来表明输出函数的特性。
 
-Example:
+例如:
 
 ```
 #include "opencv2/imgproc.hpp"
