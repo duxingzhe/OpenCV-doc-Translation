@@ -110,3 +110,30 @@ Ptr<T> 封装了一个指向T实例的指针和一个与指针相关的引用计
 对输出数据自动进行内存分配
 
 OpenCV deallocates the memory automatically, as well as automatically allocates the memory for output function parameters most of the time. So, if a function has one or more input arrays (cv::Mat instances) and some output arrays, the output arrays are automatically allocated or reallocated. The size and type of the output arrays are determined from the size and type of input arrays. If needed, the functions take extra parameters that help to figure out the output array properties.
+
+Example:
+
+```
+#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui.hpp"
+using namespace cv;
+int main(int, char**)
+{
+    VideoCapture cap(0);
+    if(!cap.isOpened()) return -1;
+    Mat frame, edges;
+    namedWindow("edges", WINDOW_AUTOSIZE);
+    for(;;)
+    {
+        cap >> frame;
+        cvtColor(frame, edges, COLOR_BGR2GRAY);
+        GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
+        Canny(edges, edges, 0, 30, 3);
+        imshow("edges", edges);
+        if(waitKey(30) >= 0) break;
+    }
+    return 0;
+}
+```
+
+The array frame is automatically allocated by the >> operator since the video frame resolution and the bit-depth is known to the video capturing module. The array edges is automatically allocated by the cvtColor function. It has the same size and the bit-depth as the input array. The number of channels is 1 because the color conversion code cv::COLOR_BGR2GRAY is passed, which means a color to grayscale conversion. Note that frame and edges are allocated only once during the first execution of the loop body since all the next video frames have the same resolution. If you somehow change the video resolution, the arrays are automatically reallocated.
