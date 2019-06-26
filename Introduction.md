@@ -136,7 +136,7 @@ int main(int, char**)
 }
 ```
 
-在视频捕捉模块获取到视频数据集的分辨率和位深以后，我们可以通过>>的操作符来自动分配数据集。cvtColor函数可以自动分配数据集边界。他的大小和位深和输入数组的长度一致。频道数为1，因为cv::COLOR_BRG2GRAY经过颜色转换后便出现灰度转换的情况。注意到数据集和边界只会在循环体的第一次执行的时候被转换，因为接下来的视频帧有相同的分辨率。如果你的视频分辨率是有所改变的，数组会自动重新分配。
+在视频捕捉模块获取到视频数据集的分辨率和位深以后，我们可以通过>>的操作符来自动分配数据集。cvtColor函数可以自动分配数据集边界。他的大小和位深和输入数组的长度一致。频道数为1，因为cv::COLOR_BRG2GRAY经过颜色转换后便出现灰度转换的情况。需要注意的是，数据集和边界只会在循环体的第一次执行的时候被转换，因为接下来的视频帧有相同的分辨率。如果你的视频分辨率是有所改变的，数组会自动重新分配。
 
 The key component of this technology is the Mat::create method. It takes the desired array size and type. If the array already has the specified size and type, the method does nothing. Otherwise, it releases the previously allocated data, if any (this part involves decrementing the reference counter and comparing it with zero), and then allocates a new buffer of the required size. Most functions call the Mat::create method for each output array, and so the automatic output data allocation is implemented.
 
