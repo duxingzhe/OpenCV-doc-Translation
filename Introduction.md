@@ -145,3 +145,15 @@ Some notable exceptions from this scheme are cv::mixChannels, cv::RNG::fill, and
 Saturation Arithmetics
 
 As a computer vision library, OpenCV deals a lot with image pixels that are often encoded in a compact, 8- or 16-bit per channel, form and thus have a limited value range. Furthermore, certain operations on images, like color space conversions, brightness/contrast adjustments, sharpening, complex interpolation (bi-cubic, Lanczos) can produce values out of the available range. If you just store the lowest 8 (16) bits of the result, this results in visual artifacts and may affect a further image analysis. To solve this problem, the so-called saturation arithmetics is used. For example, to store r, the result of an operation, to an 8-bit image, you find the nearest value within the 0..255 range:
+
+Similar rules are applied to 8-bit signed, 16-bit signed and unsigned types. This semantics is used everywhere in the library. In C++ code, it is done using the cv::saturate_cast<> functions that resemble standard C++ cast operations. See below the implementation of the formula provided above:
+
+```
+I.at<uchar>(y, x) = saturate_cast<uchar>(r);
+```
+
+where cv::uchar is an OpenCV 8-bit unsigned integer type. In the optimized SIMD code, such SSE2 instructions as paddusb, packuswb, and so on are used. They help achieve exactly the same behavior as in C++ code.
+
+>   Note
+>
+>       Saturation is not applied when the result is 32-bit integer.
