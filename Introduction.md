@@ -140,11 +140,11 @@ int main(int, char**)
 
 ![](http://latex.codecogs.com/gif.latex?I(x,y)=\min(\max(\textrm{round}(r),0),255))
 
-The key component of this technology is the Mat::create method. It takes the desired array size and type. If the array already has the specified size and type, the method does nothing. Otherwise, it releases the previously allocated data, if any (this part involves decrementing the reference counter and comparing it with zero), and then allocates a new buffer of the required size. Most functions call the Mat::create method for each output array, and so the automatic output data allocation is implemented.
+这种技术的核心关键是通过Mat::create方法来实现。这个方法可以生成所需要的数组大小和类型。如果数组已经分配了特定的大小和类型，这个方法不会做任何事情。而且，在一些条件下（这部分一般包括减少引用计数，并将其与0进行比较），他会释放之前已经分配的数据，并接着分配一个新的特定大小的缓冲区。许多函数都会通过调用Mat::create方法来生成输出数组，所以从这个方法开始输出函数的分配就已经自动实现了。
 
-Some notable exceptions from this scheme are cv::mixChannels, cv::RNG::fill, and a few other functions and methods. They are not able to allocate the output array, so you have to do this in advance.
+有一些函数方法，比如cv::mixChannels，cv::RNG::fill和其他一些函数或者方法的处理方式需要注意以下。这些函数不会为输出数组自动分配空间，所以你需要在调用这些函数之前进行空间分配。
 
-Saturation Arithmetics
+饱和算法
 
 As a computer vision library, OpenCV deals a lot with image pixels that are often encoded in a compact, 8- or 16-bit per channel, form and thus have a limited value range. Furthermore, certain operations on images, like color space conversions, brightness/contrast adjustments, sharpening, complex interpolation (bi-cubic, Lanczos) can produce values out of the available range. If you just store the lowest 8 (16) bits of the result, this results in visual artifacts and may affect a further image analysis. To solve this problem, the so-called saturation arithmetics is used. For example, to store r, the result of an operation, to an 8-bit image, you find the nearest value within the 0..255 range:
 
