@@ -144,9 +144,7 @@ int main(int, char**)
 
 饱和算法
 
-As a computer vision library, OpenCV deals a lot with image pixels that are often encoded in a compact, 8- or 16-bit per channel, form and thus have a limited value range. Furthermore, certain operations on images, like color space conversions, brightness/contrast adjustments, sharpening, complex interpolation (bi-cubic, Lanczos) can produce values out of the available range. If you just store the lowest 8 (16) bits of the result, this results in visual artifacts and may affect a further image analysis. To solve this problem, the so-called saturation arithmetics is used. For example, to store r, the result of an operation, to an 8-bit image, you find the nearest value within the 0..255 range:
-
-作为机器视觉库，OpenCV要处理非常多的图片像素，这些像素通常都会被编码为一个压缩形式，每频道有8位或者16位，因此压缩后的数据会在一个限定的范围内。另外，一些具体的图形操作，如色彩空间变换、亮度/对比度调节、锐化、复杂插值运算，会产生一些不再限定范围内的数据。
+作为机器视觉库，OpenCV要处理非常多的图片像素，这些像素通常都会被编码为一个压缩形式，每频道有8位或者16位，因此压缩后的数据会在一个限定的范围内。另外，一些具体的图形操作，如色彩空间变换、亮度/对比度调节、锐化、复杂插值运算，会产生一些不在限定范围内的数据。如果只是将低8位的结果保存下来，图像最终会有视觉上的改变而且会影响后期的图形分析。为了解决这个问题，我们需要使用饱和算法来对结果进行处理。例如，为了保存一张8位图的一个处理结果的R分量，你要找到一个在0~255之间的最接近结果的值。
 
 ![](http://latex.codecogs.com/gif.latex?I(x,y)=\min(\max(\textrm{round}(r),0),255))
 
