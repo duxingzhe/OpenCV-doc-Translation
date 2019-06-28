@@ -148,17 +148,17 @@ int main(int, char**)
 
 ![](http://latex.codecogs.com/gif.latex?I(x,y)=\min(\max(\textrm{round}(r),0),255))
 
-Similar rules are applied to 8-bit signed, 16-bit signed and unsigned types. This semantics is used everywhere in the library. In C++ code, it is done using the cv::saturate_cast<> functions that resemble standard C++ cast operations. See below the implementation of the formula provided above:
+有符号的8位和16位和无符号位类型都使用了同样的规则。这样的语法规范在库中随处可见。在C++代码里，库使用的是cv::saturate_cast<>函数来模仿标准C++的类型转换操作。你可以通过下面的例子来理解之前给出的公式：
 
 ```
 I.at<uchar>(y, x) = saturate_cast<uchar>(r);
 ```
 
-where cv::uchar is an OpenCV 8-bit unsigned integer type. In the optimized SIMD code, such SSE2 instructions as paddusb, packuswb, and so on are used. They help achieve exactly the same behavior as in C++ code.
+cv::uchar是OpenCV中8位无符号整数类型。在这个已经优化了的单指令多数据流（SIMD，Single Instruction Multiple Data）中，比如将单指令多数据流技术扩展(SSE2, Streaming SIMD Extensions)用作PADDUSB、PACKUSWB等汇编指令。他们的应用可以让程序获得在C++代码中一样的行为。
 
->   Note
+>   注意
 >
->       Saturation is not applied when the result is 32-bit integer.
+>       饱和运算并不能用在结果为32位整型的数据上。
 
 Fixed Pixel Types. Limited Use of Templates
 
