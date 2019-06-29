@@ -175,8 +175,7 @@ Consequently, there is a limited fixed set of primitive data types the library c
 * 32位符号整型 (int)
 * 32位浮点数 (float)
 * 64位浮点数 (double)
-* a tuple of several elements where all elements have the same type (one of the above). An array whose elements are such tuples, are called multi-channel arrays, as opposite to the single-channel arrays, whose elements are scalar values. The maximum possible number of channels is defined by the CV_CN_MAX constant, which is currently set to 512.
-如果我们有一个元组，是由几种数组组成在一起的，那么数组中的元素必须类型一致（上面的一种）。数组的元素是元组被称之为多频道数组，与单频道数组不同，单频道的数组元素是纯量的。CV_CN_MAX常亮定义了最大的数组频道数，目前为512。
+* 如果我们有一个元组，是由几种数组组成在一起的，那么数组中的元素必须类型一致（上面的一种）。数组的元素是元组被称之为多频道数组，与单频道数组不同，单频道的数组元素是纯量的。CV_CN_MAX常亮定义了最大的数组频道数，目前为512。
 
 For these basic types, the following enumeration is applied:
 
