@@ -166,14 +166,17 @@ cv::uchar是OpenCV中8位无符号整数类型。在这个已经优化了的单�
 
 Consequently, there is a limited fixed set of primitive data types the library can operate on. That is, array elements should have one of the following types:
 
-* 8-bit unsigned integer (uchar)
-* 8-bit signed integer (schar)
-* 16-bit unsigned integer (ushort)
-* 16-bit signed integer (short)
-* 32-bit signed integer (int)
-* 32-bit floating-point number (float)
-* 64-bit floating-point number (double)
+因此，OpenCV库只能处理一小部分的原始数据类型。也就是说，数组的元素必须为以下类型的一种：
+
+* 8位无符号整型 (uchar)
+* 8位符号整型 (schar)
+* 16位无符号整型 (ushort)
+* 16位符号整型 (short)
+* 32位符号整型 (int)
+* 32位浮点数 (float)
+* 64位浮点数 (double)
 * a tuple of several elements where all elements have the same type (one of the above). An array whose elements are such tuples, are called multi-channel arrays, as opposite to the single-channel arrays, whose elements are scalar values. The maximum possible number of channels is defined by the CV_CN_MAX constant, which is currently set to 512.
+如果我们有一个元组，是由几种数组组成在一起的，那么数组中的元素必须类型一致（上面的一种）。数组的元素是元组被称之为多频道数组，与单频道数组不同，单频道的数组元素是纯量的。CV_CN_MAX常亮定义了最大的数组频道数，目前为512。
 
 For these basic types, the following enumeration is applied:
 
