@@ -175,24 +175,24 @@ Consequently, there is a limited fixed set of primitive data types the library c
 * 32位符号整型 (int)
 * 32位浮点数 (float)
 * 64位浮点数 (double)
-* 如果我们有一个元组，是由几种数组组成在一起的，那么数组中的元素必须类型一致（上面的一种）。数组的元素是元组被称之为多频道数组，与单频道数组不同，单频道的数组元素是纯量的。CV_CN_MAX常亮定义了最大的数组频道数，目前为512。
+* 如果我们有一个元组，是由几种数组组成在一起的，那么数组中的元素必须类型一致（上面的一种）。数组的元素是元组被称之为多频道数组，与单频道数组不同，单频道的数组元素是纯量的。CV_CN_MAX常量定义了最大的数组频道数，目前为512。
 
-For these basic types, the following enumeration is applied:
+对这些基本类型，我们提供了一下枚举变量：
 
 ```
 enum { CV_8U=0, CV_8S=1, CV_16U=2, CV_16S=3, CV_32S=4, CV_32F=5, CV_64F=6 };
 ```
 
-Multi-channel (n-channel) types can be specified using the following options:
+多频道（n-channel）类型可以通过以下选项来说明：
 
-* CV_8UC1 ... CV_64FC4 constants (for a number of channels from 1 to 4)
-* CV_8UC(n) ... CV_64FC(n) or CV_MAKETYPE(CV_8U, n) ... CV_MAKETYPE(CV_64F, n) macros when the number of channels is more than 4 or unknown at the compilation time.
+* CV_8UC1 ... CV_64FC4常量(频道数为1至4)
+* 当频道数大于4或者在编译阶段未知时，CV_8UC(n) ... CV_64FC(n)或者CV_MAKETYPE(CV_8U, n) ... CV_MAKETYPE(CV_64F, n)宏。
 
->   Note
+>   注意
 >
->       CV_32FC1 == CV_32F, CV_32FC2 == CV_32FC(2) == CV_MAKETYPE(CV_32F, 2), and CV_MAKETYPE(depth, n) == ((depth&7) + ((n-1)<<3). This means that the constant type is formed from the depth, taking the lowest 3 bits, and the number of channels minus 1, taking the next log2(CV_CN_MAX) bits.
+>       CV_32FC1 == CV_32F、CV_32FC2 == CV_32FC(2) == CV_MAKETYPE(CV_32F, 2)、和 CV_MAKETYPE(depth, n) == ((depth&7) + ((n-1)<<3)。也就意味着，这些常量是通过深度来实现的，取值的低三位，频道数最小为一，取log2(CV_CN_MAX)最近的整数位。
 
-Examples:
+例如:
 
 ```
 Mat mtx(3, 3, CV_32F); // make a 3x3 floating-point matrix
