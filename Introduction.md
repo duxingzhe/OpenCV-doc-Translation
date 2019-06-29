@@ -189,3 +189,53 @@ Multi-channel (n-channel) types can be specified using the following options:
 >   Note
 >
 >       CV_32FC1 == CV_32F, CV_32FC2 == CV_32FC(2) == CV_MAKETYPE(CV_32F, 2), and CV_MAKETYPE(depth, n) == ((depth&7) + ((n-1)<<3). This means that the constant type is formed from the depth, taking the lowest 3 bits, and the number of channels minus 1, taking the next log2(CV_CN_MAX) bits.
+
+Examples:
+
+```
+Mat mtx(3, 3, CV_32F); // make a 3x3 floating-point matrix
+Mat cmtx(10, 1, CV_64FC2); // make a 10x1 2-channel floating-point
+                           // matrix (10-element complex vector)
+Mat img(Size(1920, 1080), CV_8UC3); // make a 3-channel (color) image
+                                    // of 1920 columns and 1080 rows.
+Mat grayscale(image.size(), CV_MAKETYPE(image.depth(), 1)); // make a 1-channel image of
+                                                            // the same size and same
+                                                            // channel type as img
+```
+
+Arrays with more complex elements cannot be constructed or processed using OpenCV. Furthermore, each function or method can handle only a subset of all possible array types. Usually, the more complex the algorithm is, the smaller the supported subset of formats is. See below typical examples of such limitations:
+
+* The face detection algorithm only works with 8-bit grayscale or color images.
+* Linear algebra functions and most of the machine learning algorithms work with floating-point arrays only.
+* Basic functions, such as cv::add, support all types.
+* Color space conversion functions support 8-bit unsigned, 16-bit unsigned, and 32-bit floating-point types.
+
+The subset of supported types for each function has been defined from practical needs and could be extended in future based on user requests.
+
+InputArray and OutputArray
+
+Many OpenCV functions process dense 2-dimensional or multi-dimensional numerical arrays. Usually, such functions take cppMat as parameters, but in some cases it's more convenient to use std::vector<> (for a point set, for example) or cv::Matx<> (for 3x3 homography matrix and such). To avoid many duplicates in the API, special "proxy" classes have been introduced. The base "proxy" class is cv::InputArray. It is used for passing read-only arrays on a function input. The derived from InputArray class cv::OutputArray is used to specify an output array for a function. Normally, you should not care of those intermediate types (and you should not declare variables of those types explicitly) - it will all just work automatically. You can assume that instead of InputArray/OutputArray you can always use Mat, std::vector<>, cv::Matx<>, cv::Vec<> or cv::Scalar. When a function has an optional input or output array, and you do not have or do not want one, pass cv::noArray().
+
+Error Handling
+
+OpenCV uses exceptions to signal critical errors. When the input data has a correct format and belongs to the specified value range, but the algorithm cannot succeed for some reason (for example, the optimization algorithm did not converge), it returns a special error code (typically, just a boolean variable).
+
+The exceptions can be instances of the cv::Exception class or its derivatives. In its turn, cv::Exception is a derivative of std::exception. So it can be gracefully handled in the code using other standard C++ library components.
+
+The exception is typically thrown either using the CV_Error(errcode, description) macro, or its printf-like CV_Error_(errcode, (printf-spec, printf-args)) variant, or using the CV_Assert(condition) macro that checks the condition and throws an exception when it is not satisfied. For performance-critical code, there is CV_DbgAssert(condition) that is only retained in the Debug configuration. Due to the automatic memory management, all the intermediate buffers are automatically deallocated in case of a sudden error. You only need to add a try statement to catch exceptions, if needed: :
+
+```
+try
+{
+    ... // call OpenCV
+}
+catch (const cv::Exception& e)
+{
+    const char* err_msg = e.what();
+    std::cout << "exception caught: " << err_msg << std::endl;
+}
+```
+
+Multi-threading and Re-enterability
+
+The current OpenCV implementation is fully re-enterable. That is, the same function or the same methods of different class instances can be called from different threads. Also, the same Mat can be used in different threads because the reference-counting operations use the architecture-specific atomic instructions.
