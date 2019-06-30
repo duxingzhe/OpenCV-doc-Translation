@@ -205,16 +205,16 @@ Mat grayscale(image.size(), CV_MAKETYPE(image.depth(), 1)); // make a 1-channel 
                                                             // channel type as img
 ```
 
-Arrays with more complex elements cannot be constructed or processed using OpenCV. Furthermore, each function or method can handle only a subset of all possible array types. Usually, the more complex the algorithm is, the smaller the supported subset of formats is. See below typical examples of such limitations:
+如果数组中含有比较复杂的元素就不能被OpenCV创建并加以使用。另外，每一个函数或者方法可以使用上述类型中的一部分。通常情况下，越是复杂的算法，支持的元素就越少。以下列出了一些常用算法支持的类型：
 
-* The face detection algorithm only works with 8-bit grayscale or color images.
-* Linear algebra functions and most of the machine learning algorithms work with floating-point arrays only.
-* Basic functions, such as cv::add, support all types.
-* Color space conversion functions support 8-bit unsigned, 16-bit unsigned, and 32-bit floating-point types.
+* 面部识别算法只支持8位灰阶或者彩色图形。
+* 线性代数函数和大多数机器学习算法支持浮点类数组。
+* 基本函数，如cv::add，则支持所有类型。
+* 色彩空间转换函数支持8位无符号元素，16位无符号元素，32位浮点类型。
 
-The subset of supported types for each function has been defined from practical needs and could be extended in future based on user requests.
+每一个函数支持的元素类型都由实际应用所决定，会基于以后的用户需求进行修改。
 
-InputArray and OutputArray
+输入数组和输出数组
 
 Many OpenCV functions process dense 2-dimensional or multi-dimensional numerical arrays. Usually, such functions take cppMat as parameters, but in some cases it's more convenient to use std::vector<> (for a point set, for example) or cv::Matx<> (for 3x3 homography matrix and such). To avoid many duplicates in the API, special "proxy" classes have been introduced. The base "proxy" class is cv::InputArray. It is used for passing read-only arrays on a function input. The derived from InputArray class cv::OutputArray is used to specify an output array for a function. Normally, you should not care of those intermediate types (and you should not declare variables of those types explicitly) - it will all just work automatically. You can assume that instead of InputArray/OutputArray you can always use Mat, std::vector<>, cv::Matx<>, cv::Vec<> or cv::Scalar. When a function has an optional input or output array, and you do not have or do not want one, pass cv::noArray().
 
