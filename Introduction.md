@@ -216,9 +216,9 @@ Mat grayscale(image.size(), CV_MAKETYPE(image.depth(), 1)); // make a 1-channel 
 
 输入数组和输出数组
 
-Many OpenCV functions process dense 2-dimensional or multi-dimensional numerical arrays. Usually, such functions take cppMat as parameters, but in some cases it's more convenient to use std::vector<> (for a point set, for example) or cv::Matx<> (for 3x3 homography matrix and such). To avoid many duplicates in the API, special "proxy" classes have been introduced. The base "proxy" class is cv::InputArray. It is used for passing read-only arrays on a function input. The derived from InputArray class cv::OutputArray is used to specify an output array for a function. Normally, you should not care of those intermediate types (and you should not declare variables of those types explicitly) - it will all just work automatically. You can assume that instead of InputArray/OutputArray you can always use Mat, std::vector<>, cv::Matx<>, cv::Vec<> or cv::Scalar. When a function has an optional input or output array, and you do not have or do not want one, pass cv::noArray().
+许多OpenCV函数处理密集型二维或多维数值型数组。通常情况下，这些函数会使用cppMat做为参数，但在一些情况下，使用std::vector<>更方便一点（比如，点的集合）或者cv::Matx<>（3x3的单应性矩阵等等）。为了避免API的重复，特殊的“代理”类型引入到OpenCV当中。基本的“代理”类型就是cv::InputArray。它用于一个函数输入中的只读数组传递。继承自输入函数类型的输出函数cv::OutputArray用于特定函数的输出数组。通常情况下，你不需要关心中间过程中的数据类型（你也不要显式地声明这些类型的变量）——这些内容OpenCV都会自动处理。你可以假设这样一种情况，除了输入数组/输入数组，你就直接使用Mat、std::vector<>、cv::Matx<>、cv::Vec<>或者cv::Scalar。但一个函数有可选的输入数字或输出数组时，你可以选择不设置输入数组/输出数组，直接传递cv::noArray()即可。
 
-Error Handling
+异常处理
 
 OpenCV uses exceptions to signal critical errors. When the input data has a correct format and belongs to the specified value range, but the algorithm cannot succeed for some reason (for example, the optimization algorithm did not converge), it returns a special error code (typically, just a boolean variable).
 
