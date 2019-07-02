@@ -220,11 +220,11 @@ Mat grayscale(image.size(), CV_MAKETYPE(image.depth(), 1)); // make a 1-channel 
 
 异常处理
 
-OpenCV uses exceptions to signal critical errors. When the input data has a correct format and belongs to the specified value range, but the algorithm cannot succeed for some reason (for example, the optimization algorithm did not converge), it returns a special error code (typically, just a boolean variable).
+OpenCV使用异常来表明重要的错误。当输入数据是正确的格式并且在特定的范围之内，但算法因为某些原因不能正确地处理（比如，优化函数没有完全考虑到这种情况），它会返回一个特定的错误值（通常情况下，只是一个boolean变量）。
 
-The exceptions can be instances of the cv::Exception class or its derivatives. In its turn, cv::Exception is a derivative of std::exception. So it can be gracefully handled in the code using other standard C++ library components.
+异常可以是cv::Exception类或者继承他的类的实例。在这种情况下，cv::Exception是std::Exception的继承类。所以，他能被其他标准C++库组件所捕获，并进行处理。
 
-The exception is typically thrown either using the CV_Error(errcode, description) macro, or its printf-like CV_Error_(errcode, (printf-spec, printf-args)) variant, or using the CV_Assert(condition) macro that checks the condition and throws an exception when it is not satisfied. For performance-critical code, there is CV_DbgAssert(condition) that is only retained in the Debug configuration. Due to the automatic memory management, all the intermediate buffers are automatically deallocated in case of a sudden error. You only need to add a try statement to catch exceptions, if needed: :
+异常通常情况下使用CV_ERROR（errcode， description）宏或者类似于printf的CV_Error_(errcode, (printf-spec, printf-args))变量，或CV_Assert(condition)宏来检查错误条件并在没有指明条件的情况下抛出一个异常。对于性能相关的代码，可以使用CV_DbgAssert(condition)方式来测试只与Debug配置相关的错误。由于OpenCV是可以自动进行内存管理，所有的中间缓存都是在出现突然的错误以后自动回收的。你只需要加一个try语句便可以捕获异常。在需要的情况下，请这样使用：
 
 ```
 try
