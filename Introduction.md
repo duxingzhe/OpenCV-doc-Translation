@@ -224,7 +224,7 @@ OpenCV使用异常来表明重要的错误。当输入数据是正确的格式�
 
 异常可以是cv::Exception类或者继承他的类的实例。在这种情况下，cv::Exception是std::Exception的继承类。所以，他能被其他标准C++库组件所捕获，并进行处理。
 
-异常通常情况下使用CV_ERROR（errcode， description）宏或者类似于printf的CV_Error_(errcode, (printf-spec, printf-args))变量，或CV_Assert(condition)宏来检查错误条件并在没有指明条件的情况下抛出一个异常。对于性能相关的代码，可以使用CV_DbgAssert(condition)方式来测试只与Debug配置相关的错误。由于OpenCV是可以自动进行内存管理，所有的中间缓存都是在出现突然的错误以后自动回收的。你只需要加一个try语句便可以捕获异常。在需要的情况下，请这样使用：
+异常通常情况下使用CV_ERROR(errcode， description)宏或者类似于printf的CV_Error_(errcode, (printf-spec, printf-args))变量，或CV_Assert(condition)宏来检查错误条件并在没有指明条件的情况下抛出一个异常。对于性能相关的代码，可以使用CV_DbgAssert(condition)方式来测试只与Debug配置相关的错误。由于OpenCV是可以自动进行内存管理，所有的中间缓存都是在出现突然的错误以后自动回收的。你只需要加一个try语句便可以捕获异常。在需要的情况下，请这样使用：
 
 ```
 try
@@ -238,6 +238,6 @@ catch (const cv::Exception& e)
 }
 ```
 
-Multi-threading and Re-enterability
+多线程和重进入能力
 
-The current OpenCV implementation is fully re-enterable. That is, the same function or the same methods of different class instances can be called from different threads. Also, the same Mat can be used in different threads because the reference-counting operations use the architecture-specific atomic instructions.
+目前而言，OpenCV可以完全重进入。也就是说，不同类实例的同样的函数或者同样的方法可以被不同的线程所调用。同时，同样的Mat变量可以用在不同的线程中，因为引用计数操作使用的是体系特定的原子性操作。
