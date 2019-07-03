@@ -1,10 +1,10 @@
-The following links describe a set of basic OpenCV tutorials. All the source code mentioned here is provided as part of the OpenCV regular releases, so check before you start copying & pasting the code. The list of tutorials below is automatically generated from reST files located in our GIT repository.
+接下来的教程是一系列基础OpenCV教程的集合。所有的源代码都是从OpenCV常规发行版本中提取出来的，所以在你只是简单的复制粘贴之前先检查一下。这些教程都是从我们的Git仓库中的reST文件中生成的。
 
-As always, we would be happy to hear your comments and receive your contributions on any tutorial.
+我们一如既往地期待大家的反馈，并希望大家对这些教程提供帮助。（经查阅核实，Introduction to OpenCV中关于编译方法的内容已经过时，为保证质量，不翻译。请自行百度谷歌解决。）
 
-* Introduction to OpenCV
+* 介绍OpenCV
 
-You will learn how to setup OpenCV on your computer
+你将知道如何在你的电脑上安装OpenCV。
 
 * The Core Functionality (core module)
 
