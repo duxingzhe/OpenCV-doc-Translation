@@ -26,25 +26,27 @@
 
 这些教程将告诉你如何通过videoio模块读写视频。
 
-* Camera calibration and 3D reconstruction (calib3d module)
+* 摄像机校准和三维重建(calib3d模块)
 
 Although most of our images are in a 2D format they do come from a 3D world. Here you will learn how to find out 3D world information from 2D images.
 
-* 2D Features framework (feature2d module)
+尽管大多数图片是2D样式，但是它们来自于3D世界。这里你将会学到如何从2D的图片中获取3D信息。
 
-Learn about how to use the feature points detectors, descriptors and matching framework found inside OpenCV.
+* 2D特征框架（feature2d模块）
 
-* Video analysis (video module)
+学习如何使用OpenCV中的特征点检测器、描述器和匹配框架。
 
-Here you will find algorithms usable on your video streams like motion extraction, feature tracking and foreground extractions.
+* 食品分析模块(video模块)
 
-* Object Detection (objdetect module)
+你会学到一些类似于视频中运动提取、特征记录、前景提取的算法。
 
-Ever wondered how your digital camera detects people's faces? Look here to find out!
+* 物体检测 (objdetect模块)
 
-* Deep Neural Networks (dnn module)
+想知道你的数码相机如何检测到人脸？这里可以给你帮助。
 
-These tutorials show how to use dnn module effectively.
+* 深度神经网络(dnn模块)
+
+这里将告诉你如何有效使用dnn模块。
 
 * Machine Learning (ml module)
 
