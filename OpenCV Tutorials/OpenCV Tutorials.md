@@ -6,25 +6,25 @@
 
 你将知道如何在你的电脑上安装OpenCV。
 
-* The Core Functionality (core module)
+* 核心函数模块 (core模块)
 
-Here you will learn about the basic building blocks of this library. A must read for understanding how to manipulate the images on a pixel level.
+这里你将会学到这个库中基本的构架模块。如果想要对图形进行像素级处理，请认真阅读本教程。
 
-* Image Processing (imgproc module)
+* 图形处理模块 (imgproc模块)
 
-In this section you will learn about the image processing (manipulation) functions inside OpenCV.
+这里你将会学到在OpenCV中的图形处理模块。
 
-* High Level GUI and Media (highgui module)
+* 高级别音视频处理图形界面和接口 (highgui模块)
 
-This section contains valuable tutorials on how to use the built-in graphical user interface of the library.
+这里包含了非常有用的内建图形用户界面使用教程。
 
-* Image Input and Output (imgcodecs module)
+* 图像输入输出模块 (imgcodecs模块)
 
-These tutorials show how to read and write images using imgcodecs module.
+这些教程将告诉你如何通过imgcodecs模块读写图像。
 
-* Video Input and Output (videoio module)
+* 视频输入输出模块 (videoio模块)
 
-These tutorials show how to read and write videos using videio module.
+这些教程将告诉你如何通过videoio模块读写视频。
 
 * Camera calibration and 3D reconstruction (calib3d module)
 
