@@ -61,6 +61,7 @@ Although most of our images are in a 2D format they do come from a 3D world. Her
 用OpenCV进行高级图像处理。
 
 * 图形接合(stitching模块)
+
 学习如何实现漂亮的图形全景照片，并学习更多OpenCV的接合功能。
 
 * GPU加速的机器视觉功能(cuda模块)
