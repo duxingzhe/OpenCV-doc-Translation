@@ -48,26 +48,25 @@ Although most of our images are in a 2D format they do come from a 3D world. Her
 
 这里将告诉你如何有效使用dnn模块。
 
-* Machine Learning (ml module)
+* 机器学习(ml模块)
 
-Use the powerful machine learning classes for statistical classification, regression and clustering of data.
+为数理统计分类、回归分析和分析数据，提供机器学习模块。
 
-* Graph API (gapi module)
+* 图形API(gapi模块)
 
-Learn how to use Graph API (G-API) and port algorithms from "traditional" OpenCV to a graph model.
+学习如何使用图形模块的API，并了解从“传统”OpenCV中移植过来的算法。
 
-* Computational photography (photo module)
+* 计算机摄影学(photo模块)
 
-Use OpenCV for advanced photo processing.
+用OpenCV进行高级图像处理。
 
-* Images stitching (stitching module)
+* 图形接合(stitching模块)
+学习如何实现漂亮的图形全景照片，并学习更多OpenCV的接合功能。
 
-Learn how to create beautiful photo panoramas and more with OpenCV stitching pipeline.
+* GPU加速的机器视觉功能(cuda模块)
 
-* GPU-Accelerated Computer Vision (cuda module)
-
-Squeeze out every little computational power from your system by utilizing the power of your video card to run the OpenCV algorithms.
+通过利用显卡计算功能完全释放计算机计算潜能来运行OpenCV算法。
 
 * OpenCV iOS
 
-Run OpenCV and your vision apps on an iDevice
+在苹果的设备上运行你的OpenCV应用。
