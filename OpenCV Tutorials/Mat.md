@@ -1,6 +1,6 @@
-Goal
+目标
 
-We have multiple ways to acquire digital images from the real world: digital cameras, scanners, computed tomography, and magnetic resonance imaging to name a few. In every case what we (humans) see are images. However, when transforming this to our digital devices what we record are numerical values for each of the points of the image.
+我们能从真实世界的很多地方获得数码图片：数码相机、扫描仪、机器体层扫描仪和核磁共振仪等。在上述情形中，我们（人类）看到的是图片。但对于，我们的机器而言，我们记录的只不过是图像的各种各样像素点的数值而已。
 
 ![](https://docs.opencv.org/4.1.0/MatBasicImageForComputer.jpg)
 
