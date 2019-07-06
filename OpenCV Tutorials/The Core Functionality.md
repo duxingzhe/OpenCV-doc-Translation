@@ -1,12 +1,12 @@
-Here you will learn the about the basic building blocks of the library. A must read and know for understanding how to manipulate the images on a pixel level.
+本教程将会告诉你OpenCV中最基本的构件。在对图像进行像素级的处理之前，你必须对本教程进行通读。
 
-Mat - The Basic Image Container
+Mat - 基础图形容器
 
 Compatibility: > OpenCV 2.0
 
 Author: Bernát Gábor
 
-You will learn how to store images in the memory and how to print out their content to the console.
+你将学会如何将图片保存到内存中，并如何打印到电脑终端上。
 
 How to scan images, lookup tables and time measurement with OpenCV
 
