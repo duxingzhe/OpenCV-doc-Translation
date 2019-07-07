@@ -28,8 +28,6 @@
 
 * 摄像机校准和三维重建(calib3d模块)
 
-Although most of our images are in a 2D format they do come from a 3D world. Here you will learn how to find out 3D world information from 2D images.
-
 尽管大多数图片是2D样式，但是它们来自于3D世界。这里你将会学到如何从2D的图片中获取3D信息。
 
 * 2D特征框架（feature2d模块）
@@ -66,7 +64,7 @@ Although most of our images are in a 2D format they do come from a 3D world. Her
 
 * GPU加速的机器视觉功能(cuda模块)
 
-通过利用显卡计算功能完全释放计算机计算潜能来运行OpenCV算法。
+通过利用显卡的计算功能完全释放计算机计算潜能来运行OpenCV算法。
 
 * OpenCV iOS
 
