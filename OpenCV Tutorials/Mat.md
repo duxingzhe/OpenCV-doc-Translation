@@ -4,11 +4,13 @@
 
 ![](https://docs.opencv.org/4.1.0/MatBasicImageForComputer.jpg)
 
-For example in the above image you can see that the mirror of the car is nothing more than a matrix containing all the intensity values of the pixel points. How we get and store the pixels values may vary according to our needs, but in the end all images inside a computer world may be reduced to numerical matrices and other information describing the matrix itself. OpenCV is a computer vision library whose main focus is to process and manipulate this information. Therefore, the first thing you need to be familiar with is how OpenCV stores and handles images.
+就像上面的那张图片，这是一张汽车的图片，对于计算机而言，他就是一个矩形，矩形的元素代表的是密密麻麻像素点的数值。我们根据我们自身的需求去存储使用其中的值。但是最后，在计算机领域中，每一个张图像都要最终变成一个数值矩阵，还有一些其他能够描述矩阵本身的信息。OpenCV便是一个主要关注于如何处理和使用这些信息的库。因此，首先，你应该对OpenCV如何存储和处理这些图像有非常熟悉的了解。
 
 Mat
 
-OpenCV has been around since 2001. In those days the library was built around a C interface and to store the image in the memory they used a C structure called IplImage. This is the one you'll see in most of the older tutorials and educational materials. The problem with this is that it brings to the table all the minuses of the C language. The biggest issue is the manual memory management. It builds on the assumption that the user is responsible for taking care of memory allocation and deallocation. While this is not a problem with smaller programs, once your code base grows it will be more of a struggle to handle all this rather than focusing on solving your development goal.
+This is the one you'll see in most of the older tutorials and educational materials. The problem with this is that it brings to the table all the minuses of the C language. The biggest issue is the manual memory management. It builds on the assumption that the user is responsible for taking care of memory allocation and deallocation. While this is not a problem with smaller programs, once your code base grows it will be more of a struggle to handle all this rather than focusing on solving your development goal.
+
+自2001年起，OpenCV便开始开发。在当时，OpenCV是用C实现的，并提供C语言接口，存储在内存的方式是通过IplIMage的C语言结构体来实现的。
 
 Luckily C++ came around and introduced the concept of classes making easier for the user through automatic memory management (more or less). The good news is that C++ is fully compatible with C so no compatibility issues can arise from making the change. Therefore, OpenCV 2.0 introduced a new C++ interface which offered a new way of doing things which means you do not need to fiddle with memory management, making your code concise (less to write, to achieve more). The main downside of the C++ interface is that many embedded development systems at the moment support only C. Therefore, unless you are targeting embedded platforms, there's no point to using the old methods (unless you're a masochist programmer and you're asking for trouble).
 
