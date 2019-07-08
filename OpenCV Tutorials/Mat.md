@@ -12,7 +12,7 @@ Mat
 
 庆幸的是，C++开发出来，并带来了类的概念，这让用户可以自动化处理内存占用，从而简化内存管理。而且有一个好消息，C++对C语言是充分兼容的，所以将OpenCV改成C++并不会引发任何问题。因此，从OpenCV 2.0开始，我们便引入了新的C++接口，这样我们为用户提供了新的编程方法，从而让用户不必受困于内存管理的麻烦当中，让用户的代码更加简明扼要（写的更少，做的更多）。C++接口的一个弊端是许多嵌入式开发系统目前只支持C。因此，如果你在使用嵌入式系统，请使用C语言开发。如果你并不是使用嵌入式设备，则不要使用旧方法（除非你是一位喜欢给自己挖坑的程序员，你这样做就是在自找麻烦）。
 
-The first thing you need to know about Mat is that you no longer need to manually allocate its memory and release it as soon as you do not need it. While doing this is still a possibility, most of the OpenCV functions will allocate its output data automatically. As a nice bonus if you pass on an already existing Mat object, which has already allocated the required space for the matrix, this will be reused. In other words we use at all times only as much memory as we need to perform the task.
+你需要知道的第一件事情便是：使用了Mat之后，你就不需要手动分配内存和释放内存。许多情况下，OpenCV函数可以自动分配内存来存放输出数据，尽管有的时候你还是需要自己手动分配一下。如果你传递了一个已经存在的Mat对象，而且这个Mat对象已经为矩阵分配了需要的空间，那么就有了额外的好处，这部分内存空间会被重复使用。也就是说，我们在处理任务的时候，始终只用到了我们需要的空间。
 
 Mat is basically a class with two data parts: the matrix header (containing information such as the size of the matrix, the method used for storing, at which address is the matrix stored, and so on) and a pointer to the matrix containing the pixel values (taking any dimensionality depending on the method chosen for storing) . The matrix header size is constant, however the size of the matrix itself may vary from image to image and usually is larger by orders of magnitude.
 
