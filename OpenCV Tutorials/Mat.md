@@ -10,9 +10,7 @@ Mat
 
 自2001年起，OpenCV便开始开发。在当时，OpenCV是用C实现的，并提供C语言接口，存储在内存的方式是通过IplIMage的C语言结构体来实现的。因此，你会在一些比较老的教程或者是教科书里看到OpenCV的C语言使用方式。然而，C语言带来一个问题，那就是C语言本身做的事情非常有限。最大的问题是我们需要对内存进行手动管理。C语言假定程序员应该对内存分配和回收负责。当然，这对于一个小程序而言没有多大问题，但是，一旦代码开始膨胀，程序开发便会从目标功能实现转向异常繁琐的内存管理上去。
 
-The main downside of the C++ interface is that many embedded development systems at the moment support only C. Therefore, unless you are targeting embedded platforms, there's no point to using the old methods (unless you're a masochist programmer and you're asking for trouble).
-
-庆幸的是，C++开发出来，并带来了类的概念，这让用户可以自动化处理内存占用，从而简化内存管理。而且有一个好消息，C++对C语言是充分兼容的，所以将OpenCV改成C++并不会引发任何问题。因此，从OpenCV 2.0开始，我们便引入了新的C++接口，这样我们为用户提供了新的编程方法，从而让用户不必受困于内存管理的麻烦当中，让用户的代码更加简明扼要（写的更少，做的更多）。
+庆幸的是，C++开发出来，并带来了类的概念，这让用户可以自动化处理内存占用，从而简化内存管理。而且有一个好消息，C++对C语言是充分兼容的，所以将OpenCV改成C++并不会引发任何问题。因此，从OpenCV 2.0开始，我们便引入了新的C++接口，这样我们为用户提供了新的编程方法，从而让用户不必受困于内存管理的麻烦当中，让用户的代码更加简明扼要（写的更少，做的更多）。C++接口的一个弊端是许多嵌入式开发系统目前只支持C。因此，如果你在使用嵌入式系统，请使用C语言开发。如果你并不是使用嵌入式设备，则不要使用旧方法（除非你是一位喜欢给自己挖坑的程序员，你这样做就是在自找麻烦）。
 
 The first thing you need to know about Mat is that you no longer need to manually allocate its memory and release it as soon as you do not need it. While doing this is still a possibility, most of the OpenCV functions will allocate its output data automatically. As a nice bonus if you pass on an already existing Mat object, which has already allocated the required space for the matrix, this will be reused. In other words we use at all times only as much memory as we need to perform the task.
 
