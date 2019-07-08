@@ -14,7 +14,7 @@ Mat
 
 你需要知道的第一件事情便是：使用了Mat之后，你就不需要手动分配内存和释放内存。许多情况下，OpenCV函数可以自动分配内存来存放输出数据，尽管有的时候你还是需要自己手动分配一下。如果你传递了一个已经存在的Mat对象，而且这个Mat对象已经为矩阵分配了需要的空间，那么就有了额外的好处，这部分内存空间会被重复使用。也就是说，我们在处理任务的时候，始终只用到了我们需要的空间。
 
-Mat is basically a class with two data parts: the matrix header (containing information such as the size of the matrix, the method used for storing, at which address is the matrix stored, and so on) and a pointer to the matrix containing the pixel values (taking any dimensionality depending on the method chosen for storing) . The matrix header size is constant, however the size of the matrix itself may vary from image to image and usually is larger by orders of magnitude.
+Mat通常情况下是一个有两个数据部分组成的类：矩阵头部（包括了矩阵的大小、存储所使用的方法、矩阵存储的位置等等信息）和一个指向矩阵中所包含元素的指针（矩阵的维数取决于所用的存储方式）。矩阵头部大小是一定的，然而矩阵的大小与图像有关，通常而言，维数越大，矩阵的规模也越大。
 
 OpenCV is an image processing library. It contains a large collection of image processing functions. To solve a computational challenge, most of the time you will end up using multiple functions of the library. Because of this, passing images to functions is a common practice. We should not forget that we are talking about image processing algorithms, which tend to be quite computational heavy. The last thing we want to do is further decrease the speed of your program by making unnecessary copies of potentially large images.
 
