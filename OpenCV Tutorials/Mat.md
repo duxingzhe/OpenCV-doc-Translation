@@ -18,6 +18,8 @@ Mat通常情况下是一个有两个数据部分组成的类：矩阵头部（�
 
 OpenCV is an image processing library. It contains a large collection of image processing functions. To solve a computational challenge, most of the time you will end up using multiple functions of the library. Because of this, passing images to functions is a common practice. We should not forget that we are talking about image processing algorithms, which tend to be quite computational heavy. The last thing we want to do is further decrease the speed of your program by making unnecessary copies of potentially large images.
 
+OpenCV是一个图形处理库。它包含了一系列的图像处理函数。为了解决计算处理问题，许多时候你都需要使用库里的多个函数。正因为如此，将图像数据传递给函数是一个常见的处理方式。我们牢记的是，我们是在讨论图像处理算法，也就是说，需要大量的计算处理过程。我们需要提醒的最后一件事是，对图像进行非必要的复制会对你的程序性能有相当
+
 To tackle this issue OpenCV uses a reference counting system. The idea is that each Mat object has its own header, however the matrix may be shared between two instance of them by having their matrix pointers point to the same address. Moreover, the copy operators will only copy the headers and the pointer to the large matrix, not the data itself.
 
 ```
