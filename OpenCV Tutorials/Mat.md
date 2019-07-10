@@ -27,7 +27,7 @@ Mat B(A);                                 // Use the copy constructor
 C = A;                                    // Assignment operator
 ```
 
-All the above objects, in the end, point to the same single data matrix. Their headers are different, however, and making a modification using any of them will affect all the other ones as well. In practice the different objects just provide different access method to the same underlying data. Nevertheless, their header parts are different. The real interesting part is that you can create headers which refer to only a subsection of the full data. For example, to create a region of interest (ROI) in an image you just create a new header with the new boundaries:
+在上面代码的最后，以上所提及的几个对象都是指向同一个数据矩阵。然而，他们的头部是不一样的，对其中一个对象进行数据修改会影响其他对象的数据。在实际操作过程中，程序员需要用不同的函数对同样的数据处理。尽管如此，他们的头部是不一样的。并且，比较有趣的是，你可以创建一个包含了部分矩阵数据的头部。例如，为了创建图片的感兴趣区域（Region of Interest），你可以新建有新边界的新头部。
 
 ```
 Mat D (A, Rect(10, 10, 100, 100) ); // using a rectangle
