@@ -34,7 +34,7 @@ Mat D (A, Rect(10, 10, 100, 100) ); // using a rectangle
 Mat E = A(Range::all(), Range(1,3)); // using row and column boundaries
 ```
 
-Now you may ask if the matrix itself may belong to multiple Mat objects who takes responsibility for cleaning it up when it's no longer needed. The short answer is: the last object that used it. This is handled by using a reference counting mechanism. Whenever somebody copies a header of a Mat object, a counter is increased for the matrix. Whenever a header is cleaned this counter is decreased. When the counter reaches zero the matrix too is freed. Sometimes you will want to copy the matrix itself too, so OpenCV provides the cv::Mat::clone() and cv::Mat::copyTo() functions.
+你可能会问，如果矩阵自身属于多个Mat对象，那么当矩阵不再被使用的时候，谁负责清理？答案很简单：最后一个使用它的人。这也就是应用到了引用计数机制。只要建立了一个新的Mat对象头部引用，矩阵的计数便会增加一。当头部引用被清除以后，矩阵计数减一。当引用计数变成了零，矩阵便会被清除。有时候，你也希望复制整个矩阵，所以OpenCV提供了cv::Mat::clone()和cv::Mat::copyTo()函数。
 
 ```
 Mat F = A.clone();
