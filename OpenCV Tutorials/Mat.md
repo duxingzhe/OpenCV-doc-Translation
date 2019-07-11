@@ -49,11 +49,11 @@ A.copyTo(G);
 * 分配操作符和复制构建函数只复制头部数据。
 * cv::Mat::clone()和cv::Mat::copyTo()会复制图形的底层矩阵数据。
 
-Storing methods
+存储方式
 
-This is about how you store the pixel values. You can select the color space and the data type used. The color space refers to how we combine color components in order to code a given color. The simplest one is the gray scale where the colors at our disposal are black and white. The combination of these allows us to create many shades of gray.
+这里将告诉你如何存储像素信息。你可以选择你想使用的色彩空间和数据类型。色域表示的是我们对给定颜色的描述方式。最简单的色域便是灰阶，在这个色彩空间中，我们只用黑和白作为基本颜色来表示颜色的深浅。黑白的混合就产生了各种各样的灰色。
 
-For colorful ways we have a lot more methods to choose from. Each of them breaks it down to three or four basic components and we can use the combination of these to create the others. The most popular one is RGB, mainly because this is also how our eye builds up colors. Its base colors are red, green and blue. To code the transparency of a color sometimes a fourth element: alpha (A) is added.
+身处这个五彩斑斓的世界，我们有许多方式来表示现实世界的颜色。每个色彩空间中，我们都会定义三或四个基本元素，然后我们便通过这三四种颜色的组合来表示其他颜色。最出名的色域便是RGB，这是因为这就是我们的眼睛所见到的颜色。它基于红色、绿色和蓝色的混合。为了表示颜色的透明程度，我们会加上第四个元素：alpha（A）。
 
 There are, however, many other color systems each with their own advantages:
 
@@ -89,43 +89,67 @@ For instance, CV_8UC3 means we use unsigned char types that are 8 bit long and e
 
 Use C/C++ arrays and initialize via constructor
 
-    int sz[3] = {2,2,2};
-    Mat L(3,sz, CV_8UC(1), Scalar::all(0));
+```
+int sz[3] = {2,2,2};
+Mat L(3,sz, CV_8UC(1), Scalar::all(0));
+```
+
 The upper example shows how to create a matrix with more than two dimensions. Specify its dimension, then pass a pointer containing the size for each dimension and the rest remains the same.
 
 cv::Mat::create function:
 
-    M.create(4,4, CV_8UC(2));
-    cout << "M = "<< endl << " "  << M << endl << endl;
-MatBasicContainerOut2.png
+```
+M.create(4,4, CV_8UC(2));
+cout << "M = "<< endl << " "  << M << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut2.png)
+
 You cannot initialize the matrix values with this construction. It will only reallocate its matrix data memory if the new size will not fit into the old one.
 
 MATLAB style initializer: cv::Mat::zeros , cv::Mat::ones , cv::Mat::eye . Specify size and data type to use:
 
-    Mat E = Mat::eye(4, 4, CV_64F);
-    cout << "E = " << endl << " " << E << endl << endl;
-    Mat O = Mat::ones(2, 2, CV_32F);
-    cout << "O = " << endl << " " << O << endl << endl;
-    Mat Z = Mat::zeros(3,3, CV_8UC1);
-    cout << "Z = " << endl << " " << Z << endl << endl;
-MatBasicContainerOut3.png
+```
+Mat E = Mat::eye(4, 4, CV_64F);
+cout << "E = " << endl << " " << E << endl << endl;
+Mat O = Mat::ones(2, 2, CV_32F);
+cout << "O = " << endl << " " << O << endl << endl;
+Mat Z = Mat::zeros(3,3, CV_8UC1);
+cout << "Z = " << endl << " " << Z << endl << endl;
+``` 
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut3.png)
+
 For small matrices you may use comma separated initializers or initializer lists (C++11 support is required in the last case):
 
-    Mat C = (Mat_<double>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
-    cout << "C = " << endl << " " << C << endl << endl;
-    C = (Mat_<double>({0, -1, 0, -1, 5, -1, 0, -1, 0})).reshape(3);
-    cout << "C = " << endl << " " << C << endl << endl;
-MatBasicContainerOut6.png
+```
+Mat C = (Mat_<double>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
+cout << "C = " << endl << " " << C << endl << endl;
+C = (Mat_<double>({0, -1, 0, -1, 5, -1, 0, -1, 0})).reshape(3);
+cout << "C = " << endl << " " << C << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut6.png)
+
 Create a new header for an existing Mat object and cv::Mat::clone or cv::Mat::copyTo it.
 
-    Mat RowClone = C.row(1).clone();
-    cout << "RowClone = " << endl << " " << RowClone << endl << endl;
-MatBasicContainerOut7.png
+```
+Mat RowClone = C.row(1).clone();
+cout << "RowClone = " << endl << " " << RowClone << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut7.png)
+
 Note
 You can fill out a matrix with random values using the cv::randu() function. You need to give the lower and upper value for the random values:
-    Mat R = Mat(3, 2, CV_8UC3);
-    randu(R, Scalar::all(0), Scalar::all(255));
+
+```
+Mat R = Mat(3, 2, CV_8UC3);
+randu(R, Scalar::all(0), Scalar::all(255));
+```
+
 Output formatting
+
 In the above examples you could see the default formatting option. OpenCV, however, allows you to format your matrix output:
 
 Default
