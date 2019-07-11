@@ -42,12 +42,12 @@ Mat G;
 A.copyTo(G);
 ```
 
-Now modifying F or G will not affect the matrix pointed by the Mat header. What you need to remember from all this is that:
+那么现在，如果你修改了F或者G的中的矩阵数据，对于A指针指向的数据而言是不受影响的。无论何时何地，你都要记住以下几个要点：
 
-* Output image allocation for OpenCV functions is automatic (unless specified otherwise).
-* You do not need to think about memory management with OpenCVs C++ interface.
-* The assignment operator and the copy constructor only copies the header.
-* The underlying matrix of an image may be copied using the cv::Mat::clone() and cv::Mat::copyTo() functions.
+* 由OpenCV函数输出的图像，其内存空间由OpenCV自动负责。（除非文档特别指明的特殊情况。）
+* 如果你用了OpenCV的C++接口，你完全不用担心内存管理问题。
+* 分配操作符和复制构建函数只复制头部数据。
+* cv::Mat::clone()和cv::Mat::copyTo()会复制图形的底层矩阵数据。
 
 Storing methods
 
