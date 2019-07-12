@@ -55,12 +55,12 @@ A.copyTo(G);
 
 身处这个五彩斑斓的世界，我们有许多方式来表示现实世界的颜色。每个色彩空间中，我们都会定义三或四个基本元素，然后我们便通过这三四种颜色的组合来表示其他颜色。最出名的色域便是RGB，这是因为这就是我们所见到的颜色。它基于红色、绿色和蓝色的混合。为了表示颜色的透明程度，我们会加上第四个元素：alpha（A）。
 
-There are, however, many other color systems each with their own advantages:
+然而，不同的色域有着自身独特的优势：
 
-* RGB is the most common as our eyes use something similar, however keep in mind that OpenCV standard display system composes colors using the BGR color space (a switch of the red and blue channel).
-* The HSV and HLS decompose colors into their hue, saturation and value/luminance components, which is a more natural way for us to describe colors. You might, for example, dismiss the last component, making your algorithm less sensible to the light conditions of the input image.
-* YCrCb is used by the popular JPEG image format.
-* CIE L*a*b* is a perceptually uniform color space, which comes handy if you need to measure the distance of a given color to another color.
+* RGB是最常用的，因为他们就是我们眼睛所见的色域。但是，请记住一点，OpenCV标准显示系统使用BGR色域来组成颜色的（该色域将红和蓝通道进行了对调）。
+* HSV和HLS将颜色分解为色度、饱和度、亮度等元素，因为这是我们日常生活中描述颜色的方式。比如说，你可能会忽略最后一个元素，这样可以使你的算法忽视图像亮度的改变。
+* 较为流行的JPEG图像格式使用的是YCrCb色域。
+* CIE L\*a\*b\* 是一个感性的统一色域，他主要是在你需要描述两种颜色值差距的时候使用，而且非常方便。
 
 Each of the building components has their own valid domains. This leads to the data type used. How we store a component defines the control we have over its domain. The smallest data type possible is char, which means one byte or 8 bits. This may be unsigned (so can store values from 0 to 255) or signed (values from -127 to +127). Although in case of three components this already gives 16 million possible colors to represent (like in case of RGB) we may acquire an even finer control by using the float (4 byte = 32 bit) or double (8 byte = 64 bit) data types for each component. Nevertheless, remember that increasing the size of a component also increases the size of the whole picture in the memory.
 
