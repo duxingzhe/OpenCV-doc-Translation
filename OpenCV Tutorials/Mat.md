@@ -64,11 +64,11 @@ A.copyTo(G);
 
 每一种色域都有自己擅长的区域。这取决于程序员使用的数据类型。我们存储数据的方式决定了我们使用的色域类型。最有可能的最简单数据类型可能是char，这个类型只有1个字节或8个位。可能是无符号类型（所以我们可以存储0~255）或者有符号类型（-127~127）。尽管在之前的三种色域都能支持1600万种颜色（比如RGB），我们可能会要求的更为严格，以便更好地控制颜色的输出。这时，我们会使用float（4字节=32位）或者double（8字节=64位）来表示各个元素。无论如何都要记住，增加元素的存储体积就会增加整个图片在内存中的体积。
 
-显示地创建Mat对象
+显式地创建Mat对象
 
-In the Load, Modify, and Save an Image tutorial you have already learned how to write a matrix to an image file by using the cv::imwrite() function. However, for debugging purposes it's much more convenient to see the actual values. You can do this using the << operator of Mat. Be aware that this only works for two dimensional matrices.
+在加载、修改并保存图像的教程里，你已经知道通过cv::imwrite()函数将一个矩阵中所包含的值写入一个图形文件里。然而，在调试的过程当中，我们也需要看到运行当中的真实数值，这会让我们的程序调试更加方便。你可以通过使用Mat的<<操作符来实现这个任务。但是需要注意的是，这个操作符只能用在二维矩阵中。
 
-Although Mat works really well as an image container, it is also a general matrix class. Therefore, it is possible to create and manipulate multidimensional matrices. You can create a Mat object in multiple ways:
+尽管Mat作为一个图形容器时运行的效果还是不错的，但是他也是同样是一个通用的矩阵类。因此，我们可以用他来生成多维矩阵。你可以用很多方法来生成矩阵：
 
 * cv::Mat::Mat Constructor
 
@@ -80,7 +80,7 @@ Although Mat works really well as an image container, it is also a general matri
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut1.png)
 
-For two dimensional and multichannel images we first define their size: row and column count wise.
+对于二维并且多通道图形，我们首先要定义它的大小：按行数和列数记。
 
 Then we need to specify the data type to use for storing the elements and the number of channels per matrix point. To do this we have multiple definitions constructed according to the following convention:
 
@@ -153,21 +153,47 @@ Output formatting
 In the above examples you could see the default formatting option. OpenCV, however, allows you to format your matrix output:
 
 Default
-    cout << "R (default) = " << endl <<        R           << endl << endl;
-MatBasicContainerOut8.png
+
+```
+cout << "R (default) = " << endl <<        R           << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut8.png)
+
 Python
-    cout << "R (python)  = " << endl << format(R, Formatter::FMT_PYTHON) << endl << endl;
-MatBasicContainerOut16.png
+
+```
+cout << "R (python)  = " << endl << format(R, Formatter::FMT_PYTHON) << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut16.png)
+
 Comma separated values (CSV)
-    cout << "R (csv)     = " << endl << format(R, Formatter::FMT_CSV   ) << endl << endl;
-MatBasicContainerOut10.png
+
+```
+cout << "R (csv)     = " << endl << format(R, Formatter::FMT_CSV   ) << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut10.png)
+
 Numpy
-    cout << "R (numpy)   = " << endl << format(R, Formatter::FMT_NUMPY ) << endl << endl;
-MatBasicContainerOut9.png
+
+```
+cout << "R (numpy)   = " << endl << format(R, Formatter::FMT_NUMPY ) << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut9.png)
+
 C
-    cout << "R (c)       = " << endl << format(R, Formatter::FMT_C     ) << endl << endl;
-MatBasicContainerOut11.png
+
+```
+cout << "R (c)       = " << endl << format(R, Formatter::FMT_C     ) << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut11.png)
+
 Output of other common items
+
 OpenCV offers support for output of other common OpenCV data structures too via the << operator:
 
 2D Point
