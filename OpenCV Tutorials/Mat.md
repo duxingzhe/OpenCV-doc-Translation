@@ -96,7 +96,7 @@ Mat L(3,sz, CV_8UC(1), Scalar::all(0));
 
 The upper example shows how to create a matrix with more than two dimensions. Specify its dimension, then pass a pointer containing the size for each dimension and the rest remains the same.
 
-cv::Mat::create function:
+* cv::Mat::create function:
 
 ```
 M.create(4,4, CV_8UC(2));
@@ -107,7 +107,7 @@ cout << "M = "<< endl << " "  << M << endl << endl;
 
 You cannot initialize the matrix values with this construction. It will only reallocate its matrix data memory if the new size will not fit into the old one.
 
-MATLAB style initializer: cv::Mat::zeros , cv::Mat::ones , cv::Mat::eye . Specify size and data type to use:
+* MATLAB style initializer: cv::Mat::zeros , cv::Mat::ones , cv::Mat::eye . Specify size and data type to use:
 
 ```
 Mat E = Mat::eye(4, 4, CV_64F);
@@ -120,7 +120,7 @@ cout << "Z = " << endl << " " << Z << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut3.png)
 
-For small matrices you may use comma separated initializers or initializer lists (C++11 support is required in the last case):
+* For small matrices you may use comma separated initializers or initializer lists (C++11 support is required in the last case):
 
 ```
 Mat C = (Mat_<double>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
@@ -131,7 +131,7 @@ cout << "C = " << endl << " " << C << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut6.png)
 
-Create a new header for an existing Mat object and cv::Mat::clone or cv::Mat::copyTo it.
+* Create a new header for an existing Mat object and cv::Mat::clone or cv::Mat::copyTo it.
 
 ```
 Mat RowClone = C.row(1).clone();
@@ -140,8 +140,9 @@ cout << "RowClone = " << endl << " " << RowClone << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut7.png)
 
-Note
-You can fill out a matrix with random values using the cv::randu() function. You need to give the lower and upper value for the random values:
+> Note
+>
+> You can fill out a matrix with random values using the cv::randu() function. You need to give the lower and upper value for the random > values:
 
 ```
 Mat R = Mat(3, 2, CV_8UC3);
