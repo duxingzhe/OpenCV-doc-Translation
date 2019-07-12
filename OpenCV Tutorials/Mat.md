@@ -62,9 +62,9 @@ A.copyTo(G);
 * 较为流行的JPEG图像格式使用的是YCrCb色域。
 * CIE L\*a\*b\* 是一个感性的统一色域，他主要是在你需要描述两种颜色值差距的时候使用，而且非常方便。
 
-Each of the building components has their own valid domains. This leads to the data type used. How we store a component defines the control we have over its domain. The smallest data type possible is char, which means one byte or 8 bits. This may be unsigned (so can store values from 0 to 255) or signed (values from -127 to +127). Although in case of three components this already gives 16 million possible colors to represent (like in case of RGB) we may acquire an even finer control by using the float (4 byte = 32 bit) or double (8 byte = 64 bit) data types for each component. Nevertheless, remember that increasing the size of a component also increases the size of the whole picture in the memory.
+每一种色域都有自己擅长的区域。这取决于程序员使用的数据类型。我们存储数据的方式决定了我们使用的色域类型。最有可能的最简单数据类型可能是char，这个类型只有1个字节或8个位。可能是无符号类型（所以我们可以存储0~255）或者有符号类型（-127~127）。尽管在之前的三种色域都能支持1600万种颜色（比如RGB），我们可能会要求的更为严格，以便更好地控制颜色的输出。这时，我们会使用float（4字节=32位）或者double（8字节=64位）来表示各个元素。无论如何都要记住，增加元素的存储体积就会增加整个图片在内存中的体积。
 
-Creating a Mat object explicitly
+显示地创建Mat对象
 
 In the Load, Modify, and Save an Image tutorial you have already learned how to write a matrix to an image file by using the cv::imwrite() function. However, for debugging purposes it's much more convenient to see the actual values. You can do this using the << operator of Mat. Be aware that this only works for two dimensional matrices.
 
