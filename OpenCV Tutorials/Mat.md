@@ -201,7 +201,7 @@ Output of other common items
 
 OpenCV offers support for output of other common OpenCV data structures too via the << operator:
 
-2D点
+* 二维空间的点
 
 ```
 Point2f P(5, 1);
@@ -210,7 +210,7 @@ cout << "Point (2D) = " << P << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut12.png）
 
-3D点
+* 三维空间的点
 
 ```
 Point3f P3f(2, 6, 7);
@@ -219,7 +219,7 @@ cout << "Point (3D) = " << P3f << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut13.png)
 
-通过cv::Mat创建std::vector
+* 通过cv::Mat创建std::vector
 
 ```
 vector<float> v;
@@ -229,7 +229,7 @@ cout << "Vector of floats via Mat = " << Mat(v) << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut14.png)
 
-OpenCV点类型的std::vector
+* OpenCV点类型的std::vector
 
 ```
 vector<Point2f> vPoints(20);
