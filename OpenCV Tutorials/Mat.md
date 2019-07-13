@@ -208,7 +208,7 @@ Point2f P(5, 1);
 cout << "Point (2D) = " << P << endl << endl;
 ```
 
-![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut12.png）
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut12.png)
 
 * 三维空间的点
 
