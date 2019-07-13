@@ -173,7 +173,7 @@ cout << "R (python)  = " << endl << format(R, Formatter::FMT_PYTHON) << endl << 
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut16.png)
 
-* Comma separated values (CSV)
+* 以逗号分隔的数据 (CSV)
 
 ```
 cout << "R (csv)     = " << endl << format(R, Formatter::FMT_CSV   ) << endl << endl;
