@@ -197,9 +197,9 @@ cout << "R (c)       = " << endl << format(R, Formatter::FMT_C     ) << endl << 
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut11.png)
 
-Output of other common items
+对其他常见元素的输出
 
-OpenCV offers support for output of other common OpenCV data structures too via the << operator:
+OpenCV同样支持通过<<运算符对其他常见的OpenCV数据结构类型的数据输出：
 
 * 二维空间的点
 
@@ -208,7 +208,7 @@ Point2f P(5, 1);
 cout << "Point (2D) = " << P << endl << endl;
 ```
 
-![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut12.png)
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut12.png)
 
 * 三维空间的点
 
@@ -217,7 +217,7 @@ Point3f P3f(2, 6, 7);
 cout << "Point (3D) = " << P3f << endl << endl;
 ```
 
-![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut13.png)
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut13.png)
 
 * 通过cv::Mat创建std::vector
 
@@ -227,7 +227,7 @@ v.push_back( (float)CV_PI);   v.push_back(2);    v.push_back(3.01f);
 cout << "Vector of floats via Mat = " << Mat(v) << endl << endl;
 ```
 
-![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut14.png)
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut14.png)
 
 * OpenCV点类型的std::vector
 
@@ -238,7 +238,7 @@ for (size_t i = 0; i < vPoints.size(); ++i)
 cout << "A vector of 2D Points = " << vPoints << endl << endl;
 ```
 
-![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut15.png)
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOut15.png)
 
 这里的大多数例子都写在一个控制台程序里。你可以从这里下载，或从OpenCV的cpp例子中找到这个程序。
 
