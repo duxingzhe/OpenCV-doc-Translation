@@ -97,9 +97,9 @@ int sz[3] = {2,2,2};
 Mat L(3,sz, CV_8UC(1), Scalar::all(0));
 ```
 
-The upper example shows how to create a matrix with more than two dimensions. Specify its dimension, then pass a pointer containing the size for each dimension and the rest remains the same.
+上面的例子说明了如何创建一个大于二维的矩阵。先指明维度，再传入一个包含每个维度大小的指针，其他的则保持一致。
 
-* cv::Mat::create function:
+* cv::Mat::create函数:
 
 ```
 M.create(4,4, CV_8UC(2));
@@ -108,9 +108,9 @@ cout << "M = "<< endl << " "  << M << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut2.png)
 
-You cannot initialize the matrix values with this construction. It will only reallocate its matrix data memory if the new size will not fit into the old one.
+你不能通过这个命令来对矩阵的值进行初始化。只有当矩阵大小已经无法满足原来的容量的时候，OpenCV才会对矩阵空间进行重分配。
 
-* MATLAB style initializer: cv::Mat::zeros , cv::Mat::ones , cv::Mat::eye . Specify size and data type to use:
+* MATLAB风格的初始化函数: cv::Mat::zeros , cv::Mat::ones , cv::Mat::eye . Specify size and data type to use:
 
 ```
 Mat E = Mat::eye(4, 4, CV_64F);
@@ -123,7 +123,7 @@ cout << "Z = " << endl << " " << Z << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut3.png)
 
-* For small matrices you may use comma separated initializers or initializer lists (C++11 support is required in the last case):
+* 对于小型的矩阵，你可以使用逗号分隔的初始化函数和初始化列表来创建矩阵（C++11标准支持最后一个用法）：
 
 ```
 Mat C = (Mat_<double>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
