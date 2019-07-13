@@ -82,12 +82,15 @@ A.copyTo(G);
 
 对于二维并且多通道图形，我们首先要定义它的大小：按行数和列数记。
 
-Then we need to specify the data type to use for storing the elements and the number of channels per matrix point. To do this we have multiple definitions constructed according to the following convention:
+接着我们应该指明需要使用的数据类型，这样我们才能正确存储每个矩阵点的元素和通道的数量。为了实现这一目的，我们通过以下规范来对图形类型进行多重定义：
 
-CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]
-For instance, CV_8UC3 means we use unsigned char types that are 8 bit long and each pixel has three of these to form the three channels. This are predefined for up to four channel numbers. The cv::Scalar is four element short vector. Specify this and you can initialize all matrix points with a custom value. If you need more you can create the type with the upper macro, setting the channel number in parenthesis as you can see below.
+```
+CV_[每一个元素的位数][有符号或无符号][类型前缀]C[通道数]
+```
 
-Use C/C++ arrays and initialize via constructor
+例如，CV_8UC3表示我们使用的是无符号数据类型，8位长，每个像素有3个通道。这个可以最多定义4个像素通道。cv::Scalar是四元素短向量。指明这一点，你就能将所有的矩阵点初始化成一个特定的值。如果你需要更多的信息，你可以创建大写宏的类型，就像插入语那样设置通道数。如下所示：
+
+通过构造函数和C/C++数组进行初始化
 
 ```
 int sz[3] = {2,2,2};
