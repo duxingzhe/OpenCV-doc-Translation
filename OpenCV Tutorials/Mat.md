@@ -135,6 +135,7 @@ cout << "C = " << endl << " " << C << endl << endl;
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut6.png)
 
 * Create a new header for an existing Mat object and cv::Mat::clone or cv::Mat::copyTo it.
+为一个已经存在的Mat对象创建一个新的头部，并使用cv::Mat::clone或者cv::Mat::copyTo来创建它。
 
 ```
 Mat RowClone = C.row(1).clone();
@@ -143,20 +144,20 @@ cout << "RowClone = " << endl << " " << RowClone << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut7.png)
 
-> Note
+> 注意
 >
-> You can fill out a matrix with random values using the cv::randu() function. You need to give the lower and upper value for the random > values:
+> 你可以通过使用cv::randu()函数来创建一个有随机值的矩阵。你可以给出矩阵值的最大值和最小值,以限制矩阵元素值的范围。
 
 ```
 Mat R = Mat(3, 2, CV_8UC3);
 randu(R, Scalar::all(0), Scalar::all(255));
 ```
 
-Output formatting
+对输出数据进行格式化处理
 
-In the above examples you could see the default formatting option. OpenCV, however, allows you to format your matrix output:
+上面的例子当中，你看到了默认的格式化输出选项。但是，OpenCV则允许你对你的矩阵输出进行自定义设置：
 
-Default
+* Default
 
 ```
 cout << "R (default) = " << endl <<        R           << endl << endl;
@@ -164,7 +165,7 @@ cout << "R (default) = " << endl <<        R           << endl << endl;
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut8.png)
 
-Python
+* Python
 
 ```
 cout << "R (python)  = " << endl << format(R, Formatter::FMT_PYTHON) << endl << endl;
@@ -172,7 +173,7 @@ cout << "R (python)  = " << endl << format(R, Formatter::FMT_PYTHON) << endl << 
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut16.png)
 
-Comma separated values (CSV)
+* Comma separated values (CSV)
 
 ```
 cout << "R (csv)     = " << endl << format(R, Formatter::FMT_CSV   ) << endl << endl;
@@ -180,7 +181,7 @@ cout << "R (csv)     = " << endl << format(R, Formatter::FMT_CSV   ) << endl << 
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut10.png)
 
-Numpy
+* Numpy
 
 ```
 cout << "R (numpy)   = " << endl << format(R, Formatter::FMT_NUMPY ) << endl << endl;
@@ -188,7 +189,7 @@ cout << "R (numpy)   = " << endl << format(R, Formatter::FMT_NUMPY ) << endl << 
 
 ![](https://docs.opencv.org/4.1.0/MatBasicContainerOut9.png)
 
-C
+* C
 
 ```
 cout << "R (c)       = " << endl << format(R, Formatter::FMT_C     ) << endl << endl;
@@ -200,26 +201,46 @@ Output of other common items
 
 OpenCV offers support for output of other common OpenCV data structures too via the << operator:
 
-2D Point
-    Point2f P(5, 1);
-    cout << "Point (2D) = " << P << endl << endl;
-MatBasicContainerOut12.png
-3D Point
-    Point3f P3f(2, 6, 7);
-    cout << "Point (3D) = " << P3f << endl << endl;
-MatBasicContainerOut13.png
-std::vector via cv::Mat
-    vector<float> v;
-    v.push_back( (float)CV_PI);   v.push_back(2);    v.push_back(3.01f);
-    cout << "Vector of floats via Mat = " << Mat(v) << endl << endl;
-MatBasicContainerOut14.png
-std::vector of points
-    vector<Point2f> vPoints(20);
-    for (size_t i = 0; i < vPoints.size(); ++i)
-        vPoints[i] = Point2f((float)(i * 5), (float)(i % 7));
-    cout << "A vector of 2D Points = " << vPoints << endl << endl;
-MatBasicContainerOut15.png
-Most of the samples here have been included in a small console application. You can download it from here or in the core section of the cpp samples.
+2D点
 
-You can also find a quick video demonstration of this on YouTube.
+```
+Point2f P(5, 1);
+cout << "Point (2D) = " << P << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut12.png）
+
+3D点
+
+```
+Point3f P3f(2, 6, 7);
+cout << "Point (3D) = " << P3f << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut13.png)
+
+通过cv::Mat创建std::vector
+
+```
+vector<float> v;
+v.push_back( (float)CV_PI);   v.push_back(2);    v.push_back(3.01f);
+cout << "Vector of floats via Mat = " << Mat(v) << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut14.png)
+
+OpenCV点类型的std::vector
+
+```
+vector<Point2f> vPoints(20);
+for (size_t i = 0; i < vPoints.size(); ++i)
+    vPoints[i] = Point2f((float)(i * 5), (float)(i % 7));
+cout << "A vector of 2D Points = " << vPoints << endl << endl;
+```
+
+![](https://docs.opencv.org/4.1.0/MatBasicContainerOutMatBasicContainerOut15.png)
+
+这里的大多数例子都写在一个控制台程序里。你可以从这里下载，或从OpenCV的cpp例子中找到这个程序。
+
+你可以在Youtube上看到关于这个教程的演示视频。
 
