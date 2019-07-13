@@ -12,9 +12,7 @@
 
 1、在学习翻译，可以实践；
 
-2、于图书馆扫地，有空；
-
-3、帮助部分程序员了解最新的OpenCV文档、功能和方法。
+2、帮助部分程序员了解最新的OpenCV文档、功能和方法。
 
 ![](https://github.com/duxingzhe/OpenCV-doc-Translation/blob/master/qr/alipay_qr.jpg)
 ![](https://github.com/duxingzhe/OpenCV-doc-Translation/blob/master/qr/weixin_qr.png)
