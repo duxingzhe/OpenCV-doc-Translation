@@ -1,13 +1,13 @@
-Goal
+目的：
 
-We'll seek answers for the following questions:
+我们将在这篇教程中回答一下问题：
 
-* How to go through each and every pixel of an image?
-* How is OpenCV matrix values stored?
-* How to measure the performance of our algorithm?
-* What are lookup tables and why use them?
+* 我们将如何遍历一张图片的每一个像素？
+* OpenCV矩阵值具体是如何存储的？
+* 如何衡量我们的算法性能？
+* 什么是查找表？如何使用查找表？
 
-Our test case
+我们的测试用例
 
 Let us consider a simple color reduction method. By using the unsigned char C and C++ type for matrix item storing, a channel of pixel may have up to 256 different values. For a three channel image this can allow the formation of way too many colors (16 million to be exact). Working with so many color shades may give a heavy blow to our algorithm performance. However, sometimes it is enough to work with a lot less of them to get the same final result.
 
