@@ -1,7 +1,9 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+这篇教程，你将学到：
 
-* Load an image (using cv::imread )
-* Create a named OpenCV window (using cv::namedWindow )
-* Display an image in an OpenCV window (using cv::imshow )
+* 加载图片 (使用cv::imread )
+* 创建一个命名为OpenCV窗口(使用cv::namedWindow )
+* 在OpenCV窗口中显示图片(显示cv::imshow )
+
+具体代码请参见原教程。
