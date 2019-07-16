@@ -23,13 +23,13 @@
 
 我们的这个测试程序（就是我们目前展示的这个）将实现以下功能：在控制台上用命令读取一张图片，图片是命令行的一个参数（可能是多种颜色的，也有可能是灰阶——同样也是命令行参数的形式）并且通过命令行参数的形式传递一个整数值来指明降低的程度。在OpenCV库中，目前有三种方式来处理图片中的各个像素点。为了让这三种扫描图形方法的效果变得更加直观有趣，我们会将每个方法的运行时间打印出来。
 
-You can download the full source code here or look it up in the samples directory of OpenCV at the cpp tutorial code for the core section. Its basic usage is:
+你可以在这儿下载本文所涉及的全部源代码或者在OpenCV的源代码samples目录中C++代码部分找到本文代码。它的基本用法是：
 
 ```
 how_to_scan_images imageName.jpg intValueToReduce [G]
 ```
 
-The final argument is optional. If given the image will be loaded in gray scale format, otherwise the BGR color space is used. The first thing is to calculate the lookup table.
+最后一个命令是可选的。如果指明了这个选项，图像是以灰阶方式加载的，否则就按照BGR色域方式加载图像。我们要做的第一件事便是计算查询表。
 
 ```
 int divideWith = 0; // convert our input string to number - C++ style
@@ -46,7 +46,8 @@ for (int i = 0; i < 256; ++i)
    table[i] = (uchar)(divideWith * (i/divideWith));
 ```
 
-Here we first use the C++ stringstream class to convert the third command line argument from text to an integer format. Then we use a simple look and the upper formula to calculate the lookup table. No OpenCV specific stuff here.
+
+这里，第一步，我们先使用了C++中的stringsream类来将第三个命令行参数转化为整型。接着我们再简单看看上面提到的公式，这个公式用来生成查询表。我们并没有使用到OpenCV的功能。
 
 Another issue is how do we measure time? Well OpenCV offers two simple functions to achieve this cv::getTickCount() and cv::getTickFrequency() . The first returns the number of ticks of your systems CPU from a certain event (like since you booted your system). The second returns how many times your CPU emits a tick during a second. So to measure in seconds the number of time elapsed between two operations is easy as:
 
