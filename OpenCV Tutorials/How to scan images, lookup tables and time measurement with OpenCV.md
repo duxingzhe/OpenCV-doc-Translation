@@ -28,3 +28,35 @@ You can download the full source code here or look it up in the samples director
 ```
 how_to_scan_images imageName.jpg intValueToReduce [G]
 ```
+
+The final argument is optional. If given the image will be loaded in gray scale format, otherwise the BGR color space is used. The first thing is to calculate the lookup table.
+
+```
+int divideWith = 0; // convert our input string to number - C++ style
+stringstream s;
+s << argv[2];
+s >> divideWith;
+if (!s || !divideWith)
+{
+    cout << "Invalid number entered for dividing. " << endl;
+    return -1;
+}
+uchar table[256];
+for (int i = 0; i < 256; ++i)
+   table[i] = (uchar)(divideWith * (i/divideWith));
+```
+
+Here we first use the C++ stringstream class to convert the third command line argument from text to an integer format. Then we use a simple look and the upper formula to calculate the lookup table. No OpenCV specific stuff here.
+
+Another issue is how do we measure time? Well OpenCV offers two simple functions to achieve this cv::getTickCount() and cv::getTickFrequency() . The first returns the number of ticks of your systems CPU from a certain event (like since you booted your system). The second returns how many times your CPU emits a tick during a second. So to measure in seconds the number of time elapsed between two operations is easy as:
+
+```
+double t = (double)getTickCount();
+// do something ...
+t = ((double)getTickCount() - t)/getTickFrequency();
+cout << "Times passed in seconds: " << t << endl;
+```
+
+How is the image matrix stored in memory?
+
+As you could already read in my Mat - The Basic Image Container tutorial the size of the matrix depends on the color system used. More accurately, it depends from the number of channels used. In case of a gray scale image we have something like:
