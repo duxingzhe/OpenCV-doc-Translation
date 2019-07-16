@@ -61,3 +61,44 @@ cout << "Times passed in seconds: " << t << endl;
 How is the image matrix stored in memory?
 
 As you could already read in my Mat - The Basic Image Container tutorial the size of the matrix depends on the color system used. More accurately, it depends from the number of channels used. In case of a gray scale image we have something like:
+
+![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_1.png)
+
+For multichannel images the columns contain as many sub columns as the number of channels. For example in case of an BGR color system:
+
+![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_2.png)
+
+Note that the order of the channels is inverse: BGR instead of RGB. Because in many cases the memory is large enough to store the rows in a successive fashion the rows may follow one after another, creating a single long row. Because everything is in a single place following one after another this may help to speed up the scanning process. We can use the cv::Mat::isContinuous() function to ask the matrix if this is the case. Continue on to the next section to find an example.
+
+The efficient way
+
+When it comes to performance you cannot beat the classic C style operator[] (pointer) access. Therefore, the most efficient method we can recommend for making the assignment is:
+
+```
+Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
+{
+    // accept only char type matrices
+    CV_Assert(I.depth() == CV_8U);
+    int channels = I.channels();
+    int nRows = I.rows;
+    int nCols = I.cols * channels;
+    if (I.isContinuous())
+    {
+        nCols *= nRows;
+        nRows = 1;
+    }
+    int i,j;
+    uchar* p;
+    for( i = 0; i < nRows; ++i)
+    {
+        p = I.ptr<uchar>(i);
+        for ( j = 0; j < nCols; ++j)
+        {
+            p[j] = table[p[j]];
+        }
+    }
+    return I;
+}
+```
+
+Here we basically just acquire a pointer to the start of each row and go through it until it ends. In the special case that the matrix is stored in a continuous manner we only need to request the pointer a single time and go all the way to the end. We need to look out for color images: we have three channels so we need to pass through three times more items in each row.
