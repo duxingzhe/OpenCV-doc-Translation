@@ -21,7 +21,7 @@
 
 因此，对于一些体积更大的图像而言，最好的方式是将所有可能的值在处理之前先算出来，通过查找表的时候只做任务分配。查找表是一个简单的数组（有一维和多维之分），表的内容是将输入值变量和最终输出值一一对应。他的优点就在于我们根据这张表格来查找计算结果，而不是每次都需要计算数据。
 
-Our test case program (and the sample presented here) will do the following: read in a console line argument image (that may be either color or gray scale - console line argument too) and apply the reduction with the given console line argument integer value. In OpenCV, at the moment there are three major ways of going through an image pixel by pixel. To make things a little more interesting will make the scanning for each image using all of these methods, and print out how long it took.
+我们的这个测试程序（就是我们目前展示的这个）将实现以下功能：在控制台上用命令读取一张图片，图片是命令行的一个参数（可能是多种颜色的，也有可能是灰阶——同样也是命令行参数的形式）并且通过命令行参数的形式传递一个整数值来指明降低的程度。在OpenCV库中，目前有三种方式来处理图片中的各个像素点。为了让这三种扫描图形方法的效果变得更加直观有趣，我们会将每个方法的运行时间打印出来。
 
 You can download the full source code here or look it up in the samples directory of OpenCV at the cpp tutorial code for the core section. Its basic usage is:
 
