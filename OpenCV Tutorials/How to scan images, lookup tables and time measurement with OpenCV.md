@@ -19,7 +19,7 @@
 
 一个简单的色域消除算法只是将图形矩阵的每一个像素传入这个公式中在进行处理。我们如果只是简单地执行乘除运算是没有多少意义的。这些运算对于机器而言十分耗性能。如果我们尽可能避免这种方法，而采用一些简单的运算方式，比如转化成加减法、或者转化成更为简单的任务。另外，我们要注意到，输入值是有一个非常明显的上界。在这个例子中，uchar最多有256个值。
 
-Therefore, for larger images it would be wise to calculate all possible values beforehand and during the assignment just make the assignment, by using a lookup table. Lookup tables are simple arrays (having one or more dimensions) that for a given input value variation holds the final output value. Its strength lies that we do not need to make the calculation, we just need to read the result.
+因此，对于一些体积更大的图像而言，最好的方式是将所有可能的值在处理之前先算出来，通过查找表的时候只做任务分配。查找表是一个简单的数组（有一维和多维之分），表的内容是将输入值变量和最终输出值一一对应。他的优点就在于我们根据这张表格来查找计算结果，而不是每次都需要计算数据。
 
 Our test case program (and the sample presented here) will do the following: read in a console line argument image (that may be either color or gray scale - console line argument too) and apply the reduction with the given console line argument integer value. In OpenCV, at the moment there are three major ways of going through an image pixel by pixel. To make things a little more interesting will make the scanning for each image using all of these methods, and print out how long it took.
 
