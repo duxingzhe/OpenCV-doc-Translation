@@ -72,7 +72,7 @@ cout << "Times passed in seconds: " << t << endl;
 
 有效的方法
 
-When it comes to performance you cannot beat the classic C style operator[] (pointer) access. Therefore, the most efficient method we can recommend for making the assignment is:
+当谈到有关性能问题的时候，C语言永远是第一名，传统的C指针风格访问形式永远是最优的。因此，我们在处理OpenCV数据的时候，最有效的方法便是下面的代码：
 
 ```
 Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
@@ -102,3 +102,5 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 ```
 
 Here we basically just acquire a pointer to the start of each row and go through it until it ends. In the special case that the matrix is stored in a continuous manner we only need to request the pointer a single time and go all the way to the end. We need to look out for color images: we have three channels so we need to pass through three times more items in each row.
+
+在这里，我们直接简单的使用了一个指针，这个指针从每一行的开始指向这一行的结束。在这个比较特别的测试集中矩阵是存储在一个连续的地方，所以我们只需要让指针指向数据集一次即可，然后从头读到尾。我们需要考虑到彩色图片：我们有三个通道，也就意味着我们需要在每一行的处理时间要是原来的三倍多。
