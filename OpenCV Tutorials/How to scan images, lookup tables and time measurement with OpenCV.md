@@ -49,7 +49,7 @@ for (int i = 0; i < 256; ++i)
 
 这里，第一步，我们先使用了C++中的stringsream类来将第三个命令行参数转化为整型。接着我们再简单看看上面提到的公式，这个公式用来生成查询表。我们并没有使用到OpenCV的功能。
 
-Another issue is how do we measure time? Well OpenCV offers two simple functions to achieve this cv::getTickCount() and cv::getTickFrequency() . The first returns the number of ticks of your systems CPU from a certain event (like since you booted your system). The second returns how many times your CPU emits a tick during a second. So to measure in seconds the number of time elapsed between two operations is easy as:
+另外一个问题是，我们应该如何确定程序最终运行所需要的时间？对于这个问题，OpenCV提供了cv::getTickCount()和cv::getTickfrequency()两个简单的函数来处理。第一个返回在特定情况下你的CPU时钟数（比如，你开机以后）。第二个函数返回你的CPU每秒滴答的次数。所以，在这两者之间计算程序运行的时长只需要通过以下简单的方法即可实现：
 
 ```
 double t = (double)getTickCount();
@@ -58,7 +58,7 @@ t = ((double)getTickCount() - t)/getTickFrequency();
 cout << "Times passed in seconds: " << t << endl;
 ```
 
-How is the image matrix stored in memory?
+图形矩阵在内存中所占用的内存大小
 
 As you could already read in my Mat - The Basic Image Container tutorial the size of the matrix depends on the color system used. More accurately, it depends from the number of channels used. In case of a gray scale image we have something like:
 
