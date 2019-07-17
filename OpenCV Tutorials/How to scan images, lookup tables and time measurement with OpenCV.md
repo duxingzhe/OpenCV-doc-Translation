@@ -60,17 +60,18 @@ cout << "Times passed in seconds: " << t << endl;
 
 图形矩阵在内存中所占用的内存大小
 
-As you could already read in my Mat - The Basic Image Container tutorial the size of the matrix depends on the color system used. More accurately, it depends from the number of channels used. In case of a gray scale image we have something like:
+正如你已经阅读了之前的《Mat——基本图像容器》教程中说的那样，矩阵的大小决定于使用的色域。更加精确的色域取决于使用的通道数。在一张灰阶的图形中，我们会得到下面的矩阵：
 
 ![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_1.png)
 
 For multichannel images the columns contain as many sub columns as the number of channels. For example in case of an BGR color system:
+对于多通道图像而言，通道中的小通道图像的通道数。例如在BGR图像系统中：
 
 ![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_2.png)
 
-Note that the order of the channels is inverse: BGR instead of RGB. Because in many cases the memory is large enough to store the rows in a successive fashion the rows may follow one after another, creating a single long row. Because everything is in a single place following one after another this may help to speed up the scanning process. We can use the cv::Mat::isContinuous() function to ask the matrix if this is the case. Continue on to the next section to find an example.
+需要注意的是，我们所用的图像系统和我们认知的图像系统是不一样的：BGR，而不是RGB。因为在许多情况下，内存是可以以列排序的方式容纳下许多密集的数据，这样数据一个接一个紧密相连，从形成简单的长列。因为在许多时候，所有的数据都放在同一个地方，紧紧排列会帮助加快扫描进度。所以，我们便可以使用cv::Mat::isContinous()函数来判断矩阵是否满足之前说的条件。我们会在下一个章节介绍使用的方法。
 
-The efficient way
+有效的方法
 
 When it comes to performance you cannot beat the classic C style operator[] (pointer) access. Therefore, the most efficient method we can recommend for making the assignment is:
 
