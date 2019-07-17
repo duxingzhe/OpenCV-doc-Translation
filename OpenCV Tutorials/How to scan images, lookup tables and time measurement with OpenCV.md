@@ -101,6 +101,89 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 }
 ```
 
-Here we basically just acquire a pointer to the start of each row and go through it until it ends. In the special case that the matrix is stored in a continuous manner we only need to request the pointer a single time and go all the way to the end. We need to look out for color images: we have three channels so we need to pass through three times more items in each row.
-
 在这里，我们直接简单的使用了一个指针，这个指针从每一行的开始指向这一行的结束。在这个比较特别的测试集中矩阵是存储在一个连续的地方，所以我们只需要让指针指向数据集一次即可，然后从头读到尾。我们需要考虑到彩色图片：我们有三个通道，也就意味着我们需要在每一行的处理时间要是原来的三倍多。
+
+There's another way of this. The data data member of a Mat object returns the pointer to the first row, first column. If this pointer is null you have no valid input in that object. Checking this is the simplest method to check if your image loading was a success. In case the storage is continuous we can use this to go through the whole data pointer. In case of a gray scale image this would look like:
+
+```
+uchar* p = I.data;
+for( unsigned int i =0; i < ncol*nrows; ++i)
+    *p++ = table[*p];
+```
+
+You would get the same result. However, this code is a lot harder to read later on. It gets even harder if you have some more advanced technique there. Moreover, in practice I've observed you'll get the same performance result (as most of the modern compilers will probably make this small optimization trick automatically for you).
+
+The iterator (safe) method
+In case of the efficient way making sure that you pass through the right amount of uchar fields and to skip the gaps that may occur between the rows was your responsibility. The iterator method is considered a safer way as it takes over these tasks from the user. All you need to do is ask the begin and the end of the image matrix and then just increase the begin iterator until you reach the end. To acquire the value pointed by the iterator use the * operator (add it before it).
+
+```
+Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
+{
+    // accept only char type matrices
+    CV_Assert(I.depth() == CV_8U);
+    const int channels = I.channels();
+    switch(channels)
+    {
+    case 1:
+        {
+            MatIterator_<uchar> it, end;
+            for( it = I.begin<uchar>(), end = I.end<uchar>(); it != end; ++it)
+                *it = table[*it];
+            break;
+        }
+    case 3:
+        {
+            MatIterator_<Vec3b> it, end;
+            for( it = I.begin<Vec3b>(), end = I.end<Vec3b>(); it != end; ++it)
+            {
+                (*it)[0] = table[(*it)[0]];
+                (*it)[1] = table[(*it)[1]];
+                (*it)[2] = table[(*it)[2]];
+            }
+        }
+    }
+    return I;
+}
+```
+
+In case of color images we have three uchar items per column. This may be considered a short vector of uchar items, that has been baptized in OpenCV with the Vec3b name. To access the n-th sub column we use simple operator[] access. It's important to remember that OpenCV iterators go through the columns and automatically skip to the next row. Therefore in case of color images if you use a simple uchar iterator you'll be able to access only the blue channel values.
+
+On-the-fly address calculation with reference returning
+The final method isn't recommended for scanning. It was made to acquire or modify somehow random elements in the image. Its basic usage is to specify the row and column number of the item you want to access. During our earlier scanning methods you could already observe that is important through what type we are looking at the image. It's no different here as you need to manually specify what type to use at the automatic lookup. You can observe this in case of the gray scale images for the following source code (the usage of the + cv::Mat::at() function):
+
+```
+Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
+{
+    // accept only char type matrices
+    CV_Assert(I.depth() == CV_8U);
+    const int channels = I.channels();
+    switch(channels)
+    {
+    case 1:
+        {
+            for( int i = 0; i < I.rows; ++i)
+                for( int j = 0; j < I.cols; ++j )
+                    I.at<uchar>(i,j) = table[I.at<uchar>(i,j)];
+            break;
+        }
+    case 3:
+        {
+         Mat_<Vec3b> _I = I;
+         for( int i = 0; i < I.rows; ++i)
+            for( int j = 0; j < I.cols; ++j )
+               {
+                   _I(i,j)[0] = table[_I(i,j)[0]];
+                   _I(i,j)[1] = table[_I(i,j)[1]];
+                   _I(i,j)[2] = table[_I(i,j)[2]];
+            }
+         I = _I;
+         break;
+        }
+    }
+    return I;
+}
+```
+
+The functions takes your input type and coordinates and calculates on the fly the address of the queried item. Then returns a reference to that. This may be a constant when you get the value and non-constant when you set the value. As a safety step in debug mode only* there is performed a check that your input coordinates are valid and does exist. If this isn't the case you'll get a nice output message of this on the standard error output stream. Compared to the efficient way in release mode the only difference in using this is that for every element of the image you'll get a new row pointer for what we use the C operator[] to acquire the column element.
+
+If you need to do multiple lookups using this method for an image it may be troublesome and time consuming to enter the type and the at keyword for each of the accesses. To solve this problem OpenCV has a cv::Mat_ data type. It's the same as Mat with the extra need that at definition you need to specify the data type through what to look at the data matrix, however in return you can use the operator() for fast access of items. To make things even better this is easily convertible from and to the usual cv::Mat data type. A sample usage of this you can see in case of the color images of the upper function. Nevertheless, it's important to note that the same operation (with the same runtime speed) could have been done with the cv::Mat::at function. It's just a less to write for the lazy programmer trick.
