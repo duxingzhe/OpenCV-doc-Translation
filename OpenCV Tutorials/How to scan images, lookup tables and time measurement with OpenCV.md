@@ -64,8 +64,7 @@ cout << "Times passed in seconds: " << t << endl;
 
 ![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_1.png)
 
-For multichannel images the columns contain as many sub columns as the number of channels. For example in case of an BGR color system:
-对于多通道图像而言，通道中的小通道图像的通道数。例如在BGR图像系统中：
+对于多通道图像而言，通道中的小通道才是图像的通道数。例如在BGR图像系统中：
 
 ![](https://docs.opencv.org/4.1.0/tutorial_how_matrix_stored_2.png)
 
