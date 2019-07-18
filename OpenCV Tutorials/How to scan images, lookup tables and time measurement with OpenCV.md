@@ -147,9 +147,10 @@ Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
 }
 ```
 
-In case of color images we have three uchar items per column. This may be considered a short vector of uchar items, that has been baptized in OpenCV with the Vec3b name. To access the n-th sub column we use simple operator[] access. It's important to remember that OpenCV iterators go through the columns and automatically skip to the next row. Therefore in case of color images if you use a simple uchar iterator you'll be able to access only the blue channel values.
+在这个彩色图片中，我们在每一行中都有三个uchar子列。这是通过OpenCV的Vec3b方法进行了预先处理，由此我们可以把它看做是一个uchar类型的short vector对象。通过[]运算符，我们可以访问第n个子列。我们需要着重强调的是，OpenCV的迭代器是按列访问的，会自动跳到下一行去。因此，在这张图片中，如果你只是用了一个uchar迭代器，你将只能访问蓝色通道的值。
 
 On-the-fly address calculation with reference returning
+
 The final method isn't recommended for scanning. It was made to acquire or modify somehow random elements in the image. Its basic usage is to specify the row and column number of the item you want to access. During our earlier scanning methods you could already observe that is important through what type we are looking at the image. It's no different here as you need to manually specify what type to use at the automatic lookup. You can observe this in case of the gray scale images for the following source code (the usage of the + cv::Mat::at() function):
 
 ```
