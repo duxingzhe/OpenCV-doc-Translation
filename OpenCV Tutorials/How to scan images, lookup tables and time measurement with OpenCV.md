@@ -115,7 +115,7 @@ for( unsigned int i =0; i < ncol*nrows; ++i)
 
 迭代器方法（安全）
 
-In case of the efficient way making sure that you pass through the right amount of uchar fields and to skip the gaps that may occur between the rows was your responsibility. The iterator method is considered a safer way as it takes over these tasks from the user. All you need to do is ask the begin and the end of the image matrix and then just increase the begin iterator until you reach the end. To acquire the value pointed by the iterator use the * operator (add it before it).
+在这最有效率的方法里，你要确保你传递了正确数量的uchar大小并能正确跳过在内存中行与行之间的空隙。迭代器方法由于减轻了程序员的任务，从而被认为是一种非常安全的方法。你所需要做的便是在一开始的时候请求图形矩阵的头部和尾部，然后反复执行迭代器的递归功能，直到达到矩阵的末端。获取值只需要通过迭代器的\*运算符即可实现（\*加在迭代器的前面）。
 
 ```
 Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
