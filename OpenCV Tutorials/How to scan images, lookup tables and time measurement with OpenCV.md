@@ -103,7 +103,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 
 在这里，我们直接简单的使用了一个指针，这个指针从每一行的开始指向这一行的结束。在这个比较特别的测试集中矩阵是存储在一个连续的地方，所以我们只需要让指针指向数据集一次即可，然后从头读到尾。我们需要考虑到彩色图片：我们有三个通道，也就意味着我们需要在每一行的处理时间要是原来的三倍多。
 
-There's another way of this. The data data member of a Mat object returns the pointer to the first row, first column. If this pointer is null you have no valid input in that object. Checking this is the simplest method to check if your image loading was a success. In case the storage is continuous we can use this to go through the whole data pointer. In case of a gray scale image this would look like:
+当然，我们还可以用其他方法实现。Mat数据中的data部分返回了指向第一行第一列的指针。如果指针为空，则说明在Mat并没有合适的数据。检查数据是否为空的最最简单方法便是检查你的图片是否加载成功。在本例子中，数据的存储是连续的，因此我们用一个指针遍历所有数据。在一张灰阶图片里，程序应该是这样写的：
 
 ```
 uchar* p = I.data;
@@ -111,9 +111,10 @@ for( unsigned int i =0; i < ncol*nrows; ++i)
     *p++ = table[*p];
 ```
 
-You would get the same result. However, this code is a lot harder to read later on. It gets even harder if you have some more advanced technique there. Moreover, in practice I've observed you'll get the same performance result (as most of the modern compilers will probably make this small optimization trick automatically for you).
+你可以在你的程序中得到同样的结果。然而，接下来的代码会变的相当复杂。如果你使用了更多的高级特性，代码会变得更加难懂。另外，实际上，你只能得到同样的性能（因为实际情况下，大多数近期的编译器都会对你的代码进行微小的优化，这让你的代码运行起来相差无几。）
 
-The iterator (safe) method
+迭代器方法（安全）
+
 In case of the efficient way making sure that you pass through the right amount of uchar fields and to skip the gaps that may occur between the rows was your responsibility. The iterator method is considered a safer way as it takes over these tasks from the user. All you need to do is ask the begin and the end of the image matrix and then just increase the begin iterator until you reach the end. To acquire the value pointed by the iterator use the * operator (add it before it).
 
 ```
