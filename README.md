@@ -6,6 +6,10 @@
 
 [https://docs.opencv.org/4.1.0/](https://docs.opencv.org/4.1.0/)
 
+实际项目地址
+
+[https://github.com/duxingzhe/OpenCV4AndroidDemo](https://github.com/duxingzhe/OpenCV4AndroidDemo)
+
 如果这个项目帮助到了你，或对你的技术开发有帮助，欢迎赏一份茶水钱。
 
 本项目目的：
