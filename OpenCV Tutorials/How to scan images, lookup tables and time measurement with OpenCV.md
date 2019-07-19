@@ -149,9 +149,9 @@ Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
 
 在这个彩色图片中，我们在每一行中都有三个uchar子列。这是通过OpenCV的Vec3b方法进行了预先处理，由此我们可以把它看做是一个uchar类型的short vector对象。通过[]运算符，我们可以访问第n个子列。我们需要着重强调的是，OpenCV的迭代器是按列访问的，会自动跳到下一行去。因此，在这张图片中，如果你只是用了一个uchar迭代器，你将只能访问蓝色通道的值。
 
-On-the-fly address calculation with reference returning
+通过引用返回的方式在运行时进行地址修改
 
-The final method isn't recommended for scanning. It was made to acquire or modify somehow random elements in the image. Its basic usage is to specify the row and column number of the item you want to access. During our earlier scanning methods you could already observe that is important through what type we are looking at the image. It's no different here as you need to manually specify what type to use at the automatic lookup. You can observe this in case of the gray scale images for the following source code (the usage of the + cv::Mat::at() function):
+最后一个方法并不推荐使用扫描的方法进行遍历。这个方法被用于获取或者修改图片的部分随机元素。它的基本方式是，修改你想访问元素的行数和列数。在之前的扫描方法中，你可以发现这个过程中最重要的是知道我们在查看图片时需要什么类型的元素。在自动查找的时候手动指明要查看的类型时，这几种方法之间没有什么区别。通过下面的代码，你能知道在灰阶图像中如何实现之前的扫描方法（cv::Mat::at()函数方法）：
 
 ```
 Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
