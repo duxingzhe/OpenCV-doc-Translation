@@ -186,9 +186,7 @@ Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
 }
 ```
 
-The functions takes your input type and coordinates and calculates on the fly the address of the queried item. Then returns a reference to that. This may be a constant when you get the value and non-constant when you set the value. As a safety step in debug mode only* there is performed a check that your input coordinates are valid and does exist. If this isn't the case you'll get a nice output message of this on the standard error output stream. Compared to the efficient way in release mode the only difference in using this is that for every element of the image you'll get a new row pointer for what we use the C operator[] to acquire the column element.
-
-函数会分析你的输入类型和坐标，并对请求的元素在运行的时候进行地址计算。函数会返回一个应用指针。使用get的时候获得的是常亮，而使用set的时候使用的是非常亮。这仅在调试模式中存在的安全步骤，
+函数会分析你的输入类型和坐标，并对请求的元素在运行的时候进行地址计算。函数会返回一个应用指针。使用get的时候获得的是常量，而使用set的时候使用的是非常量。这是仅在调试模式中存在的安全步骤，这一步会检查你输入的坐标是有效的并且真实存在的。如果检查失败，程序便会从标准错误输出流中输出错误信息。相比于发布模式，这个方法有一点不同，在每一个图形元素中，你都会得到一个新的行指针，我们会通过C操作符[]来获得列指针。
 
 If you need to do multiple lookups using this method for an image it may be troublesome and time consuming to enter the type and the at keyword for each of the accesses. To solve this problem OpenCV has a cv::Mat_ data type. It's the same as Mat with the extra need that at definition you need to specify the data type through what to look at the data matrix, however in return you can use the operator() for fast access of items. To make things even better this is easily convertible from and to the usual cv::Mat data type. A sample usage of this you can see in case of the color images of the upper function. Nevertheless, it's important to note that the same operation (with the same runtime speed) could have been done with the cv::Mat::at function. It's just a less to write for the lazy programmer trick.
 
