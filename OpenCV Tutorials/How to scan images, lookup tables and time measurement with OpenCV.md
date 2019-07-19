@@ -189,3 +189,35 @@ Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
 The functions takes your input type and coordinates and calculates on the fly the address of the queried item. Then returns a reference to that. This may be a constant when you get the value and non-constant when you set the value. As a safety step in debug mode only* there is performed a check that your input coordinates are valid and does exist. If this isn't the case you'll get a nice output message of this on the standard error output stream. Compared to the efficient way in release mode the only difference in using this is that for every element of the image you'll get a new row pointer for what we use the C operator[] to acquire the column element.
 
 If you need to do multiple lookups using this method for an image it may be troublesome and time consuming to enter the type and the at keyword for each of the accesses. To solve this problem OpenCV has a cv::Mat_ data type. It's the same as Mat with the extra need that at definition you need to specify the data type through what to look at the data matrix, however in return you can use the operator() for fast access of items. To make things even better this is easily convertible from and to the usual cv::Mat data type. A sample usage of this you can see in case of the color images of the upper function. Nevertheless, it's important to note that the same operation (with the same runtime speed) could have been done with the cv::Mat::at function. It's just a less to write for the lazy programmer trick.
+
+The Core Function
+
+This is a bonus method of achieving lookup table modification in an image. In image processing it's quite common that you want to modify all of a given image values to some other value. OpenCV provides a function for modifying image values, without the need to write the scanning logic of the image. We use the cv::LUT() function of the core module. First we build a Mat type of the lookup table:
+
+```
+Mat lookUpTable(1, 256, CV_8U);
+uchar* p = lookUpTable.ptr();
+for( int i = 0; i < 256; ++i)
+    p[i] = table[i];
+```
+
+Finally call the function (I is our input image and J the output one):
+
+```
+LUT(I, lookUpTable, J);
+```
+
+Performance Difference
+
+For the best result compile the program and run it on your own speed. To make the differences more clear, I've used a quite large (2560 X 1600) image. The performance presented here are for color images. For a more accurate value I've averaged the value I got from the call of the function for hundred times.
+
+Method | Time | 
+-|-|
+Efficient Way| 79.4717 milliseconds |
+Iterator | 83.7201 milliseconds |
+On-The-Fly RA | 93.7878 milliseconds |
+LUT function | 32.5759 milliseconds |
+
+We can conclude a couple of things. If possible, use the already made functions of OpenCV (instead of reinventing these). The fastest method turns out to be the LUT function. This is because the OpenCV library is multi-thread enabled via Intel Threaded Building Blocks. However, if you need to write a simple image scan prefer the pointer method. The iterator is a safer bet, however quite slower. Using the on-the-fly reference access method for full image scan is the most costly in debug mode. In the release mode it may beat the iterator approach or not, however it surely sacrifices for this the safety trait of iterators.
+
+Finally, you may watch a sample run of the program on the video posted on our YouTube channel.
