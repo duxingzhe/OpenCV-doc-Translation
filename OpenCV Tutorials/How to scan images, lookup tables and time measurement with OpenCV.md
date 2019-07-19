@@ -188,9 +188,9 @@ Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
 
 函数会分析你的输入类型和坐标，并对请求的元素在运行的时候进行地址计算。函数会返回一个应用指针。使用get的时候获得的是常量，而使用set的时候使用的是非常量。这是仅在调试模式中存在的安全步骤，这一步会检查你输入的坐标是有效的并且真实存在的。如果检查失败，程序便会从标准错误输出流中输出错误信息。相比于发布模式，这个方法有一点不同，在每一个图形元素中，你都会得到一个新的行指针，我们会通过C操作符[]来获得列指针。
 
-If you need to do multiple lookups using this method for an image it may be troublesome and time consuming to enter the type and the at keyword for each of the accesses. To solve this problem OpenCV has a cv::Mat_ data type. It's the same as Mat with the extra need that at definition you need to specify the data type through what to look at the data matrix, however in return you can use the operator() for fast access of items. To make things even better this is easily convertible from and to the usual cv::Mat data type. A sample usage of this you can see in case of the color images of the upper function. Nevertheless, it's important to note that the same operation (with the same runtime speed) could have been done with the cv::Mat::at function. It's just a less to write for the lazy programmer trick.
+如果你需要通过这种方式对一个图像的查找表进行修改，这会变得问题多多并且耗费大量的时间，在每一次访问类型和关键字的时候尤为明显。为了解决这个问题，OpenCV设计了cv::Mat_数据类型。这个数据类型跟Mat一致，只不过在一开始使用的时候需要在查看数据矩阵的时候指明数据类型。并且返回的时候使用()操作符来快速访问所需元素。为了更方便用户使用，Mat和Mat_类型之间可以实现轻松互转。在上文的函数中，你就能看到对彩色图像处理的例子。不仅如此，还有一点非常重要，同样的操作（在同样的运行时速度情况下）可以通过cv::Mat::at函数实现。这为一些“偷懒”的程序员提供了一些编程技巧。
 
-The Core Function
+核心函数
 
 This is a bonus method of achieving lookup table modification in an image. In image processing it's quite common that you want to modify all of a given image values to some other value. OpenCV provides a function for modifying image values, without the need to write the scanning logic of the image. We use the cv::LUT() function of the core module. First we build a Mat type of the lookup table:
 
