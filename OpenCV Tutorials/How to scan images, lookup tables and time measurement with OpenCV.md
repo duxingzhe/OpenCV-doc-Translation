@@ -192,7 +192,7 @@ Mat& ScanImageAndReduceRandomAccess(Mat& I, const uchar* const table)
 
 核心函数
 
-This is a bonus method of achieving lookup table modification in an image. In image processing it's quite common that you want to modify all of a given image values to some other value. OpenCV provides a function for modifying image values, without the need to write the scanning logic of the image. We use the cv::LUT() function of the core module. First we build a Mat type of the lookup table:
+这里我们提供额外的教程，告诉大家如何实现对图像的查找表进行修改。在图像处理中，你非常希望能够修改给定图像的所有值。OpenCV提供了一个函数来修改图像值，也不需要读写图像的扫描方式。我们使用的是核心模块中的cv::LUT()函数。第一步，我们先要构建查找表的Mat类型。
 
 ```
 Mat lookUpTable(1, 256, CV_8U);
@@ -201,17 +201,17 @@ for( int i = 0; i < 256; ++i)
     p[i] = table[i];
 ```
 
-Finally call the function (I is our input image and J the output one):
+最后调用函数(I是输入图像，J是输出图像）
 
 ```
 LUT(I, lookUpTable, J);
 ```
 
-Performance Difference
+性能比较
 
-For the best result compile the program and run it on your own speed. To make the differences more clear, I've used a quite large (2560 X 1600) image. The performance presented here are for color images. For a more accurate value I've averaged the value I got from the call of the function for hundred times.
+为了有更好的结果，你需要请自编译程序，并在自己的机器上运行。为了确保有明显的差距，我用了一张非常大的图片（2560X1600）。下表就是处理这张彩色图片需要的时间。为了有更精确的结果，我运行了上百次，然后取了平均值。
 
-Method | Time | 
+方法 | 时间 | 
 -|-|
 Efficient Way| 79.4717 milliseconds |
 Iterator | 83.7201 milliseconds |
