@@ -8,13 +8,13 @@ Author: Bernát Gábor
 
 你将学会如何将图片保存到内存中，并如何打印到电脑终端上。
 
-How to scan images, lookup tables and time measurement with OpenCV
+如何扫描图像，建立查找表，并对OpenCV的程序进行性能分析
 
 Compatibility: > OpenCV 2.0
 
 Author: Bernát Gábor
 
-You'll find out how to scan images (go through each of the image pixels) with OpenCV. Bonus: time measurement with OpenCV.
+你将知道如何通过OpenCV扫描图像（一个个像素地扫描）。额外内容：OpenCV的性能分析。
 
 Mask operations on matrices
 
