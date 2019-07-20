@@ -218,6 +218,6 @@ Iterator | 83.7201 milliseconds |
 On-The-Fly RA | 93.7878 milliseconds |
 LUT function | 32.5759 milliseconds |
 
-We can conclude a couple of things. If possible, use the already made functions of OpenCV (instead of reinventing these). The fastest method turns out to be the LUT function. This is because the OpenCV library is multi-thread enabled via Intel Threaded Building Blocks. However, if you need to write a simple image scan prefer the pointer method. The iterator is a safer bet, however quite slower. Using the on-the-fly reference access method for full image scan is the most costly in debug mode. In the release mode it may beat the iterator approach or not, however it surely sacrifices for this the safety trait of iterators.
+我们可以通过这张表格得出非常多的结论。我们需要尽可能地使用OpenCv自带的函数（而不是自己去再写一个）。在这其中，最快的函数是LUT函数。这是因为通过英特尔的线程构建模块功能，OpenCV可以使用多线程技术。然而，如果你需要写一个简单地图像扫描函数，建议你使用指针方法。迭代器方法是非常安全的，但是非常慢。在调试模式的时候，对整张图片使用运行时修改引用访问方法是最耗时间的。在发布版本里，他可能会打败迭代器方法，因为他确实为了迭代器的安全特性作出了牺牲。
 
-Finally, you may watch a sample run of the program on the video posted on our YouTube channel.
+最后，你可以在Youtube上看到本教程的演示视频。
