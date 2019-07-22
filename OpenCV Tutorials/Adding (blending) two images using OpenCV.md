@@ -30,7 +30,7 @@ addWeighted( src1, alpha, src2, beta, 0.0, dst);
 
 addWeighted()的公式如下:
 
-![](http://latex.codecogs.com/gif.latex?dst=α⋅src1+β⋅src2+γ)
+![](http://latex.codecogs.com/gif.latex?dst=\alpha*src1+\beta*src2+\gamma)
 
 这个例子中，gamma在代码里的值为0。
 
