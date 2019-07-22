@@ -1,18 +1,20 @@
-Goal
+目的
 
-In this tutorial you will learn:
+本教程你将学到
 
-* what is linear blending and why it is useful;
-* how to add two images using addWeighted()
+* 解释线性混合并解释为什么他很有效果
+* 使用addWeighted()函数添加两张图片
 
-Theory
+原理
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Computer Vision: Algorithms and Applications by Richard Szeliski
+> 以下用例来自书籍Richard Szeliski《机器视觉：算法和应用》
 
-From our previous tutorial, we know already a bit of Pixel operators. An interesting dyadic (two-input) operator is the linear blend operator:
+在我们之前的教程中，我们已经知道了一系列像素操作。线性混合操作是比较有趣的二阶（双输入）操作：
 
-By varying α from 0→1 this operator can be used to perform a temporal cross-dissolve between two images or videos, as seen in slide shows and film productions (cool, eh?)
+![](http://latex.codecogs.com/gif.latex?g(x)=(1-\alpha)f_{0}(x)+\alphaf_{1}(x))
+
+将α的值在0到1之间变换，这个操作可以实现两张图片或视频之间短暂的交叉溶解效果，就好像幻灯片和电影中常见的一种特效（很酷，不是吗？）
 
 具体代码请参考原教程
