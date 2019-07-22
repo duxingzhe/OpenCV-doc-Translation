@@ -17,23 +17,24 @@
 
 将α的值在0到1之间变换，这个操作可以实现两张图片或视频之间短暂的交叉溶解效果，就好像幻灯片和电影中常见的一种特效（很酷，不是吗？）
 
-> Warning
-> Since we are adding src1 and src2, they both have to be of the same size (width and height) and type.
+> 注意
+>
+> 我们不能随意添加两张图片，两张图片的长宽和图像类型必须一致。
 
-Now we need to generate the g(x) image. For this, the function addWeighted() comes quite handy:
+现在我们就来生成一张通过公式得到的g(x)图片。在这个例子中，addWeighted()使用非常简单：
 
 ```
 beta = ( 1.0 - alpha );
 addWeighted( src1, alpha, src2, beta, 0.0, dst);
 ```
 
-since addWeighted() produces:
+addWeighted()的公式如下:
 
 ![](http://latex.codecogs.com/gif.latex?dst=α⋅src1+β⋅src2+γ)
 
-In this case, gamma is the argument 0.0 in the code above.
+这个例子中，gamma在代码里的值为0。
 
-Create windows, show the images and wait for the user to end the program.
+然后，我们创建一个窗口，显示图片，让用户结束这个程序。
 
 ```
 imshow( "Linear Blend", dst );
