@@ -29,17 +29,17 @@
 
 亮度和对比度调整
 
-* Two commonly used point processes are multiplication and addition with a constant:
+* 两个常用的点处理方法一般是通过常量进行加和乘：
 
-g(x)=αf(x)+β
+![](http://latex.codecogs.com/gif.latex?g(x)=\alpha*f(x)+\beta)
 
-* The parameters α>0 and β are often called the gain and bias parameters; sometimes these parameters are said to control contrast and brightness respectively.
+* 变量![](http://latex.codecogs.com/gif.latex?\alpha)>0和![](http://latex.codecogs.com/gif.latex?\beta)通常被称为增益参数和修正参数；有时这些参数会用于控制对比度和亮度。
 
-* You can think of f(x) as the source image pixels and g(x) as the output image pixels. Then, more conveniently we can write the expression as:
+* 你可以认为f(x)是原图像像素，而g(x)是输出图像像素。那么，更加清晰的写法，我们可以用以下公式表示：
 
-g(i,j)=α⋅f(i,j)+β
+![](http://latex.codecogs.com/gif.latex?g(i,j)=\alpha*f(i,j)+\beta)
 
-where i and j indicates that the pixel is located in the i-th row and j-th column.
+这里i和j表示图像中第i行、第j列的像素。
 
 Practical example
 
