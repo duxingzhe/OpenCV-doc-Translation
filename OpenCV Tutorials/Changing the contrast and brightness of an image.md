@@ -1,33 +1,33 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇文章中你将会学到：
 
-Access pixel values
+访问像素值
 
-* Initialize a matrix with zeros
-* Learn what cv::saturate_cast does and why it is useful
-* Get some cool info about pixel transformations
-* Improve the brightness of an image on a practical example
+* 初始化生成一个全部为0的矩阵
+* 学习cv::saturate_cast，了解到它的作用
+* 学习一些十分好玩的像素转化算法
+* 在一个简单的例子中学习如何增强图片的亮度
 
-Theory
+理论
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Computer Vision: Algorithms and Applications by Richard Szeliski
+> 以下用例来自书籍Richard Szeliski《机器视觉：算法和应用》
 
-Image Processing
+图像处理
 
-* A general image processing operator is a function that takes one or more input images and produces an output image.
-* Image transforms can be seen as:
-  * Point operators (pixel transforms)
-  * Neighborhood (area-based) operators
+* 一个普通的图像操作方法是输入一个或多个图像并最后生成一个图像的函数。
+* 图像转换可以是以下几种途径：
+  * 点操作（像素转换）
+  * 临近点（基于某一区域）操作
   
-Pixel Transforms
+像素级转换
 
-* In this kind of image processing transform, each output pixel's value depends on only the corresponding input pixel value (plus, potentially, some globally collected information or parameters).
-* Examples of such operators include brightness and contrast adjustments as well as color correction and transformations.
+* 在这种图片处理转换中，每一个输出点的值和输入点的值之间都有一定的联系，而且只能与输入点像素值之间有联系（例如加，有的时候则是全局收集到信息或变量）。
+* 这些操作的例子包括了亮度和对比度的调整以及颜色纠正和转换。
 
-Brightness and contrast adjustments
+亮度和对比度调整
 
 * Two commonly used point processes are multiplication and addition with a constant:
 
