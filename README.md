@@ -18,5 +18,4 @@
 
 2、帮助部分程序员了解最新的OpenCV文档、功能和方法。
 
-![](https://github.com/duxingzhe/OpenCV-doc-Translation/blob/master/qr/alipay_qr.jpg)
-![](https://github.com/duxingzhe/OpenCV-doc-Translation/blob/master/qr/weixin_qr.png)
+<img src="./qr/alipay_qr.jpg" width="300"> <img src="./qr/weixin_qr.png" width="300">
