@@ -41,22 +41,23 @@
 
 这里i和j表示图像中第i行、第j列的像素。
 
-Practical example
+实际例子
 
-In this paragraph, we will put into practice what we have learned to correct an underexposed image by adjusting the brightness and the contrast of the image. We will also see another technique to correct the brightness of an image called gamma correction.
+在本篇，我们将之前提到的算法运用到实践当中，学习如何将曝光不足的照片进行亮度和对比度修正。我们同样学习一种名为伽马修正的图像亮度修复算法。
 
-Brightness and contrast adjustments
+亮度和对比度修正
 
-Increasing (/ decreasing) the β value will add (/ subtract) a constant value to every pixel. Pixel values outside of the [0 ; 255] range will be saturated (i.e. a pixel value higher (/ lesser) than 255 (/ 0) will be clamp to 255 (/ 0)).
+增加(减少)β的值将对每一个像素增加(/减少)一个常量。像素值在[0 ; 255]之外的将会被修正 (例如，如果计算后图像值大于(小于)255 (0)将会被修正成255(0)).
 
-Basic_Linear_Transform_Tutorial_hist_beta.png
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_hist_beta.png)
 
 In light gray, histogram of the original image, in dark gray when brightness = 80 in Gimp
-The histogram represents for each color level the number of pixels with that color level. A dark image will have many pixels with low color value and thus the histogram will present a peak in his left part. When adding a constant bias, the histogram is shifted to the right as we have added a constant bias to all the pixels.
 
-The α parameter will modify how the levels spread. If α<1, the color levels will be compressed and the result will be an image with less contrast.
+直方图表示的是每一个颜色区域中像素的总数。一张偏暗的图片有许多像素点是有较低的色值，所以直方图的峰会主要集中在左半部分。当加上了一个常量，直方图的峰会逐步往右移动。这是因为我们对每一个像素点都加上了一个常量。
 
-Basic_Linear_Transform_Tutorial_hist_alpha.png
+变量α将改变对比度的范围。因此，如果α<1，则色级会被压缩，由此图片的对比度会下降。
+
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_hist_alpha.png)
 
 In light gray, histogram of the original image, in dark gray when contrast < 0 in Gimp
 Note that these histograms have been obtained using the Brightness-Contrast tool in the Gimp software. The brightness tool should be identical to the β bias parameters but the contrast tool seems to differ to the α gain where the output range seems to be centered with Gimp (as you can notice in the previous histogram).
