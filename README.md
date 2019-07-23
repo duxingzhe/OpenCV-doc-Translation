@@ -10,7 +10,7 @@
 
 [https://github.com/duxingzhe/OpenCV4AndroidDemo](https://github.com/duxingzhe/OpenCV4AndroidDemo)
 
-如果这个项目帮助到了你，或对你的技术开发有帮助，欢迎赏一份茶水钱。翻译完了我给你一份专属电子版（PDF EPUB MOBI），表示对实际支持的感谢。
+如果这个项目帮助到了你，或对你的技术开发有帮助，欢迎赏一份茶水钱。翻译完了我给你一份专属电子版（PDF EPUB MOBI），表示对实际支持的感谢。目前在翻译阶段，5元以上提供电子版本，若翻译完成则需10元。由于翻译进程较长，所以建议赞助后截图保留，以便查阅。
 
 本项目目的：
 
