@@ -69,7 +69,7 @@ In light gray, histogram of the original image, in dark gray when contrast < 0 i
 
 伽马修正可以用来修正图片的亮度，这种修正方式是在输入值和输出值之间进行非线性变换。
 
-![](http://latex.codecogs.com/gif.latex?O=(I255)\gamma*255)
+![](http://latex.codecogs.com/gif.latex?O=(\frac{I}{255})^{\gamma}*255)
 
 由于这个关系是非线性的，对于每一个像素而言，伽马修正的影响也有所不同，最终的值决定于他们的初始值。
 
