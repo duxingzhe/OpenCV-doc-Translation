@@ -110,10 +110,10 @@ An application idea would be to determine the geometrical orientation present in
 
 In case of the horizontal text:
 
-result_normal.jpg
+![](https://docs.opencv.org/4.1.0/result_normal.jpg)
 
 In case of a rotated text:
 
-result_rotated.jpg
+![](https://docs.opencv.org/4.1.0/result_rotated.jpg)
 
 You can see that the most influential components of the frequency domain (brightest dots on the magnitude image) follow the geometric rotation of objects on the image. From this we may calculate the offset and perform an image rotation to correct eventual miss alignments.
