@@ -60,15 +60,16 @@ In light gray, histogram of the original image, in dark gray when brightness = 8
 ![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_hist_alpha.png)
 
 In light gray, histogram of the original image, in dark gray when contrast < 0 in Gimp
-Note that these histograms have been obtained using the Brightness-Contrast tool in the Gimp software. The brightness tool should be identical to the β bias parameters but the contrast tool seems to differ to the α gain where the output range seems to be centered with Gimp (as you can notice in the previous histogram).
 
-It can occur that playing with the β bias will improve the brightness but in the same time the image will appear with a slight veil as the contrast will be reduced. The α gain can be used to diminue this effect but due to the saturation, we will lose some details in the original bright regions.
+我们需要注意的是，直方图已经包含在Gimp中的亮度-对比度工具。亮度工具应该和偏正变量β一致，但是对比度工具似乎和修正值α有所不同，我们可以通过GIMP看出，修改α的值，让直方图的分布更趋向于中间数值（对比之前的直方图）。
 
-Gamma correction
+更改偏正变量值β会增加亮度，但与此同时，图片会变得有点朦胧，这是因为对比度会有所下降。修正值α减弱这种影响，但是这种影响的减弱是因为饱和度修正，我们会丢掉原本图像在亮度区域方面的细节。
 
-Gamma correction can be used to correct the brightness of an image by using a non linear transformation between the input values and the mapped output values:
+伽马修正
 
-O=(I255)γ×255
+伽马修正可以用来修正图片的亮度，这种修正方式是在输入值和输出值之间进行非线性变换。
+
+![](http://latex.codecogs.com/gif.latex?O=(I255)\gamma*255)
 
 As this relation is non linear, the effect will not be the same for all the pixels and will depend to their original value.
 
