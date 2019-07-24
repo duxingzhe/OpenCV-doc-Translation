@@ -101,6 +101,6 @@ By Visem (Own work) [CC BY-SA 3.0], via Wikimedia Commons
 
 Left: histogram after alpha, beta correction ; Center: histogram of the original image ; Right: histogram after the gamma correction
 
-The previous figure compares the histograms for the three images (the y-ranges are not the same between the three histograms). You can notice that most of the pixel values are in the lower part of the histogram for the original image. After α, β correction, we can observe a big peak at 255 due to the saturation as well as a shift in the right. After gamma correction, the histogram is shifted to the right but the pixels in the dark regions are more shifted (see the gamma curves figure) than those in the bright regions.
+这里的三张图就表示了三张图片直方图之间的差别（y轴的值并不相同）。你可以注意到在原始图片的直方图中，大多数像素点都集中在直方图的低值区域。经过线性变换以后，我们得到了一张新的直方图。直方图中由于有了饱和度的修正，所以在255处出现了最高峰，同样，整个直方图向右移动。经过伽马修正以后，直方图被移到了右边，但是比较暗的像素点比比较亮的像素点移动的距离更大（可以对比一下伽马曲线）。
 
-In this tutorial, you have seen two simple methods to adjust the contrast and the brightness of an image. They are basic techniques and are not intended to be used as a replacement of a raster graphics editor!
+在本篇教程中，你可以看到两种简单地调整图像对比度和亮度的方法。他们是初步图形处理方法，不能用于位图图形编辑器中！
