@@ -71,32 +71,33 @@ In light gray, histogram of the original image, in dark gray when contrast < 0 i
 
 ![](http://latex.codecogs.com/gif.latex?O=(I255)\gamma*255)
 
-As this relation is non linear, the effect will not be the same for all the pixels and will depend to their original value.
+由于这个关系是非线性的，对于每一个像素而言，伽马修正的影响也有所不同，最终的值决定于他们的初始值。
 
-Basic_Linear_Transform_Tutorial_gamma.png
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_gamma.png)
+
 Plot for different values of gamma
 
-When γ<1, the original dark regions will be brighter and the histogram will be shifted to the right whereas it will be the opposite with γ>1.
+当γ<1，原来比较黑的区域就会变得亮一点，直方图变回移动到右边，γ>1则向右移动。
 
-Correct an underexposed image
+对曝光不足的图像进行修正
 
-The following image has been corrected with: α=1.3 and β=40.
+以下图片通过给定值进行了修正：α=1.3和β=40。
 
-Basic_Linear_Transform_Tutorial_linear_transform_correction.jpg
-
-By Visem (Own work) [CC BY-SA 3.0], via Wikimedia Commons
-
-The overall brightness has been improved but you can notice that the clouds are now greatly saturated due to the numerical saturation of the implementation used (highlight clipping in photography).
-
-The following image has been corrected with: γ=0.4.
-
-Basic_Linear_Transform_Tutorial_gamma_correction.jpg
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_linear_transform_correction.jpg)
 
 By Visem (Own work) [CC BY-SA 3.0], via Wikimedia Commons
 
-The gamma correction should tend to add less saturation effect as the mapping is non linear and there is no numerical saturation possible as in the previous method.
+总体的亮度已经得到了提高，但是你会发现白云变得过饱和，这便是因为我们使用的是数值饱和算法。
 
-Basic_Linear_Transform_Tutorial_histogram_compare.png
+下面的图片是通过给定值进行的修正: γ=0.4.
+
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_gamma_correction.jpg)
+
+By Visem (Own work) [CC BY-SA 3.0], via Wikimedia Commons
+
+伽马修正看上去就只是加上了少许的饱和效果，因为我们是通过非线性函数进行的处理，就不存在之前的数值饱和修复的情况。
+
+![](https://docs.opencv.org/4.1.0/Basic_Linear_Transform_Tutorial_histogram_compare.png)
 
 Left: histogram after alpha, beta correction ; Center: histogram of the original image ; Right: histogram after the gamma correction
 
