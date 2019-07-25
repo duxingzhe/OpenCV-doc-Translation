@@ -14,7 +14,7 @@
 
 ![](http://latex.codecogs.com/gif.latex?e^{ix}=\cos{x}+i\sin{x})
 
-Here f is the image value in its spatial domain and F in its frequency domain. The result of the transformation is complex numbers. Displaying this is possible either via a real image and a complex image or via a magnitude and a phase image. However, throughout the image processing algorithms only the magnitude image is interesting as this contains all the information we need about the images geometric structure. Nevertheless, if you intend to make some modifications of the image in these forms and then you need to retransform it you'll need to preserve both of these.
+在这里，f指的是图片的空间域部分，而F指的是他的时频域部分。最后得出的转换结果是复数形式。可以通过一张实像图片或虚像图片或者是强度图和相位图。然而，在这个图像处理算法中，只有强度图包含了我们所有感兴趣的信息，信息里面主要是图像的几何结构。无论如何，如果你需要在傅里叶变换的方式下对图片进行修改，你接着需要将他们再进行一次转换，你还要保存两者的信息。
 
 In this sample I'll show how to calculate and show the magnitude image of a Fourier Transform. In case of digital images are discrete. This means they may take up a value from a given domain value. For example in a basic gray scale image values usually are between zero and 255. Therefore the Fourier Transform too needs to be of a discrete type resulting in a Discrete Fourier Transform (DFT). You'll want to use this whenever you need to determine the structure of an image from a geometrical point of view. Here are the steps to follow (in case of a gray scale input image I):
 
