@@ -16,7 +16,7 @@
 
 在这里，f指的是图片的空间域部分，而F指的是他的时频域部分。最后得出的转换结果是复数形式。可以通过一张实像图片或虚像图片或者是强度图和相位图。然而，在这个图像处理算法中，只有强度图包含了我们所有感兴趣的信息，信息里面主要是图像的几何结构。无论如何，如果你需要在傅里叶变换的方式下对图片进行修改，你接着需要将他们再进行一次转换，你还要保存两者的信息。
 
-In this sample I'll show how to calculate and show the magnitude image of a Fourier Transform. In case of digital images are discrete. This means they may take up a value from a given domain value. For example in a basic gray scale image values usually are between zero and 255. Therefore the Fourier Transform too needs to be of a discrete type resulting in a Discrete Fourier Transform (DFT). You'll want to use this whenever you need to determine the structure of an image from a geometrical point of view. Here are the steps to follow (in case of a gray scale input image I):
+在这个例子中，我将告诉各位如何计算并显示一个傅里叶变换的强度图。在数字图像中，这些图片数据都是离散型的。这也就意味着他们的值是通过一个给定的阈值来取得。例如，在一个简单的灰阶图形中，值通常在0-255之间。因此，傅里叶变换急需转换成离散型傅里叶变换（DFT）。每当你需要研究一张图形的几何视点的时候，你就需要使用离散傅里叶变换。这里有几个简单的步骤告诉你如何实现（在本例中，I代表的是一张灰阶图像）：
 
 Expand the image to an optimal size
 The performance of a DFT is dependent of the image size. It tends to be the fastest for image sizes that are multiple of the numbers two, three and five. Therefore, to achieve maximal performance it is generally a good idea to pad border values to the image to get a size with such traits. The getOptimalDFTSize() returns this optimal size and we can use the copyMakeBorder() function to expand the borders of an image (the appended pixels are initialized with zero):
