@@ -1,14 +1,14 @@
-Goal
+目的
 
-We'll seek answers for the following questions:
+我们对以下问题进行讨论：
 
-* What is a Fourier transform and why use it?
-* How to do it in OpenCV?
-* Usage of functions such as: copyMakeBorder(), merge(), dft(), getOptimalDFTSize(), log() and normalize().
+* 什么是傅里叶变换，使用的目的是什么？
+* H在OpenCV里如何使用傅里叶变换？
+* 部分函数的使用方法: copyMakeBorder(), merge(), dft(), getOptimalDFTSize(), log() and normalize().
 
-Explanation 
+原理解释 
 
-The Fourier Transform will decompose an image into its sinus and cosines components. In other words, it will transform an image from its spatial domain to its frequency domain. The idea is that any function may be approximated exactly with the sum of infinite sinus and cosines functions. The Fourier Transform is a way how to do this. Mathematically a two dimensional images Fourier transform is:
+傅里叶变换会将图像转化为图像的sin和cos部分。也就是说，他会将图片转换成空间域转化为时频域。原理也很简单，所有的函数都可以准确地用sin和cos的无穷级数来表示。傅里叶变换就是用来实现这一过程的变换方法。数学上表示二维图形的傅里叶变换如下所示：
 
 ![](http://latex.codecogs.com/gif.latex?F(k,l)=\displaystyle\sum\limits_{i=0}^{N-1}\sum\limits_{j=0}^{N-1}f(i,j)e^{-i2\pi(\frac{ki}{N}+\frac{lj}{N})})
 
