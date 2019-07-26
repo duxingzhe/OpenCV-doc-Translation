@@ -31,7 +31,7 @@ copyMakeBorder(I, padded, 0, m - I.rows, 0, n - I.cols, BORDER_CONSTANT, Scalar:
 
 为复数和实数提供计算位置
 
-The result of a Fourier Transform is complex. This implies that for each image value the result is two image values (one per component). Moreover, the frequency domains range is much larger than its spatial counterpart. Therefore, we store these usually at least in a float format. Therefore we'll convert our input image to this type and expand it with another channel to hold the complex values:
+傅里叶变换的结果是一个复数。这也就意味着每一个像素点的值在结果都对应两个值。更重要的是，时频域比它对应的空间域要大得多。因此，我们会用float变量来存储数据。那么，这也就意味着，我们将我们的输入图片转换成float类型，然后将他和其他通道进行展开，以便保存复数值：
 
 ```
 Mat planes[] = {Mat_<float>(padded), Mat::zeros(padded.size(), CV_32F)};
@@ -39,20 +39,21 @@ Mat complexI;
 merge(planes, 2, complexI);         // Add to the expanded another plane with zeros
 ```
 
-Make the Discrete Fourier Transform
+进行离散型傅里叶变换
 
-It's possible an in-place calculation (same input as output):
+这是一个对自身进行的计算：
 
 ```
 dft(complexI, complexI);            // this way the result may fit in the source matrix
 ```
 
-Transform the real and complex values to magnitude
-A complex number has a real (Re) and a complex (imaginary - Im) part. The results of a DFT are complex numbers. The magnitude of a DFT is:
+将实部和虚部的数值转化为强度：
+
+A complex number has a real (Re) and a complex (imaginary - Im) part. The results of a DFT are complex numbers. The magnitude of a DFT is复数有实部（Re）和虚部（imaginary - Im）。DFT的结果是一个复数。DFT的强度如下：
 
 ![](http://latex.codecogs.com/gif.latex?M=\sqrt[2]{{Re(DFT(I))}^2+{Im(DFT(I))}^2})
 
-Translated to OpenCV code:
+转换成OpenCV的代码：
 
 ```
 split(complexI, planes);                   // planes[0] = Re(DFT(I), planes[1] = Im(DFT(I))
