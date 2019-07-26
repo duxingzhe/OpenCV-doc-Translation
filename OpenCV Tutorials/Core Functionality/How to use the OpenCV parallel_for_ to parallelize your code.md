@@ -28,7 +28,7 @@ The Mandelbrot set definition has been named in tribute to the mathematician Ben
 
 The Mandelbrot set is the set of values of c in the complex plane for which the orbit of 0 under iteration of the quadratic map
 
-![](http://latex.codecogs.com/gif.latex?\begin{cases}z_0 = 0\\z_{n+1}=z_n^2+c\end{cases})
+![](http://latex.codecogs.com/gif.latex?\begin{cases}z_0=0\\z_{n+1}=z_n^2+c\end{cases})
 
 remains bounded. That is, a complex number c is part of the Mandelbrot set if, when starting with z0=0 and applying the iteration repeatedly, the absolute value of zn remains bounded however large n gets. This can also be represented as
 
