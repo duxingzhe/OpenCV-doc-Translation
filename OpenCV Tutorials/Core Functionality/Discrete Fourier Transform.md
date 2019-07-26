@@ -61,22 +61,22 @@ magnitude(planes[0], planes[1], planes[0]);// planes[0] = magnitude
 Mat magI = planes[0];
 ```
 
-Switch to a logarithmic scale
+转换成对数形式
 
-It turns out that the dynamic range of the Fourier coefficients is too large to be displayed on the screen. We have some small and some high changing values that we can't observe like this. Therefore the high values will all turn out as white points, while the small ones as black. To use the gray scale values to for visualization we can transform our linear scale to a logarithmic one:
+这是在说明，傅里叶级数的系数有一个非常大的范围，而且系数一般比较大，不能在屏幕上正常显示。我们这有一个小屏幕，所以这么大范围的数值变换是无法在屏幕上显示地。因此，较大的数值会变成白点，而较小的数值会变成黑色的点。为了能够将灰阶值可视化，我们可以将我们的线性表示转换成对数形式表示：
 
 ![](http://latex.codecogs.com/gif.latex?M_1=\log{(1+M)})
 
-Translated to OpenCV code:
+Translated to OpenCV code:用OpenCV的代码便是：
 
 ```
 magI += Scalar::all(1);                    // switch to logarithmic scale
 log(magI, magI);
 ```
 
-Crop and rearrange
+裁剪和重排
 
-Remember, that at the first step, we expanded the image? Well, it's time to throw away the newly introduced values. For visualization purposes we may also rearrange the quadrants of the result, so that the origin (zero, zero) corresponds with the image center.
+首先，要记住，我们不是要先展开我们的图像。其实一开始是去掉一些新进来的数据。为了能够进行可视化分析，我们可能还需要对结果的象限进行简单处理，这样能够让原点（0,0）是在图像正中心。
 
 ```
 // crop the spectrum, if it has an odd number of rows or columns
@@ -97,9 +97,9 @@ q2.copyTo(q1);
 tmp.copyTo(q2);
 ```
 
-Normalize
+归一化
 
-This is done again for visualization purposes. We now have the magnitudes, however this are still out of our image display range of zero to one. We normalize our values to this range using the cv::normalize() function.
+这还是为了方便可视化分析。我们现在有强度图，但是他对于我们要求的\[0,1\]的值而言仍然差得很远。我们需要用cv::normalize()函数对我们的数值进行归一化处理。
 
 ```
 normalize(magI, magI, 0, 1, NORM_MINMAX); // Transform the matrix with float values into a
