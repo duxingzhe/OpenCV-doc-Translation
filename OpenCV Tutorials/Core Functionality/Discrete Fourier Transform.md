@@ -3,7 +3,7 @@
 我们对以下问题进行讨论：
 
 * 什么是傅里叶变换，使用的目的是什么？
-* H在OpenCV里如何使用傅里叶变换？
+* 在OpenCV里如何使用傅里叶变换？
 * 部分函数的使用方法: copyMakeBorder(), merge(), dft(), getOptimalDFTSize(), log() and normalize().
 
 原理解释 
@@ -18,8 +18,9 @@
 
 在这个例子中，我将告诉各位如何计算并显示一个傅里叶变换的强度图。在数字图像中，这些图片数据都是离散型的。这也就意味着他们的值是通过一个给定的阈值来取得。例如，在一个简单的灰阶图形中，值通常在0-255之间。因此，傅里叶变换急需转换成离散型傅里叶变换（DFT）。每当你需要研究一张图形的几何视点的时候，你就需要使用离散傅里叶变换。这里有几个简单的步骤告诉你如何实现（在本例中，I代表的是一张灰阶图像）：
 
-Expand the image to an optimal size
-The performance of a DFT is dependent of the image size. It tends to be the fastest for image sizes that are multiple of the numbers two, three and five. Therefore, to achieve maximal performance it is generally a good idea to pad border values to the image to get a size with such traits. The getOptimalDFTSize() returns this optimal size and we can use the copyMakeBorder() function to expand the borders of an image (the appended pixels are initialized with zero):
+将图片展开到合适的大小
+
+DFT的性能取决于图像大小。一般情况而言，在乘以数字2、3、4的时候，计算速度会比较快。因此，为了能够获得最好的性能，最好的方法便是将图像的边缘值扩展到上述数值当中。getOptimalDFTSize返回图片的最佳值，我们还可以使用copyMakeBorder函数来扩展图像的边界（那些扩展的像素值会设为0）。
 
 ```
 Mat padded;                            //expand input image to optimal size
@@ -28,7 +29,7 @@ int n = getOptimalDFTSize( I.cols ); // on the border add zero values
 copyMakeBorder(I, padded, 0, m - I.rows, 0, n - I.cols, BORDER_CONSTANT, Scalar::all(0));
 ```
 
-Make place for both the complex and the real values
+为复数和实数提供计算位置
 
 The result of a Fourier Transform is complex. This implies that for each image value the result is two image values (one per component). Moreover, the frequency domains range is much larger than its spatial counterpart. Therefore, we store these usually at least in a float format. Therefore we'll convert our input image to this type and expand it with another channel to hold the complex values:
 
