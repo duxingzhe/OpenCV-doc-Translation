@@ -99,7 +99,7 @@ tmp.copyTo(q2);
 
 归一化
 
-这还是为了方便可视化分析。我们现在有强度图，但是他对于我们要求的\[0,1\]的值而言仍然差得很远。我们需要用cv::normalize()函数对我们的数值进行归一化处理。
+这还是为了方便可视化分析。我们现在有强度图，但是产生的值不在\[0,1\]的范围内。因此，我们需要用cv::normalize()函数对我们的数值进行归一化处理。
 
 ```
 normalize(magI, magI, 0, 1, NORM_MINMAX); // Transform the matrix with float values into a
