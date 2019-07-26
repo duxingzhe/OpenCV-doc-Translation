@@ -49,7 +49,7 @@ dft(complexI, complexI);            // this way the result may fit in the source
 
 将实部和虚部的数值转化为强度：
 
-A complex number has a real (Re) and a complex (imaginary - Im) part. The results of a DFT are complex numbers. The magnitude of a DFT is复数有实部（Re）和虚部（imaginary - Im）。DFT的结果是一个复数。DFT的强度如下：
+复数有实部（Re）和虚部（imaginary - Im）。DFT的结果是一个复数。DFT的强度如下：
 
 ![](http://latex.codecogs.com/gif.latex?M=\sqrt[2]{{Re(DFT(I))}^2+{Im(DFT(I))}^2})
 
