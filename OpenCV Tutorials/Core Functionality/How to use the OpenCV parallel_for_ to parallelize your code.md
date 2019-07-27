@@ -1,6 +1,6 @@
-Goal
+目的
 
-The goal of this tutorial is to show you how to use the OpenCV parallel_for_ framework to easily parallelize your code. To illustrate the concept, we will write a program to draw a Mandelbrot set exploiting almost all the CPU load available. The full tutorial code is here. If you want more information about multithreading, you will have to refer to a reference book or course as this tutorial is intended to remain simple.
+本教程主要目的是为了告诉你如何使用OpenCV的parallel_for_框架轻松地对你的代码进行并行化处理。为了介绍这一理论，我们将编写一个画Mandelbrot图形的程序，这个程序会占用所有可用的CPU运算资源。本教程所涉及的代码都将在这里查阅。如果你希望知道更多有关多线程的知识，你需要查阅相关书籍或者课程，因为这些知识不再本教程范围之内，本教程只是简单的介绍相关知识点。
 
 Precondition
 
