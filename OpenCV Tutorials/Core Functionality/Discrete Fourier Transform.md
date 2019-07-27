@@ -106,16 +106,16 @@ normalize(magI, magI, 0, 1, NORM_MINMAX); // Transform the matrix with float val
                                             // viewable image form (float between values 0 and 1).
 ```
 
-Result
+运行结果
 
-An application idea would be to determine the geometrical orientation present in the image. For example, let us find out if a text is horizontal or not? Looking at some text you'll notice that the text lines sort of form also horizontal lines and the letters form sort of vertical lines. These two main components of a text snippet may be also seen in case of the Fourier transform. Let us use this horizontal and this rotated image about a text.
+有一个想法便是，我们需要知道图像的几何方向。例如，我们想知道图像中的文字是水平的或者是有偏移的。如果你看着某些文字，你会发现，文字可能既有水平排列的又有垂直排列的。在傅里叶变换中，我们就会看到图像中文字的这两种排列方式。那么就让我们看看一张有水平文字的图片，和一张有旋转文字的图片。
 
-In case of the horizontal text:
+在水平文字图片的情况下
 
 ![](https://docs.opencv.org/4.1.0/result_normal.jpg)
 
-In case of a rotated text:
+在有旋转文字的情况下
 
 ![](https://docs.opencv.org/4.1.0/result_rotated.jpg)
 
-You can see that the most influential components of the frequency domain (brightest dots on the magnitude image) follow the geometric rotation of objects on the image. From this we may calculate the offset and perform an image rotation to correct eventual miss alignments.
+你可以看到时频域中最明显的部分（在强度途中则是最亮的点）就正好和图像中的图形几何旋转角度一致。通过这个方式，我们就能计算出偏移量，并通过图像旋转来修正图像中物体的位置。
