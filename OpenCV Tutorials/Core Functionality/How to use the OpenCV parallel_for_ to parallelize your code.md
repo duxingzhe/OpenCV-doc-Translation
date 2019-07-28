@@ -22,7 +22,7 @@
 
 所以，正如你所看到的，大多数并行框架都能在OpenCV中使用到。一些框架是第三方控件，需要显式启用并在cmake中修改（比如，TBB和C=），其他的可以根据平台自动启用（例如，APPLE GCD）。使用的方式是你应该有足够大的权限可以直接访问到这些并行框架，或者在CMake的选项中启用，并重建OpenCV。
 
-The second (weak) precondition is more related to the task you want to achieve as not all computations are suitable / can be adatapted to be run in a parallel way. To remain simple, tasks that can be split into multiple elementary operations with no memory dependency (no possible race condition) are easily parallelizable. Computer vision processing are often easily parallelizable as most of the time the processing of one pixel does not depend to the state of other pixels.
+第二个（较弱的）前提条件是，你需要确保你的任务是符合并行处理的，换而言之并行处理取决于你的任务情况，并不是所有的任务都适合/能够改成并行处理行为。简单而言，那些可以分成多个基本操作步骤并与内存分配无关（没有潜在地条件竞争情况）的任务适合并行式处理。机器视觉因为大多数时候处理的是像素，而像素的处理与其他像素处理无关，因此是可以进行并行式操作的。
 
 简单教程：画曼德尔布罗特分形图
 
