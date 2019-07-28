@@ -2,19 +2,25 @@
 
 本教程主要目的是为了告诉你如何使用OpenCV的parallel_for_框架轻松地对你的代码进行并行化处理。为了介绍这一理论，我们将编写一个画Mandelbrot图形的程序，这个程序会占用所有可用的CPU运算资源。本教程所涉及的代码都将在这里查阅。如果你希望知道更多有关多线程的知识，你需要查阅相关书籍或者课程，因为这些知识不再本教程范围之内，本教程只是简单的介绍相关知识点。
 
-Precondition
+前提条件
 
-The first precondition is to have OpenCV built with a parallel framework. In OpenCV 3.2, the following parallel frameworks are available in that order:
+第一个前提是，OpenCV的并行计算是构建在一个并行计算的框架上。自OpenCV3.2开始，OpenCV调用的并行框架按以下顺序进行：
 
-1.Intel Threading Building Blocks (3rdparty library, should be explicitly enabled)
-2.C= Parallel C/C++ Programming Language Extension (3rdparty library, should be explicitly enabled)
-3.OpenMP (integrated to compiler, should be explicitly enabled)
-4.APPLE GCD (system wide, used automatically (APPLE only))
-5.Windows RT concurrency (system wide, used automatically (Windows RT only))
-6.Windows concurrency (part of runtime, used automatically (Windows only - MSVC++ >= 10))
-7.Pthreads (if available)
+1.英特尔多线程构建模块（第三方库，必须显式调用）
 
-As you can see, several parallel frameworks can be used in the OpenCV library. Some parallel libraries are third party libraries and have to be explicitly built and enabled in CMake (e.g. TBB, C=), others are automatically available with the platform (e.g. APPLE GCD) but chances are that you should be enable to have access to a parallel framework either directly or by enabling the option in CMake and rebuild the library.
+2.C=并行的C/C++编程语言扩展（第三方库，必须显式调用）
+
+3.OpenMP （与编译器整合在一起，必须显式调用）
+
+4.APPLE GCD （系统级别的框架，可直接使用（只能用在MacOS上））
+
+5.Windows RT并行框架（系统级别的框架，可直接使用（只能用在Windows RT上））
+
+6.Windows 并行框架（运行时的一部分，可直接使用（仅限Windows，MSVC++ >= 10））
+
+7.Pthreads（在可用的情况下）
+
+所以，正如你所看到的，大多数并行框架都能在OpenCV中使用到。一些框架是第三方控件，需要显式启用并在cmake中修改（比如，TBB和C=），其他的可以根据平台自动启用（例如，APPLE GCD）。使用的方式是你应该有足够大的权限可以直接访问到这些并行框架，或者在CMake的选项中启用，并重建OpenCV。
 
 The second (weak) precondition is more related to the task you want to achieve as not all computations are suitable / can be adatapted to be run in a parallel way. To remain simple, tasks that can be split into multiple elementary operations with no memory dependency (no possible race condition) are easily parallelizable. Computer vision processing are often easily parallelizable as most of the time the processing of one pixel does not depend to the state of other pixels.
 
