@@ -1,6 +1,6 @@
 目的
 
-本教程主要目的是为了告诉你如何使用OpenCV的parallel_for_框架轻松地对你的代码进行并行化处理。为了介绍这一理论，我们将编写一个画Mandelbrot图形的程序，这个程序会占用所有可用的CPU运算资源。本教程所涉及的代码都将在这里查阅。如果你希望知道更多有关多线程的知识，你需要查阅相关书籍或者课程，因为这些知识不再本教程范围之内，本教程只是简单的介绍相关知识点。
+本教程主要目的是为了告诉你如何使用OpenCV的parallel_for_框架轻松地对你的代码进行并行化处理。为了介绍这一理论，我们将编写一个画曼德尔布罗特分形图的程序，这个程序会占用所有可用的CPU运算资源。本教程所涉及的代码都将在这里查阅。如果你希望知道更多有关多线程的知识，你需要查阅相关书籍或者课程，因为这些知识不再本教程范围之内，本教程只是简单的介绍相关知识点。
 
 前提条件
 
@@ -24,7 +24,7 @@
 
 The second (weak) precondition is more related to the task you want to achieve as not all computations are suitable / can be adatapted to be run in a parallel way. To remain simple, tasks that can be split into multiple elementary operations with no memory dependency (no possible race condition) are easily parallelizable. Computer vision processing are often easily parallelizable as most of the time the processing of one pixel does not depend to the state of other pixels.
 
-Simple example: drawing a Mandelbrot set
+简单教程：画曼德尔布罗特分形图
 
 We will use the example of drawing a Mandelbrot set to show how from a regular sequential code you can easily adapt the code to parallelize the computation.
 
