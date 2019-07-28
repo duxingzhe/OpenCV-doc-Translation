@@ -26,11 +26,11 @@
 
 简单教程：画曼德尔布罗特分形图
 
-We will use the example of drawing a Mandelbrot set to show how from a regular sequential code you can easily adapt the code to parallelize the computation.
+在本篇教程中，我们将使用曼德尔布罗特分形图来作为例子，讲解如何将普通的时序性代码转换成并行计算的代码。
 
-Theory
+原理
 
-The Mandelbrot set definition has been named in tribute to the mathematician Benoit Mandelbrot by the mathematician Adrien Douady. It has been famous outside of the mathematics field as the image representation is an example of a class of fractals, a mathematical set that exhibits a repeating pattern displayed at every scale (even more, a Mandelbrot set is self-similar as the whole shape can be repeatedly seen at different scale). For a more in-depth introduction, you can look at the corresponding Wikipedia article. Here, we will just introduce the formula to draw the Mandelbrot set (from the mentioned Wikipedia article).
+曼德尔布罗特分形图是数学家阿德里安·杜阿德为了致敬著名数学家本华·曼德博而命名的图形。他之所以如此出名，是因为他的图形展示是一张分形图形，他是一个数学集合，每一部分在任何大小上都是自身的重复（甚至曼德尔布罗特集合是自相似的，图形的任何一个部分在任意大小上都是相似的）。如果你想了解更多信息，你可以查阅维基百科文档。这里我们只介绍相关公式，介绍如何绘制曼德尔布罗特分形图。
 
 The Mandelbrot set is the set of values of c in the complex plane for which the orbit of 0 under iteration of the quadratic map
 
