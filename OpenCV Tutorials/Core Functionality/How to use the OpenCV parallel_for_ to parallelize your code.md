@@ -32,17 +32,17 @@
 
 曼德尔布罗特分形图是数学家阿德里安·杜阿德为了致敬著名数学家本华·曼德博而命名的图形。他之所以如此出名，是因为他的图形展示是一张分形图形，他是一个数学集合，每一部分在任何大小上都是自身的重复（甚至曼德尔布罗特集合是自相似的，图形的任何一个部分在任意大小上都是相似的）。如果你想了解更多信息，你可以查阅维基百科文档。这里我们只介绍相关公式，介绍如何绘制曼德尔布罗特分形图。
 
-The Mandelbrot set is the set of values of c in the complex plane for which the orbit of 0 under iteration of the quadratic map
+曼德尔布罗特集合是复平面上一系列复数点的集合，围绕着零点，根据下述二次映射来作图：
 
 ![](http://latex.codecogs.com/gif.latex?\begin{cases}z_0=0&z_{n+1}=z_n^2+c\end{cases})
 
-remains bounded. That is, a complex number c is part of the Mandelbrot set if, when starting with z0=0 and applying the iteration repeatedly, the absolute value of zn remains bounded however large n gets. This can also be represented as
+该函数保持有界。也就是说，如果复数c是曼德尔布罗特集合中的，当![](http://latex.codecogs.com/gif.latex?z_{0}=0)时并且持续执行这个递归式，无论n取多大，![](http://latex.codecogs.com/gif.latex?z_{n})的绝对值始终有界。也就是可以表示成如下所示：
 
 ![](http://latex.codecogs.com/gif.latex?\limsup_{n\to\infty}|z_{n+1}|\leqslant2)
 
-Pseudocode
+伪代码
 
-A simple algorithm to generate a representation of the Mandelbrot set is called the "escape time algorithm". For each pixel in the rendered image, we test using the recurrence relation if the complex number is bounded or not under a maximum number of iterations. Pixels that do not belong to the Mandelbrot set will escape quickly whereas we assume that the pixel is in the set after a fixed maximum number of iterations. A high value of iterations will produce a more detailed image but the computation time will increase accordingly. We use the number of iterations needed to "escape" to depict the pixel value in the image.
+一个简单生成曼德尔布罗特集合的算法叫做“逃离时间算法”。在这张生成的图片中，如果复数值已经有界或者还没有达到迭代次数的最大值，每一个像素我们都会使用递推关系来生成。像素不属于曼德尔布罗特集合部分的将会舍弃，因为我们要确定所有的像素都要在规定的迭代次数中形成。迭代次数越大将能生成越精细的图形，但是运行时间也由此增加。我们使用递归次数来描述图中的像素值。
 
 ```
 For each pixel (Px, Py) on the screen, do:
