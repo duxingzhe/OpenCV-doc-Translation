@@ -126,8 +126,8 @@ float scaleY = mandelbrotImg.rows / (y2 - y1);
 
 最后，为了能够确定灰阶图中像素的值，我们有以下规定：
 
-* a pixel is black if it reaches the maximum number of iterations (pixel is assumed to be in the Mandelbrot set),
-* otherwise we assign a grayscale value depending on the escaped iteration and scaled to fit the grayscale range.
+* 如果他满足迭代的最大值（像素点假设是在曼德尔布罗特集合当中），像素便是黑色的。
+* 否则，我们就会根据逃离的迭代和规模来确定灰阶程度，最后定一个灰阶值。
 
 ```
 int mandelbrotFormula(const complex<float> &z0, const int maxIter=500) {
@@ -140,7 +140,7 @@ int mandelbrotFormula(const complex<float> &z0, const int maxIter=500) {
 }
 ```
 
-Using a linear scale transformation is not enough to perceive the grayscale variation. To overcome this, we will boost the perception by using a square root scale transformation (borrowed from Jeremy D. Frens in his blog post): f(x)=xmaxIter−−−−−√×255
+使用线性转换的方式并不能准确描述灰阶变化。为了解决这个问题，我们将使用平方根灰阶变换来增强准确性。![](http://latex.codecogs.com/gif.latex?\(f\left(x\right)=\sqrt{\frac{x}{\text{maxIter}}}\times255\))
 
 ![](https://docs.opencv.org/4.1.0/how_to_use_OpenCV_parallel_for_sqrt_scale_transformation.png)
 
