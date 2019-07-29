@@ -64,7 +64,7 @@ For each pixel (Px, Py) on the screen, do:
 }
 ```
 
-To relate between the pseudocode and the theory, we have:
+为了让这些伪代码和理论有联系，我们有以下公式：
 
 * ![](http://latex.codecogs.com/gif.latex?z=x+iy)
 * ![](http://latex.codecogs.com/gif.latex?z^2=x^2+i2xy-y^2)
@@ -72,11 +72,11 @@ To relate between the pseudocode and the theory, we have:
 
 ![](https://docs.opencv.org/4.1.0/how_to_use_OpenCV_parallel_for_640px-Mandelset_hires.png)
 
-On this figure, we recall that the real part of a complex number is on the x-axis and the imaginary part on the y-axis. You can see that the whole shape can be repeatedly visible if we zoom at particular locations.
+在这张图中，我们将复数的实部放在x轴上，虚部放在y轴上。如果我们放大特定的某一部分，你可以看到整个图片都在重复自己的某一部分。
 
-Implementation
+算法实现
 
-Escape time algorithm implementation
+逃脱时间算法的实现
 
 ```
 int mandelbrot(const complex<float> &z0, const int max)
@@ -91,9 +91,9 @@ int mandelbrot(const complex<float> &z0, const int max)
 }
 ```
 
-Here, we used the std::complex template class to represent a complex number. This function performs the test to check if the pixel is in set or not and returns the "escaped" iteration.
+在这里，我们是用了std::complex模板来表示一个复数。这个函数会检查像素是否在这个集合，并返回“escaped"的结果。
 
-Sequential Mandelbrot implementation
+序列式曼德尔布罗特算法实现
 
 ```
 void sequentialMandelbrot(Mat &img, const float x1, const float y1, const float scaleX, const float scaleY)
@@ -112,9 +112,9 @@ void sequentialMandelbrot(Mat &img, const float x1, const float y1, const float 
 }
 ```
 
-In this implementation, we sequentially iterate over the pixels in the rendered image to perform the test to check if the pixel is likely to belong to the Mandelbrot set or not.
+在这个实现当中，我们在像素上一步步递归并生成图形，判断像素是否在曼德尔布罗特集合当中。
 
-Another thing to do is to transform the pixel coordinate into the Mandelbrot set space with:
+另一件要做的事情是通过下列代码将像素协调至曼德尔布罗特集合空间当中：
 
 ```
 Mat mandelbrotImg(4800, 5400, CV_8U);
@@ -124,7 +124,7 @@ float scaleX = mandelbrotImg.cols / (x2 - x1);
 float scaleY = mandelbrotImg.rows / (y2 - y1);
 ```
 
-Finally, to assign the grayscale value to the pixels, we use the following rule:
+最后，为了能够确定灰阶图中像素的值，我们有以下规定：
 
 * a pixel is black if it reaches the maximum number of iterations (pixel is assumed to be in the Mandelbrot set),
 * otherwise we assign a grayscale value depending on the escaped iteration and scaled to fit the grayscale range.
