@@ -140,15 +140,15 @@ int mandelbrotFormula(const complex<float> &z0, const int maxIter=500) {
 }
 ```
 
-使用线性转换的方式并不能准确描述灰阶变化。为了解决这个问题，我们将使用平方根灰阶变换来增强准确性。![](http://latex.codecogs.com/gif.latex?\(f\left(x\right)=\sqrt{\frac{x}{\text{maxIter}}}\times255\))
+使用线性转换的方式并不能准确描述灰阶变化。为了解决这个问题，我们将使用平方根尺度变换来增强准确性。![](http://latex.codecogs.com/gif.latex?\(f\left(x\right)=\sqrt{\frac{x}{\text{maxIter}}}\times255\))
 
 ![](https://docs.opencv.org/4.1.0/how_to_use_OpenCV_parallel_for_sqrt_scale_transformation.png)
 
-The green curve corresponds to a simple linear scale transformation, the blue one to a square root scale transformation and you can observe how the lowest values will be boosted when looking at the slope at these positions.
+绿色的曲线跟线性尺度变换有关，而蓝色的线则与平方根尺度变换由管，当你观察那些倾斜的位置时，你可以的看到最低端的值有所增加。
 
-Parallel Mandelbrot implementation
+并行曼德尔布罗特集合算法实现
 
-When looking at the sequential implementation, we can notice that each pixel is computed independently. To optimize the computation, we can perform multiple pixel calculations in parallel, by exploiting the multi-core architecture of modern processor. To achieve this easily, we will use the OpenCV cv::parallel_for_ framework.
+当我们观察时序性曼德尔布罗特集合算法实现的时候，我们会观察到，每一个像素点的计算都是独立的。为了得到最优化的性能，我们可以并行地处理多个像素点的计算，这样我们就能利用现代处理器的多线程结构。为了能更方便的实现这一效果，我们使用OpenCV的cv::parallel_for_框架。
 
 ```
 class ParallelMandelbrot : public ParallelLoopBody
@@ -183,7 +183,7 @@ private:
 };
 ```
 
-The first thing is to declare a custom class that inherits from cv::ParallelLoopBody and to override the virtual void operator ()(const cv::Range& range) const.
+第一件事是要声明一个继承于cv::ParallelLoopBody的类，并覆写虚拟函数void operator()(const cv::Range& range)常量。
 
 The range in the operator () represents the subset of pixels that will be treated by an individual thread. This splitting is done automatically to distribute equally the computation load. We have to convert the pixel index coordinate to a 2D [row, col] coordinate. Also note that we have to keep a reference on the mat image to be able to modify in-place the image.
 
