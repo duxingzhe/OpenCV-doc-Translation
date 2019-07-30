@@ -185,9 +185,9 @@ private:
 
 第一件事是要声明一个继承于cv::ParallelLoopBody的类，并覆写虚拟函数void operator()(const cv::Range& range)常量。
 
-The range in the operator () represents the subset of pixels that will be treated by an individual thread. This splitting is done automatically to distribute equally the computation load. We have to convert the pixel index coordinate to a 2D [row, col] coordinate. Also note that we have to keep a reference on the mat image to be able to modify in-place the image.
+operator()中的range变量表示像素的子集，并会在一个单独线程内进行处理。这项分治工作会自动处理，以将计算负担均匀分割到每一个线程中。我们将像素索引坐标转换为2D\[行，列\]坐标。同时，我们也会保持对mat图像的引用，其确保准确修改所引用的图片。
 
-The parallel execution is called with:
+并行计算通过以下函数得到执行：
 
 ```
 ParallelMandelbrot parallelMandelbrot(mandelbrotImg, x1, y1, scaleX, scaleY);
@@ -196,9 +196,9 @@ parallel_for_(Range(0, mandelbrotImg.rows*mandelbrotImg.cols), parallelMandelbro
 
 Here, the range represents the total number of operations to be executed, so the total number of pixels in the image. To set the number of threads, you can use: cv::setNumThreads. You can also specify the number of splitting using the nstripes parameter in cv::parallel_for_. For instance, if your processor has 4 threads, setting cv::setNumThreads(2) or setting nstripes=2 should be the same as by default it will use all the processor threads available but will split the workload only on two threads.
 
-> Note
+> 注意
 >
-> C++ 11 standard allows to simplify the parallel implementation by get rid of the ParallelMandelbrot class and replacing it with lambda expression:
+> C++11标准允许程序员通过不使用ParallelMandelbrot类而用lambda表达式来简化代码：
 
 ```
 parallel_for_(Range(0, mandelbrotImg.rows*mandelbrotImg.cols), [&](const Range& range){
@@ -215,9 +215,9 @@ parallel_for_(Range(0, mandelbrotImg.rows*mandelbrotImg.cols), [&](const Range& 
 });
 ```
 
-Results
+结果
 
-You can find the full tutorial code here. The performance of the parallel implementation depends of the type of CPU you have. For instance, on 4 cores / 8 threads CPU, you can expect a speed-up of around 6.9X. There are many factors to explain why we do not achieve a speed-up of almost 8X. Main reasons should be mostly due to:
+你可以在这里找到完整的代码。并行计算的性能取决于你用的电脑CPU。例如，在四核八线程CPU中，你会得到6.9倍的性能提升。有很多原因导致我们无法得到8倍的性能提升。主要原因可能有：
 
 * the overhead to create and manage the threads,
 * background processes running in parallel,
