@@ -194,7 +194,7 @@ ParallelMandelbrot parallelMandelbrot(mandelbrotImg, x1, y1, scaleX, scaleY);
 parallel_for_(Range(0, mandelbrotImg.rows*mandelbrotImg.cols), parallelMandelbrot);
 ```
 
-Here, the range represents the total number of operations to be executed, so the total number of pixels in the image. To set the number of threads, you can use: cv::setNumThreads. You can also specify the number of splitting using the nstripes parameter in cv::parallel_for_. For instance, if your processor has 4 threads, setting cv::setNumThreads(2) or setting nstripes=2 should be the same as by default it will use all the processor threads available but will split the workload only on two threads.
+在这里，rang表示图像中将要处理的像素的总数。你可以使用cv::setNumThreads来设置线程的数目。你可以用cv::parallel_for_中的nstripes变量来指明线程数。例如，如果你的处理器有四个线程，而你设置的是cv::setNumThreads(2)或者nstripes=3，那么默认情况下它将会使用所有可用的处理器线程，但是只会将工作负荷放到两个线程中。
 
 > 注意
 >
@@ -219,10 +219,11 @@ parallel_for_(Range(0, mandelbrotImg.rows*mandelbrotImg.cols), [&](const Range& 
 
 你可以在这里找到完整的代码。并行计算的性能取决于你用的电脑CPU。例如，在四核八线程CPU中，你会得到6.9倍的性能提升。有很多原因导致我们无法得到8倍的性能提升。主要原因可能有：
 
-* the overhead to create and manage the threads,
-* background processes running in parallel,
-* the difference between 4 hardware cores with 2 logical threads for each core and 8 hardware cores.
-* The resulting image produced by the tutorial code (you can modify the code to use more iterations and assign a pixel color depending on the escaped iteration and using a color palette to get more aesthetic images):
+* 创建和管理线程需要有额外的开支，
+* 在并行的时候有后台运行线程，
+* 4个硬件处理器带有两个逻辑线程和8个硬件处理中只有一个线程是不一样的。
+
+使用示例代码产生的图片如下所示（你可以更改代码从而设置更多的迭代，或者更改在溢出时间的图像像素的颜色，或者使用调色板来让你的图片更有美感）：
 
 ![](https://docs.opencv.org/4.1.0/how_to_use_OpenCV_parallel_for_Mandelbrot.png)
 
