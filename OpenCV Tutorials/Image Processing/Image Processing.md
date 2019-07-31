@@ -1,6 +1,6 @@
-In this section you will learn about the image processing (manipulation) functions inside OpenCV.
+在这一大教程中，你讲学习到如何利用OpenCV的图像处理（操作）函数。
 
-Basic Drawing
+基础绘画方式
 
 Languages: C++, Java, Python
 
@@ -8,7 +8,7 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-We will learn how to draw simple geometry with OpenCV!
+我们将学习使用OpenCV画简单的几何图形！
 
 Random generator and text with OpenCV
 
