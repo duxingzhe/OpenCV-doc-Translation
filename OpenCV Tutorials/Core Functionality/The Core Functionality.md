@@ -16,7 +16,7 @@ Author: Bernát Gábor
 
 你将知道如何通过OpenCV扫描图像（一个个像素地扫描）。额外内容：OpenCV的性能分析。
 
-Mask operations on matrices
+在矩形中进行蒙版算法
 
 Languages: C++, Java, Python
 
@@ -24,27 +24,17 @@ Compatibility: > OpenCV 2.0
 
 Author: Bernát Gábor
 
-You'll find out how to scan images with neighbor access and use the cv::filter2D function to apply kernel filters on images.
+你将知道如何通过邻近访问和cv::filter2D的方法在图像上使用核心滤镜功能。
 
-Operations with images
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Reading/writing images from file, accessing pixels, primitive operations, visualizing images.
-
-Adding (blending) two images using OpenCV
+对图像的操作
 
 Languages: C++, Java, Python
 
 Compatibility: > OpenCV 2.0
 
-Author: Ana Huamán
+从文件中读取图像，访问像素，进行操作，将图片显示出来。
 
-We will learn how to blend two images!
-
-Changing the contrast and brightness of an image!
+将两张图片混合在一起
 
 Languages: C++, Java, Python
 
@@ -52,9 +42,19 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-We will learn how to change our image appearance!
+学习如何混合两种图片！
 
-Discrete Fourier Transform
+改变图像的亮度和对比度！
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+我们会学习如何改变图片地亮度和对比度。
+
+离散傅里叶变换
 
 Languages: C++, Java, Python
 
@@ -62,7 +62,7 @@ Compatibility: > OpenCV 2.0
 
 Author: Bernát Gábor
 
-You will see how and why use the Discrete Fourier transformation with OpenCV.
+学习并理解OpenCV中离散傅里叶变换的意义。
 
 File Input and Output using XML and YAML files
 
