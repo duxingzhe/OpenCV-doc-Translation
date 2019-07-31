@@ -64,16 +64,16 @@ Author: Bernát Gábor
 
 学习并理解OpenCV中离散傅里叶变换的意义。
 
-File Input and Output using XML and YAML files
+使用XML和YAML文件在文件中读取数据或将数据输出到文件中
 
 Compatibility: > OpenCV 2.0
 
 Author: Bernát Gábor
 
-You will see how to use the cv::FileStorage data structure of OpenCV to write and read data to XML or YAML file format.
+你讲学习如何使用cv::FileStorage将OpenCV的数据结构写入XML或YAML文件，或者从XML和YAML读取文件。
 
-How to use the OpenCV parallel_for_ to parallelize your code
+如何使用OpenCV的parallel_for_框架让你的代码可以并行运行
 
 Compatibility: >= OpenCV 2.4.3
 
-You will see how to use the OpenCV parallel_for_ to easily parallelize your code.
+你学习如何使用OpenCV的parallel_for_框架实现并行计算。
