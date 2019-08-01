@@ -1,20 +1,20 @@
-Goals
+目的
 
-In this tutorial you will learn how to:
+在本篇教程中，你将会学到：
 
-* Draw a line by using the OpenCV function line()
-* Draw an ellipse by using the OpenCV function ellipse()
-* Draw a rectangle by using the OpenCV function rectangle()
-* Draw a circle by using the OpenCV function circle()
-* Draw a filled polygon by using the OpenCV function fillPoly()
+* 通过OpenCV的line()函数画线
+* 通过OpenCV的ellipse()函数画椭圆
+* 通过OpenCV的rectangle()函数画矩形
+* 通过OpenCV的circle()函数画圆
+* 通过OpenCV的fillPoly()函数画实心多边形
 
-OpenCV Theory
+OpenCV原理
 
-For this tutorial, we will heavily use two structures: cv::Point and cv::Scalar :
+在这篇教程中，我们主要使用两个数据结构：cv::Point和cv::Scalar：
 
 Point
 
-It represents a 2D point, specified by its image coordinates x and y. We can define it as:
+它代表的是一个二维的点，通过指定他在图像中的x和y坐标来确定一个点。我们可以用下面的方式定义：
 
 ```
 Point pt;
@@ -22,7 +22,7 @@ pt.x = 10;
 pt.y = 8;
 ```
 
-or
+或者
 
 ```
 Point pt =  Point(10, 8);
