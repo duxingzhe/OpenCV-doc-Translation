@@ -30,13 +30,12 @@ Point pt =  Point(10, 8);
 
 Scalar
 
-Represents a 4-element vector. The type Scalar is widely used in OpenCV for passing pixel values.
-In this tutorial, we will use it extensively to represent BGR color values (3 parameters). It is not necessary to define the last argument if it is not going to be used.
+它代表的是一个有四个元素的向量。Scalar类型变量在OpenCV中常用于传递像素值。在这篇教程中，我们将用它来代表BGR颜色值（3个变量）。如果最后一个参数并没有被用到，我们可以不用去定义。
 
-Let's see an example, if we are asked for a color argument and we give:
+现在我们来看一个例子，假设我们需要一个颜色参数，于是我们做了如下定义：
 
 ```
 Scalar( a, b, c )
 ```
 
-We would be defining a BGR color such as: Blue = a, Green = b and Red = c
+我们将定义了一个BGR颜色值：Blue = a, Green = b和Red = c。
