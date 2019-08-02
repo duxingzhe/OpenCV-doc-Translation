@@ -1,20 +1,20 @@
-Goal 
+目标
 
-In this tutorial you will learn how to apply diverse linear filters to smooth images using OpenCV functions such as:
+在这篇教程里，你讲学习到如何使用OpenCV函数对各种各样的线性变换来对图像进行模糊处理，例如：
 
 * blur()
 * GaussianBlur()
 * medianBlur()
 * bilateralFilter()
 
-Theory 
+理论
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Computer Vision: Algorithms and Applications by Richard Szeliski and to LearningOpenCV
+> 本教程的例子选自Richard Szeliski的《机器视觉：算法和应用》一书以及OpenCV入门教程。
 
-* Smoothing, also called blurring, is a simple and frequently used image processing operation.
-* There are many reasons for smoothing. In this tutorial we will focus on smoothing in order to reduce noise (other uses will be seen in the following tutorials).
+* 平滑处理，抑或叫做模糊处理，是一种简单又常见的图像处理操作。
+* 我们有许多原因需要进行平滑处理。在这篇教程中，我们将对图片进行平滑处理以便去除噪声（其他的用法将会在接下来的教程中一一讲解）。
 * To perform a smoothing operation we will apply a filter to our image. The most common type of filters are linear, in which an output pixel's value (i.e. ![](http://latex.codecogs.com/gif.latex?g(i,j))) is determined as a weighted sum of input pixel values (i.e. ![](http://latex.codecogs.com/gif.latex?f(i+k,j+l))) :
 
 ![](http://latex.codecogs.com/gif.latex?g(i,j)=\sum_{k,l}f(i+k,j+l)h(k,l))
