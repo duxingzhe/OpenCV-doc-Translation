@@ -38,3 +38,32 @@ Gaussian Filter
 * Probably the most useful filter (although not the fastest). Gaussian filtering is done by convolving each point in the input array with a Gaussian kernel and then summing them all to produce the output array.
 
 * Just to make the picture clearer, remember how a 1D Gaussian kernel look like?
+
+Gaussian Filter
+
+* Probably the most useful filter (although not the fastest). Gaussian filtering is done by convolving each point in the input array with a Gaussian kernel and then summing them all to produce the output array.
+
+* Just to make the picture clearer, remember how a 1D Gaussian kernel look like?
+
+![](file:///F:/Project/C/OpenCV4.1.0doc/Smoothing_Tutorial_theory_gaussian_0.jpg)
+
+Assuming that an image is 1D, you can notice that the pixel located in the middle would have the biggest weight. The weight of its neighbors decreases as the spatial distance between them and the center pixel increases.
+
+L Note
+> 
+> Remember that a 2D Gaussian can be represented as :
+> 
+> ![](http://latex.codecogs.com/gif.latex?G_{0}(x,y)=Ae^{\dfrac{-(x-\mu_{x})^{2}}{2\sigma^{2}_{x}}+\dfrac{-(y-\mu_{y})^{2}}{2\sigma^{2}_{y}}})
+> 
+> where μ is the mean (the peak) and σ2 represents the variance (per each of the variables x and y)
+
+Median Filter
+The median filter run through each element of the signal (in this case the image) and replace each pixel with the median of its neighboring pixels (located in a square neighborhood around the evaluated pixel).
+
+Bilateral Filter
+
+* So far, we have explained some filters which main goal is to smooth an input image. However, sometimes the filters do not only dissolve the noise, but also smooth away the edges. To avoid this (at certain extent at least), we can use a bilateral filter.
+
+* In an analogous way as the Gaussian filter, the bilateral filter also considers the neighboring pixels with weights assigned to each of them. These weights have two components, the first of which is the same weighting used by the Gaussian filter. The second component takes into account the difference in intensity between the neighboring pixels and the evaluated one.
+
+* For a more detailed explanation you can check this link.
