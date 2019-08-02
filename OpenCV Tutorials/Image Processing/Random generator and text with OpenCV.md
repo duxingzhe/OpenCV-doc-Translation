@@ -1,14 +1,13 @@
-Goals
+目标
 
-In this tutorial you will learn how to:
+在本教程中，你将学到：
 
-Use the Random Number generator class (cv::RNG ) and how to get a random number from a uniform distribution.
-Display text on an OpenCV window by using the function cv::putText
+使用随机数字生成器生成一系列随机数，使用统一方法来实现。使用cv::putText函数将文字显示在OpenCV窗体上。
 
-Code
+代码
 
-In the previous tutorial (Basic Drawing) we drew diverse geometric figures, giving as input parameters such as coordinates (in the form of cv::Point), color, thickness, etc. You might have noticed that we gave specific values for these arguments.
+在之前的教程中（基本绘画）我们学会了绘制简单的几何图形，输入变量例如坐标（在cv::Pointer形式里）来绘制点，颜色，边框粗细等。你可能已经注意到我们对变量赋予了特定的值。
 
-In this tutorial, we intend to use random values for the drawing parameters. Also, we intend to populate our image with a big number of geometric figures. Since we will be initializing them in a random fashion, this process will be automatic and made by using loops .
+在这篇教程中，我们会在绘制图形时对变量使用不同的随机值。同时，我们也会用一连串图形数据来绘制我们的图像。因为我们需要通过随机生成器来进行初始化，这个过程往往是自动的，并且要使用循环。
 
-This code is in your OpenCV sample folder. Otherwise you can grab it from here
+代码将会在你下载的OpenCV例子文件夹中。如果你还没有下载示例代码，你也可以在这里下载到。
