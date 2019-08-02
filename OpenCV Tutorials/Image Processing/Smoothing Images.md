@@ -15,19 +15,19 @@
 
 * 平滑处理，抑或叫做模糊处理，是一种简单又常见的图像处理操作。
 * 我们有许多原因需要进行平滑处理。在这篇教程中，我们将对图片进行平滑处理以便去除噪声（其他的用法将会在接下来的教程中一一讲解）。
-* To perform a smoothing operation we will apply a filter to our image. The most common type of filters are linear, in which an output pixel's value (i.e. ![](http://latex.codecogs.com/gif.latex?g(i,j))) is determined as a weighted sum of input pixel values (i.e. ![](http://latex.codecogs.com/gif.latex?f(i+k,j+l))) :
+* 为了能够执行对图像的平滑处理，我们将对图像加上一个滤镜。最常用的滤镜方式是线性滤镜，也就是说，对于一个输出的像素值(i.e. ![](http://latex.codecogs.com/gif.latex?g(i,j)))取决于输入值的加权处理结果(i.e. ![](http://latex.codecogs.com/gif.latex?f(i+k,j+l))) :
 
 ![](http://latex.codecogs.com/gif.latex?g(i,j)=\sum_{k,l}f(i+k,j+l)h(k,l))
 
-![](http://latex.codecogs.com/gif.latex?h(k,l)) is called the kernel, which is nothing more than the coefficients of the filter.
+![](http://latex.codecogs.com/gif.latex?h(k,l))被称作核，就是滤镜中的一个系数。
 
-It helps to visualize a filter as a window of coefficients sliding across the image.
+它可以将图像中的平滑系数进行可视化显示。
 
-* There are many kind of filters, here we will mention the most used:
+* 有很多可以使用的滤镜，这里我们将介绍一些特别常用的：
 
-Normalized Box Filter
+归一化块滤波
 
-* This filter is the simplest of all! Each output pixel is the mean of its kernel neighbors ( all of them contribute with equal weights)
+* 这是一个最简单的滤镜！所有的输出像素值是以其为中心加和平均值（所有像素的权重是一致的）
 
 * The kernel is below:
 
