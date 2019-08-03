@@ -51,12 +51,13 @@
 > 
 > μ表示的是方差（峰值）and ![](http://latex.codecogs.com/gif.latex?\sigma^{2})代表的是变量（分别是x和y）
 
-Median Filter
-The median filter run through each element of the signal (in this case the image) and replace each pixel with the median of its neighboring pixels (located in a square neighborhood around the evaluated pixel).
+中值滤镜
 
-Bilateral Filter
+中值滤镜会处理所有信号的元素（这里是图像），将每一个像素都用其邻近像素的中值来代替（以需处理的像素周围画一个正方形）。
 
-* So far, we have explained some filters which main goal is to smooth an input image. However, sometimes the filters do not only dissolve the noise, but also smooth away the edges. To avoid this (at certain extent at least), we can use a bilateral filter.
+二分滤镜
+
+* 目前，我们主要讨论的是对输入图像进行平滑处理。然而有时候我们不仅要滤镜对噪声进行消除，还要处理边缘。为了达到这一目的（在一定程度上），我们可以使用二分滤镜。
 
 * In an analogous way as the Gaussian filter, the bilateral filter also considers the neighboring pixels with weights assigned to each of them. These weights have two components, the first of which is the same weighting used by the Gaussian filter. The second component takes into account the difference in intensity between the neighboring pixels and the evaluated one.
 
