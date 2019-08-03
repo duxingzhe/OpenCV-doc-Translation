@@ -59,6 +59,6 @@
 
 * 目前，我们主要讨论的是对输入图像进行平滑处理。然而有时候我们不仅要滤镜对噪声进行消除，还要处理边缘。为了达到这一目的（在一定程度上），我们可以使用二分滤镜。
 
-* In an analogous way as the Gaussian filter, the bilateral filter also considers the neighboring pixels with weights assigned to each of them. These weights have two components, the first of which is the same weighting used by the Gaussian filter. The second component takes into account the difference in intensity between the neighboring pixels and the evaluated one.
+* 二分滤镜的方式和高斯模糊是一样的，二分滤镜同样考虑了邻近像素值的权重。只不过，二分滤镜将权重分成两个部分，第一部分和高斯模糊是一致的。第二部分是按照相近像素与被处理像素的关系强弱进行处理的。
 
-* For a more detailed explanation you can check this link.
+* 为了获得更多的信息，你可以查阅这个链接。

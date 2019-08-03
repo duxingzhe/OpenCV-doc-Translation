@@ -1,15 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中你将会学到：
 
-* Apply two very common morphological operators: Erosion and Dilation. For this purpose, you will use the following OpenCV functions:
+* 应用两种非常常用的形态学操作：腐蚀和扩张。为了完成这项操作，你可以使用一下OpenCV函数：
     * cv::erode
     * cv::dilate
-> Note
-> 
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
 
-Morphological Operations
+> 注意
+> 
+> 本教程的例子选自Richard Szeliski的《机器视觉：算法和应用》一书
+
+形态学操作
 
 * In short: A set of operations that process images based on shapes. Morphological operations apply a structuring element to an input image and generate an output image.
 
