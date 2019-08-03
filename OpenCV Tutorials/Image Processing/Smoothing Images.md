@@ -29,33 +29,27 @@
 
 * 这是一个最简单的滤镜！所有的输出像素值是以其为中心加和平均值（所有像素的权重是一致的）
 
-* The kernel is below:
+* 核函数表达式如下所示:
 
 ![](http://latex.codecogs.com/gif.latex?K%3D%5Cdfrac%7B1%7D%7BK_%7Bwidth%7D%5Ccdot%7BK_%7Bheight%7D%7D%7D%5Cbegin%7Bbmatrix%7D1%261%261%26...%261%5C%5C1%261%261%26...%261%5C%5C.%26.%26.%26...%26%201%5C%5C.%26.%26.%26...%261%5C%5C1%261%261%26...%261%5Cend%7Bbmatrix%7D)
 
-Gaussian Filter
+搞死滤镜
 
-* Probably the most useful filter (although not the fastest). Gaussian filtering is done by convolving each point in the input array with a Gaussian kernel and then summing them all to produce the output array.
+* 高斯滤镜可能是最有用的滤镜（同样不是最快的滤镜）。高斯滤镜将输入的所有点都进行卷积计算，通过高斯核函数处理并加上他们所有的值来输出最终结果。
 
-* Just to make the picture clearer, remember how a 1D Gaussian kernel look like?
-
-Gaussian Filter
-
-* Probably the most useful filter (although not the fastest). Gaussian filtering is done by convolving each point in the input array with a Gaussian kernel and then summing them all to produce the output array.
-
-* Just to make the picture clearer, remember how a 1D Gaussian kernel look like?
+* 就让我们简单地说明一下，还记得一维高斯滤镜的变换结果吗？
 
 ![](file:///F:/Project/C/OpenCV4.1.0doc/Smoothing_Tutorial_theory_gaussian_0.jpg)
 
-Assuming that an image is 1D, you can notice that the pixel located in the middle would have the biggest weight. The weight of its neighbors decreases as the spatial distance between them and the center pixel increases.
+假设图片是一维的，你可以观察到位于中间的像素值会有最大的权重，他周围的像素权重会因为空间距离而下降，中间像素的权重是增加的。
 
-L Note
+> 注意
 > 
-> Remember that a 2D Gaussian can be represented as :
+> 要记住，二维高斯滤镜可以表示为：
 > 
 > ![](http://latex.codecogs.com/gif.latex?G_{0}(x,y)=Ae^{\dfrac{-(x-\mu_{x})^{2}}{2\sigma^{2}_{x}}+\dfrac{-(y-\mu_{y})^{2}}{2\sigma^{2}_{y}}})
 > 
-> where μ is the mean (the peak) and σ2 represents the variance (per each of the variables x and y)
+> μ表示的是方差（峰值）and ![](http://latex.codecogs.com/gif.latex?\sigma^{2})代表的是变量（分别是x和y）
 
 Median Filter
 The median filter run through each element of the signal (in this case the image) and replace each pixel with the median of its neighboring pixels (located in a square neighborhood around the evaluated pixel).
