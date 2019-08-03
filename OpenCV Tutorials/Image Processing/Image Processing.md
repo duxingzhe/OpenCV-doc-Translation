@@ -18,7 +18,7 @@ Author: Ana Huamán
 
 We will draw some fancy-looking stuff using OpenCV!
 
-Smoothing Images
+对图像进行模糊处理
 
 Languages: C++, Java, Python
 
@@ -26,9 +26,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Let's take a look at some basic linear filters!
+学习一些简单的线性变换滤镜
 
-Eroding and Dilating
+侵蚀和扩张
 
 Languages: C++, Java, Python
 
@@ -36,7 +36,7 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Let's change the shape of objects!
+我们来改变一下图像物体的形状
 
 More Morphology Transformations
 

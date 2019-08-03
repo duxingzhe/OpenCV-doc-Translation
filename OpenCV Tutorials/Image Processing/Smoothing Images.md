@@ -33,7 +33,7 @@
 
 ![](http://latex.codecogs.com/gif.latex?K%3D%5Cdfrac%7B1%7D%7BK_%7Bwidth%7D%5Ccdot%7BK_%7Bheight%7D%7D%7D%5Cbegin%7Bbmatrix%7D1%261%261%26...%261%5C%5C1%261%261%26...%261%5C%5C.%26.%26.%26...%26%201%5C%5C.%26.%26.%26...%261%5C%5C1%261%261%26...%261%5Cend%7Bbmatrix%7D)
 
-搞死滤镜
+高斯滤镜
 
 * 高斯滤镜可能是最有用的滤镜（同样不是最快的滤镜）。高斯滤镜将输入的所有点都进行卷积计算，通过高斯核函数处理并加上他们所有的值来输出最终结果。
 
@@ -49,7 +49,7 @@
 > 
 > ![](http://latex.codecogs.com/gif.latex?G_{0}(x,y)=Ae^{\dfrac{-(x-\mu_{x})^{2}}{2\sigma^{2}_{x}}+\dfrac{-(y-\mu_{y})^{2}}{2\sigma^{2}_{y}}})
 > 
-> μ表示的是方差（峰值）and ![](http://latex.codecogs.com/gif.latex?\sigma^{2})代表的是变量（分别是x和y）
+> μ表示的是方差（峰值）and ![](http://latex.codecogs.com/gif.latex?\sigma^{2})代表的是变量（分别是x和y）的方差
 
 中值滤镜
 
