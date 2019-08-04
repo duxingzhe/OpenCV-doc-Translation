@@ -2,7 +2,7 @@
 
 在这篇教程中你将会学到：
 
-* 应用两种非常常用的形态学操作：腐蚀和扩张。为了完成这项操作，你可以使用一下OpenCV函数：
+* 应用两种非常常用的形态学操作：扩张和腐蚀。为了完成这项操作，你可以使用一下OpenCV函数：
     * cv::erode
     * cv::dilate
 
@@ -14,34 +14,33 @@
 
 * 简而言之：形态学就是一系列对图像中的物体形状进行处理的操作。形态学操作是对输入图片的物体进行一系列建模操作然后生成最终图形。
 
-* 大多数常见的形态学操作有：腐蚀和扩张。他们有各种各样的用法，例如：
+* 大多数常见的形态学操作有：扩张和侵蚀。他们有各种各样的用法，例如：
 
     * 去除噪声
     * 隔离独立的元素并放置到图像中的其他元素中去
     * 检测图像中的碰撞强度或者是撞击后的洞
 
-* 我们将使用以下图片为侵蚀和扩张进行简单的介绍：
+* 我们将使用以下图片为扩张和侵蚀进行简单的介绍：
 
 ![](https://docs.opencv.org/4.1.0/Morphology_1_Tutorial_Theory_Original_Image.png)
 
-侵蚀
+扩张
 
 * 这个操作包括了一张图片和一些核函数，核函数可以是任意大小或者形状，通常是一个正方形或圆形。
 * 核函数B通常有一个固定点，通常是核函数的中心。
-* 由于核函数B是是对图片的分析，我们会计算与B重合部分的最大值，并用这个最大值将位于定点处的图像像素进行替换。因此你就能推断出，这种最大值操作便会导致图像的亮度区域扩大（也就是“侵蚀”一词的由来）。
-* 侵蚀操作的数学公式是:![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\max_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
-* 就以之前提到的图片为例。我们进行侵蚀操作以后：
+* 由于核函数B是是对图片的分析，我们会计算与B重合部分的最大值，并用这个最大值将位于定点处的图像像素进行替换。因此你就能推断出，这种最大值操作便会导致图像的亮度区域扩大（也就是“扩张”一词的由来）。
+* 扩张操作的数学公式是:![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\max_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
+* 就以之前提到的图片为例。我们进行扩张操作以后：
 
 ![](https://docs.opencv.org/4.1.0/Morphology_1_Tutorial_Theory_Dilation.png)
 
 * 第二张图像的亮度部分开始入侵周围较暗的背景部分。
 
-Erosion
+侵蚀
 
-* This operation is the sister of dilation. It computes a local minimum over the area of given kernel.
-* As the kernel B is scanned over the image, we compute the minimal pixel value overlapped by B and replace the image pixel under the anchor point with that minimal value.
-The erosion operation is: ![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\min_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
-
-* Analagously to the example for dilation, we can apply the erosion operator to the original image (shown above). You can see in the result below that the bright areas of the image get thinner, whereas the dark zones gets bigger.
+* 这个操作与扩张类似。他通过给定的核函数计算后取一个最小值。
+* 由于核函数B是是对图片的分析，我们会计算与B重合部分的最小值，并用这个最小值将位于定点处的图像像素进行替换。
+* 扩张操作的数学公式是: ![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\min_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
+* 与扩张类似，我们可以对原图片进行扩张操作（由上图所示）。你可以在下图看到，图片的较亮区域开始收缩，而黑色的区域变得更大。
 
 ![](https://docs.opencv.org/4.1.0/Morphology_1_Tutorial_Theory_Erosion.png)
