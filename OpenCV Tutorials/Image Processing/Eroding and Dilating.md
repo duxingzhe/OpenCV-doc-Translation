@@ -28,13 +28,13 @@
 
 * 这个操作包括了一张图片和一些核函数，核函数可以是任意大小或者形状，通常是一个正方形或圆形。
 * 核函数B通常有一个固定点，通常是核函数的中心。
-* As the kernel B is scanned over the image, we compute the maximal pixel value overlapped by B and replace the image pixel in the anchor point position with that maximal value. As you can deduce, this maximizing operation causes bright regions within an image to "grow" (therefore the name dilation).
-* The dilatation operation is:![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\max_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
-* Take the above image as an example. Applying dilation we can get:
+* 由于核函数B是是对图片的分析，我们会计算与B重合部分的最大值，并用这个最大值将位于定点处的图像像素进行替换。因此你就能推断出，这种最大值操作便会导致图像的亮度区域扩大（也就是“侵蚀”一词的由来）。
+* 侵蚀操作的数学公式是:![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=\max_{(x',y'):\,\texttt{element}(x',y')\ne0}\texttt{src}(x+x',y+y'))
+* 就以之前提到的图片为例。我们进行侵蚀操作以后：
 
 ![](https://docs.opencv.org/4.1.0/Morphology_1_Tutorial_Theory_Dilation.png)
 
-* The bright area of the letter dilates around the black regions of the background.
+* 第二张图像的亮度部分开始入侵周围较暗的背景部分。
 
 Erosion
 
