@@ -20,26 +20,26 @@
 * 侵蚀
 * 扩张
 
-Based on these two we can effectuate more sophisticated transformations to our images. Here we discuss briefly 5 operations offered by OpenCV:
+基于这两项基本操作，我们能够对我们的图片进行更多的细致性操作。这里我们将用OpenCV来讨论5种操作：
 
 Opening
 
-* It is obtained by the erosion of an image followed by a dilation.
+* 这个操作是先扩张再侵蚀。
 
 ![](http://latex.codecogs.com/gif.latex?dst=open(src,element)=dilate(erode(src,element)))
 
-* Useful for removing small objects (it is assumed that the objects are bright on a dark foreground)
-* For instance, check out the example below. The image at the left is the original and the image at the right is the result after applying the opening transformation. We can observe that the small dots have disappeared.
+* 可以用来去除一些小物体（假设小物体是处在黑暗区域的）
+* 例如，观察一下下面的例子。左边的图形是原始图片，右边的图形是进行了Opening操作以后的图片。我们观察到小点已经消失了。
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Opening.png)
 
 Closing
 
-* It is obtained by the dilation of an image followed by an erosion.
+* 这个操作是先侵蚀再扩张。
 
 ![](http://latex.codecogs.com/gif.latex?dst=close(src,element)=erode(dilate(src,element)))
 
-* Useful to remove small holes (dark regions).
+* 可以用来去除一些小洞。
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Closing.png)
 
