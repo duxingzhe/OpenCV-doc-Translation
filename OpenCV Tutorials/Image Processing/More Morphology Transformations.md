@@ -45,17 +45,17 @@ Closing
 
 Morphological Gradient
 
-* It is the difference between the dilation and the erosion of an image.
+* 对于图片来说，他与扩张和侵蚀有些不同。
 
 ![](http://latex.codecogs.com/gif.latex?dst=morph_{grad}(src,element)=dilate(src,element)-erode(src,element))
 
-* It is useful for finding the outline of an object as can be seen below:
+* 可以用来临摹图像物体的轮廓，如下图所示：
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Gradient.png)
 
 Top Hat
 
-* It is the difference between an input image and its opening.
+* 可以对比一下输入图形和Opening操作后的图形。
 
 ![](http://latex.codecogs.com/gif.latex?dst=tophat(src,element)=src-open(src,element))
 
@@ -63,7 +63,7 @@ Top Hat
 
 Black Hat
 
-* It is the difference between the closing and its input image
+* 可以对比一下原始图形和经过Closing操作后的图形。
 
 ![](http://latex.codecogs.com/gif.latex?dst=blackhat(src,element)=close(src,element)-src)
 
