@@ -1,24 +1,24 @@
-Goal
+目标
 
-In this tutorial you will learn how to:
+你将在本教程内学到：
 
-* Use the OpenCV function cv::morphologyEx to apply Morphological Transformation such as:
-    * Opening
-    * Closing
-    * Morphological Gradient
-    * Top Hat
+* 使用OpenCV中的cv::morphologyEx函数来进行形态学的转换，例如：
+    * 打孔
+    * 闭合
+    * 形态梯度
+    * Top Hat（由于实在没有合适的中文翻译，故保留原文）
     * Black Hat
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 以下内容来自Bradski and Kaehler的《OpenCV》入门一书。
 
-In the previous tutorial we covered two basic Morphology operations:
+在之前的教程中，我们介绍了两种基本的形态学操作：
 
-* Erosion
-* Dilation.
+* 侵蚀
+* 扩张
 
 Based on these two we can effectuate more sophisticated transformations to our images. Here we discuss briefly 5 operations offered by OpenCV:
 
@@ -59,7 +59,7 @@ Top Hat
 
 ![](http://latex.codecogs.com/gif.latex?dst=tophat(src,element)=src-open(src,element))
 
-Morphology_2_Tutorial_Theory_TopHat.png
+![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_TopHat.png)
 
 Black Hat
 
