@@ -1,18 +1,18 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+从这篇教程中，你将会学习到：
 
-* Apply two very common morphology operators (i.e. Dilation and Erosion), with the creation of custom kernels, in order to extract straight lines on the horizontal and vertical axes. For this purpose, you will use the following OpenCV functions:
+* 使用两种非常常用的形态学操作（如侵蚀和扩张），使用自定义的核，这样就能直接提取到垂直和水平方向的直线。为了能够达到这一目的，你需要以下OpenCV函数：
 
     * erode()
     * dilate()
     * getStructuringElement()
 
-in an example where your goal will be to extract the music notes from a music sheet.
+接下来的例子中，你将会知道如何从乐谱中提取出音符。
 
-Theory
+理论
 
-Morphology Operations
+形态学操作
 
 Morphology is a set of image processing operations that process images based on predefined structuring elements known also as kernels. The value of each pixel in the output image is based on a comparison of the corresponding pixel in the input image with its neighbors. By choosing the size and shape of the kernel, you can construct a morphological operation that is sensitive to specific shapes regarding the input image.
 
