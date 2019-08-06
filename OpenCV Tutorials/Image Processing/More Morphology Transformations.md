@@ -6,8 +6,8 @@
     * 打孔
     * 闭合
     * 形态梯度
-    * Top Hat（由于实在没有合适的中文翻译，故保留原文）
-    * Black Hat
+    * 顶帽
+    * 黑帽
 
 理论
 
@@ -22,7 +22,7 @@
 
 基于这两项基本操作，我们能够对我们的图片进行更多的细致性操作。这里我们将用OpenCV来讨论5种操作：
 
-Opening
+打开
 
 * 这个操作是先扩张再侵蚀。
 
@@ -33,7 +33,7 @@ Opening
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Opening.png)
 
-Closing
+闭合
 
 * 这个操作是先侵蚀再扩张。
 
@@ -43,7 +43,7 @@ Closing
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Closing.png)
 
-Morphological Gradient
+径向形态学变换
 
 * 对于图片来说，他与扩张和侵蚀有些不同。
 
@@ -53,7 +53,7 @@ Morphological Gradient
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_Gradient.png)
 
-Top Hat
+顶帽
 
 * 可以对比一下输入图形和Opening操作后的图形。
 
@@ -61,7 +61,7 @@ Top Hat
 
 ![](https://docs.opencv.org/4.1.0/Morphology_2_Tutorial_Theory_TopHat.png)
 
-Black Hat
+黑帽
 
 * 可以对比一下原始图形和经过Closing操作后的图形。
 
