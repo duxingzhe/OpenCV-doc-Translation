@@ -13,28 +13,28 @@
 
 ![](http://latex.codecogs.com/gif.latex?A\circledast{B}=(A\ominus{B_1})\cap(A^c\ominus{B_2}))
 
-Therefore, the hit-or-miss operation comprises three steps:
+因此，击中与否变换包括以下三个步骤：
 
-Erode image A with structuring element B1.
+1.用B1侵蚀图像A。
 
-Erode the complement of image A ( Ac) with structuring element B2.
+2.用元素B2侵蚀图像A的剩下部分。
 
-AND results from step 1 and step 2.
+3.将步骤一和步骤二的图形做与运算。
 
-The structuring elements B1 and B2 can be combined into a single element B. Let's see an example:
+元素B1和B2可以合成一个简单的元素B。让我们来看个例子：
 
 ![](https://docs.opencv.org/4.1.0/hitmiss_kernels.png)
 
 Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel
 
-In this case, we are looking for a pattern in which the central pixel belongs to the background while the north, south, east, and west pixels belong to the foreground. The rest of pixels in the neighbourhood can be of any kind, we don't care about them. Now, let's apply this kernel to an input image:
+在这个例子当中，我们需要寻找中心像素是属于背景的，而东西南北的元素是属于前景的。而邻近元素则是任何一种，我们并不关注。现在我们可以用以下核函数对输入图像进行处理：
 
 ![](https://docs.opencv.org/4.1.0/hitmiss_input.png)
 
-Input binary image
+输入二值图
 
 ![](https://docs.opencv.org/4.1.0/hitmiss_output.png)
 
-Output binary image
+输出二值图
 
 You can see that the pattern is found in just one location within the image.
