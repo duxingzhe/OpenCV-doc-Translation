@@ -34,7 +34,7 @@
 
 曼德尔布罗特集合是复平面上一系列复数点的集合，围绕着零点，根据下述二次映射来作图：
 
-![](http://latex.codecogs.com/gif.latex?\begin{cases}z_0=0&z_{n+1}=z_n^2+c\end{cases})
+![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Bcases%7D%20z_0%3D0%5C%5C%20z_%7Bn+1%7D%3Dz_n%5E2+c%20%5Cend%7Bcases%7D)
 
 该函数保持有界。也就是说，如果复数c是曼德尔布罗特集合中的，当![](http://latex.codecogs.com/gif.latex?z_{0}=0)时并且持续执行这个递归式，无论n取多大，![](http://latex.codecogs.com/gif.latex?z_{n})的绝对值始终有界。也就是可以表示成如下所示：
 
