@@ -18,7 +18,7 @@
 
 两种最基本的形态学操作是侵蚀和扩张。侵蚀会将图像中目标对象的像素加载物体的边缘上，而扩张则正好相反。增加或减少像素的数量基于对图像处理中使用的预定义元素大小和形状。通常情况下，这两个操作的规则是：
 
-* Dilation: The value of the output pixel is the maximum value of all the pixels that fall within the structuring element's size and shape. For example in a binary image, if any of the pixels of the input image falling within the range of the kernel is set to the value 1, the corresponding pixel of the output image will be set to 1 as well. The latter applies to any type of image (e.g. grayscale, bgr, etc).
+* 侵蚀：将所有预先定义的形状元素大小和形状内的像素值全部计算出来，找到最大值，并作为输出像素值。例如，在二值图里，如果所有落在规定区域内的输入图像像素值都为1，那么对应输出像素的值也会被设置为1。后面提高的计算情况适用于任何类型的图片（例如，灰阶图，三色图等）。
 
 ![](https://docs.opencv.org/4.1.0/morph21.gif)
 
@@ -28,7 +28,7 @@ Dilation on a Binary Image
 
 Dilation on a Grayscale Image
 
-* Erosion: The vise versa applies for the erosion operation. The value of the output pixel is the minimum value of all the pixels that fall within the structuring element's size and shape. Look the at the example figures below:
+* 扩张：这项操作正好与侵蚀相反。将所有预先定义的形状元素大小和形状内的像素值全部计算出来，找到最小值，并作为输出像素值。可以观察以下图形：
 
 ![](https://docs.opencv.org/4.1.0/morph211.png)
 
@@ -38,9 +38,9 @@ Erosion on a Binary Image
 
 Erosion on a Grayscale Image
 
-Structuring Elements
+结构性元素
 
-As it can be seen above and in general in any morphological operation the structuring element used to probe the input image, is the most important part.
+从之前的教程中看出，任何形态学操作当中，结构性元素用来处理图像，它是最重要的一部分。
 
 A structuring element is a matrix consisting of only 0's and 1's that can have any arbitrary shape and size. Typically are much smaller than the image being processed, while the pixels with values of 1 define the neighborhood. The center pixel of the structuring element, called the origin, identifies the pixel of interest – the pixel being processed.
 
