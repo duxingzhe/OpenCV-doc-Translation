@@ -16,7 +16,7 @@
 
 形态学是一系列基于预定义元素（同时也被称作核）的图像处理技术。每一个输出图像像素的值都基于输入函数对应像素的临近像素之间的比较。当你选择了核的大小和形状以后，你就可以对输入图像创建一种基于特定形状的形态学操作。
 
-Two of the most basic morphological operations are dilation and erosion. Dilation adds pixels to the boundaries of the object in an image, while erosion does exactly the opposite. The amount of pixels added or removed, respectively depends on the size and shape of the structuring element used to process the image. In general the rules followed from these two operations have as follows:
+两种最基本的形态学操作是侵蚀和扩张。侵蚀会将图像中目标对象的像素加载物体的边缘上，而扩张则正好相反。增加或减少像素的数量基于对图像处理中使用的预定义元素大小和形状。通常情况下，这两个操作的规则是：
 
 * Dilation: The value of the output pixel is the maximum value of all the pixels that fall within the structuring element's size and shape. For example in a binary image, if any of the pixels of the input image falling within the range of the kernel is set to the value 1, the corresponding pixel of the output image will be set to 1 as well. The latter applies to any type of image (e.g. grayscale, bgr, etc).
 
