@@ -14,7 +14,7 @@
 
 形态学操作
 
-Morphology is a set of image processing operations that process images based on predefined structuring elements known also as kernels. The value of each pixel in the output image is based on a comparison of the corresponding pixel in the input image with its neighbors. By choosing the size and shape of the kernel, you can construct a morphological operation that is sensitive to specific shapes regarding the input image.
+形态学是一系列基于预定义元素（同时也被称作核）的图像处理技术。每一个输出图像像素的值都基于输入函数对应像素的临近像素之间的比较。当你选择了核的大小和形状以后，你就可以对输入图像创建一种基于特定形状的形态学操作。
 
 Two of the most basic morphological operations are dilation and erosion. Dilation adds pixels to the boundaries of the object in an image, while erosion does exactly the opposite. The amount of pixels added or removed, respectively depends on the size and shape of the structuring element used to process the image. In general the rules followed from these two operations have as follows:
 
