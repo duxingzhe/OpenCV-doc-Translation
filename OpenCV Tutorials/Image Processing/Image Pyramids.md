@@ -1,18 +1,18 @@
-Goal
+目标
 
-In this tutorial you will learn how to:
+在这篇教程中，你将学到如何：
 
-* Use the OpenCV functions pyrUp() and pyrDown() to downsample or upsample a given image.
+* Use the OpenCV functions pyrUp() and pyrDown() to downsample or upsample a given image.使用OpenCV的pyrUp()和pyrDown()来讲图像层级降低或提高采样率。
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 本教程例子来自Bradski and Kaehler的Learning OpenCV一书.
 
-* Usually we need to convert an image to a size different than its original. For this, there are two possible options:
-    1.Upsize the image (zoom in) or
-    2.Downsize it (zoom out).
+* 通常情况下我们需要对图像的大小进行转化。为了达到这一目的，我们有两种不同的方法：
+    1.放大图片
+    2.缩小图片
 * Although there is a geometric transformation function in OpenCV that -literally- resize an image (resize, which we will show in a future tutorial), in this section we analyze first the use of Image Pyramids, which are widely applied in a huge range of vision applications.
 
 Image Pyramid
