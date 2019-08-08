@@ -42,12 +42,12 @@ Erosion on a Grayscale Image
 
 从之前的教程中看出，任何形态学操作当中，结构性元素用来处理图像，它是最重要的一部分。
 
-A structuring element is a matrix consisting of only 0's and 1's that can have any arbitrary shape and size. Typically are much smaller than the image being processed, while the pixels with values of 1 define the neighborhood. The center pixel of the structuring element, called the origin, identifies the pixel of interest – the pixel being processed.
+结构性元素是一只个包含了0和1的矩阵，这个元素可以有不同的形状和大小。通常情况下，结构性元素比需要处理的图片要小，1表示的是邻近元素。我们将结构性元素的中心元素称之为原点，确定了我们感兴趣的像素，也就是需要处理的元素。
 
-For example, the following illustrates a diamond-shaped structuring element of 7x7 size.
+例如，下面的图像表示的是一个六边形大小的结构性元素，它的大小是7x7。
 
 ![](https://docs.opencv.org/4.1.0/morph12.gif)
 
 A Diamond-Shaped Structuring Element and its Origin
 
-A structuring element can have many common shapes, such as lines, diamonds, disks, periodic lines, and circles and sizes. You typically choose a structuring element the same size and shape as the objects you want to process/extract in the input image. For example, to find lines in an image, create a linear structuring element as you will see later.
+结构性元素可以有各种各样的形状，线条、六边形、碟片、周期型线条或者是圆。通常情况下你会设置一个和输入图片中需要处理/扩大的物体一样大小和形状的结构性元素。

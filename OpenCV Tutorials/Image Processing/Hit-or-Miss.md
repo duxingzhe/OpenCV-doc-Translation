@@ -37,4 +37,4 @@ Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'.
 
 输出二值图
 
-You can see that the pattern is found in just one location within the image.
+你可以看到在这张图片的某一地方应用了一个模型。
