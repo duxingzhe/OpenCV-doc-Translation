@@ -2,7 +2,7 @@
 
 在这篇教程中，你将学到如何：
 
-* Use the OpenCV functions pyrUp() and pyrDown() to downsample or upsample a given image.使用OpenCV的pyrUp()和pyrDown()来讲图像层级降低或提高采样率。
+* 使用OpenCV的pyrUp()和pyrDown()来降低或提高图像采样率。
 
 理论
 
