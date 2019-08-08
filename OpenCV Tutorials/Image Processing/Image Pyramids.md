@@ -13,15 +13,15 @@
 * 通常情况下我们需要对图像的大小进行转化。为了达到这一目的，我们有两种不同的方法：
     1.放大图片
     2.缩小图片
-* Although there is a geometric transformation function in OpenCV that -literally- resize an image (resize, which we will show in a future tutorial), in this section we analyze first the use of Image Pyramids, which are widely applied in a huge range of vision applications.
+* 尽管在OpenCV里，这种几何变换（从字面上）是将图形的形状大小进行改变（我们会在之后的章节解释调整大小的方法）。在这一章我们会分析图像金字塔的用法，这种用法在很多视觉处理软件中有非常多的使用。
 
-Image Pyramid
+图像金字塔
 
-* An image pyramid is a collection of images - all arising from a single original image - that are successively downsampled until some desired stopping point is reached.
-* There are two common kinds of image pyramids:
-    * Gaussian pyramid: Used to downsample images
-    * Laplacian pyramid: Used to reconstruct an upsampled image from an image lower in the pyramid (with less resolution)
-* In this tutorial we'll use the Gaussian pyramid.
+* 图像金字塔是将一张原始图片进行缩放后叠加在一起的一系列图片。图片会不断地缩放直到达到终止目标。
+* 通常情况下有两种实现图像金字塔的方法：
+    * 高斯金字塔：用于缩放图像
+    * 拉普拉斯金字塔：用于重构从金字塔下层提取出来的图片（通常分辨率较低），将他们放大
+* 本篇教程，我们会使用高斯金字塔。
 
 Gaussian Pyramid
 
