@@ -8,7 +8,7 @@
 
 > 注意
 >
-> 这些例子来自Bradski和Kaehler所著的Learning OpenCV一书. 
+> 这些例子来自Bradski和Kaehler所著的Learning OpenCV一书。
 
 什么是阈值？
 
