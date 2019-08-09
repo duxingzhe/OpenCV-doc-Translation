@@ -31,7 +31,7 @@ Threshold Binary
 
 * This thresholding operation can be expressed as:
 
-dst(x,y)={maxVal0if src(x,y)>threshotherwise
+![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20maxVal%5Ctexttt%7B%20if%20%7D%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%3D%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7B0%7D%20%5Ctexttt%7B%20otherwise%20%7D%20%5Cend%7Bcases%7D)
 
 * So, if the intensity of the pixel src(x,y) is higher than thresh, then the new pixel intensity is set to a MaxVal. Otherwise, the pixels are set to 0.
 
@@ -41,7 +41,7 @@ Threshold Binary, Inverted
 
 * This thresholding operation can be expressed as:
 
-dst(x,y)={0maxValif src(x,y)>threshotherwise
+![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20%5Ctexttt%7B0%7D%5Ctexttt%7B%20if%20%7D%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%3D%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20maxVal%20%5Ctexttt%7B%20otherwise%20%7D%20%5Cend%7Bcases%7D)
 
 * If the intensity of the pixel src(x,y) is higher than thresh, then the new pixel intensity is set to a 0. Otherwise, it is set to MaxVal.
 
@@ -51,7 +51,7 @@ Truncate
 
 * This thresholding operation can be expressed as:
 
-![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%200%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7BmavVal%7D%2Cotherwise%20%5Cend%7Bcases%7D)
+![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20%5Ctexttt%7Bthreshold%7D%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%2Cotherwise%20%5Cend%7Bcases%7D)
 
 * The maximum intensity value for the pixels is thresh, if src(x,y) is greater, then its value is truncated. See figure below:
 
@@ -61,7 +61,7 @@ Threshold to Zero
 
 * This operation can be expressed as:
 
-![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20%5Ctexttt%7Bthreshold%7D%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%2Cotherwise%20%5Cend%7Bcases%7D)
+![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20src(x,y)%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%200%2Cotherwise%20%5Cend%7Bcases%7D)
 
 * If src(x,y) is lower than thresh, the new pixel value will be set to 0.
 
@@ -71,7 +71,7 @@ Threshold to Zero, Inverted
 
 * This operation can be expressed as:
 
-![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20maxVal%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%200%2Cotherwise%20%5Cend%7Bcases%7D)
+![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%5Ctexttt%7B%20if%20%7D%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%3D%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7B0%7D%20%5Ctexttt%7B%20otherwise%20%7D%20%5Cend%7Bcases%7D)
 
 * If src(x,y) is greater than thresh, the new pixel value will be set to 0.
 
