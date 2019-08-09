@@ -1,19 +1,19 @@
-Goal
+目标
 
-In this tutorial you will learn how to:
+在本篇教程你将学到：
 
-* Perform basic thresholding operations using OpenCV function cv::threshold
+* 我们使用OpenCV的cv::threshold函数实现基本的阈值操作
 
-Cool Theory
+理论介绍
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler. What is Thresholding?
+> 这些例子来自Bradski和Kaehler所著的Learning OpenCV一书. 
 
-Thresholding
+什么是阈值？
 
-* The simplest segmentation method
-* Application example: Separate out regions of an image corresponding to objects which we want to analyze. This separation is based on the variation of intensity between the object pixels and the background pixels.
+* 最简单的分割方法
+* 应用例子：将图片中的物体进行分隔，以提取出我们需要分析的物体。这种分割算法是基于物体的像素和背景像素之间的强度变量值。
 * To differentiate the pixels we are interested in from the rest (which will eventually be rejected), we perform a comparison of each pixel intensity value with respect to a threshold (determined according to the problem to solve).
 * Once we have separated properly the important pixels, we can set them with a determined value to identify them (i.e. we can assign them a value of 0 (black), 255 (white) or any value that suits your needs).
 
