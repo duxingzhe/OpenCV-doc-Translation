@@ -57,22 +57,22 @@
 
 ![](https://docs.opencv.org/4.1.0/Threshold_Tutorial_Theory_Truncate.png)
 
-Threshold to Zero
+低于阈值为零
 
-* This operation can be expressed as:
+* 这个阈值操作可以用如下公式表示：
 
 ![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20src(x,y)%2C%20%5Ctexttt%7Bsrc%7D%28x%2Cy%29%3E%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%200%2Cotherwise%20%5Cend%7Bcases%7D)
 
-* If src(x,y) is lower than thresh, the new pixel value will be set to 0.
+* 如果src(x,y)低于阈值，新的像素值将设置成0。
 
 ![](https://docs.opencv.org/4.1.0/Threshold_Tutorial_Theory_Zero.png)
 
-Threshold to Zero, Inverted
+高于阈值为零
 
-* This operation can be expressed as:
+* 这个阈值操作可以用如下公式表示：
 
 ![](http://latex.codecogs.com/gif.latex?\texttt{dst}(x,y)=%5Cbegin%7Bcases%7D%20%26%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%5Ctexttt%7B%20if%20%7D%20%5Ctexttt%7Bsrc%28x%2Cy%29%7D%3D%20%5Ctexttt%7Bthresh%7D%20%5C%5C%20%26%20%5Ctexttt%7B0%7D%20%5Ctexttt%7B%20otherwise%20%7D%20%5Cend%7Bcases%7D)
 
-* If src(x,y) is greater than thresh, the new pixel value will be set to 0.
+* 如果src(x,y)高于阈值，新的像素值将设置成0。
 
 ![](https://docs.opencv.org/4.1.0/Threshold_Tutorial_Theory_Zero_Inverted.png)
