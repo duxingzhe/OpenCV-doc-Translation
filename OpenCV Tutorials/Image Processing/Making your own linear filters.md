@@ -1,22 +1,22 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function filter2D() to create your own linear filters.
+* 使用OpenCV的filter2D()函数实现你自己的线性滤镜。
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 本文例子来源于Bradski和Kaehler所著的Learning OpenCV一书。
 
-Correlation
+修正
 
-In a very general sense, correlation is an operation between every part of an image and an operator (kernel).
+在一个非常通用的场景中，修正是在图像的每一部分和操作（核）之间的处理过程。
 
-What is a kernel?
+什么是核？
 
-A kernel is essentially a fixed size array of numerical coefficients along with an anchor point in that array, which is typically located at the center.
+核通常是一个固定大小的数组元素，里面包含了数值系数和一个锚点，一般而言锚点会位于数组的中心位置。
 
 ![](https://docs.opencv.org/4.1.0/filter_2d_tutorial_kernel_theory.png)
 
