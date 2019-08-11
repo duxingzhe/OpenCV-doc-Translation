@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在本教程中，你将会学到：
 
-* Perform basic thresholding operations using OpenCV cv::inRange function.
-* Detect an object based on the range of pixel values in the HSV colorspace.
+* 使用OpenCV的cv::inRange函数进行简单的阈值操作。
+* 在HSV色域中检测图像中的元素。
 
-Theory
+理论
 
-In the previous tutorial, we learnt how to perform thresholding using cv::threshold function.
+在之前的教程中，我们学习了如何使用cv::threshold函数进行阈值处理。
 
-* In this tutorial, we will learn how to do it using cv::inRange function.
-* The concept remains the same, but now we add a range of pixel values we need.
+* 在本教程中，我们将学习cv::inRange函数。
+* 概念是差不多的，但是我们有一系列的像素需要处理。
 
 HSV colorspace
 
