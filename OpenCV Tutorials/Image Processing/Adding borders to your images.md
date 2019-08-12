@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function copyMakeBorder() to set the borders (extra padding to your image).
+* 使用OpenCV copyMakeBorder()函数来设置边框（额外的图像边距）
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 本文例子来源于Bradski和Kaehler所著的Learning OpenCV一书。
 
-1.In our previous tutorial we learned to use convolution to operate on images. One problem that naturally arises is how to handle the boundaries. How can we convolve them if the evaluated points are at the edge of the image?
+1.在之前的教程中，我们学会了如何使用卷积的方式处理图片。但是，很自然地我们还有其他问题，如何处理图像的边框？如果我们需要处理的图像像素位于图像的边界上，我们应该如何处理？
 
 2.What most of OpenCV functions do is to copy a given image onto another slightly larger image and then automatically pads the boundary (by any of the methods explained in the sample code just below). This way, the convolution can be performed over the needed pixels without problems (the extra padding is cut after the operation is done).
 
