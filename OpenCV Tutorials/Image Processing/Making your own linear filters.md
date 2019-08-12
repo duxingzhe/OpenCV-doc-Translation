@@ -20,20 +20,20 @@
 
 ![](https://docs.opencv.org/4.1.0/filter_2d_tutorial_kernel_theory.png)
 
-How does correlation with a kernel work?
+一个有核的修正操作是怎么样的？
 
-Assume you want to know the resulting value of a particular location in the image. The value of the correlation is calculated in the following way:
+假如你想知道图像中具体位置的操作结果。我们可以通过以下方式计算修正操作的值：
 
-1.Place the kernel anchor on top of a determined pixel, with the rest of the kernel overlaying the corresponding local pixels in the image.
-2.Multiply the kernel coefficients by the corresponding image pixel values and sum the result.
-3.Place the result to the location of the anchor in the input image.
-4.Repeat the process for all pixels by scanning the kernel over the entire image.
+1.将核放置在确定像素的顶端，同时核的其他部分覆盖图像的其他对应区域。
+2.用对应图像像素乘以核系数，并加上全部的值。
+3.将结果保存在输入图像中锚点对应位置。
+4.通过对核进行遍历对整个图像覆盖的像素点进行相同操作。
 
-Expressing the procedure above in the form of an equation we would have:
+以上步骤可以用以下公式来表示：
 
 ![](http://latex.codecogs.com/gif.latex?H(x,y)=\sum_{i=0}^{M_{i}-1}\sum_{j=0}^{M_{j}-1}I(x+i-a_{i},y+j-a_{j})K(i,j))
 
-Fortunately, OpenCV provides you with the function filter2D() so you do not have to code all these operations.
+幸运的是，OpenCV提供了filter2D()函数，所以你可以少写很多代码。
 
 What does this program do?
 
