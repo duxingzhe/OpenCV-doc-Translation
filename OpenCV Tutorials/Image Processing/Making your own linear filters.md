@@ -35,13 +35,13 @@
 
 幸运的是，OpenCV提供了filter2D()函数，所以你可以少写很多代码。
 
-What does this program do?
+这个程序主要是做什么的？
 
-* Loads an image
-* Performs a normalized box filter. For instance, for a kernel of size size=3, the kernel would be:
+* 加载一张图片
+* 进行一次普通的核滤镜转换。例如，当核的大小为3  size=3，核的表达式应是：
 
 ![](http://latex.codecogs.com/gif.latex?K%3D%5Cdfrac%7B1%7D%7B3%5Ccdot%7B3%7D%7D%5Cbegin%7Bbmatrix%7D1%261%261%5C%5C1%261%261%5C%5C1%261%261%5Cend%7Bbmatrix%7D)
 
-The program will perform the filter operation with kernels of sizes 3, 5, 7, 9 and 11.
+程序中滤镜核的大小分别是3、5、7、9和11。
 
-* The filter output (with each kernel) will be shown during 500 milliseconds
+* 滤镜结果（跟每一个核的操作）将会在500毫秒后输出。
