@@ -26,9 +26,9 @@
     * 加载一张图片
     * 允许用户使用各种各样的值来对图像的边界进行边框处理。这里有两个选项：
         
-        1.Constant value border: Applies a padding of a constant value for the whole border. This value will be updated randomly each 0.5 seconds.
-        2.Replicated border: The border will be replicated from the pixel values at the edges of the original image.
+        1.固定值的边框：对整个边框增加固定宽度。每五秒钟更新固定边框的值。
+        2.复杂的边框值：边框将通过原始图片的边界值复制得到。
     
-    The user chooses either option by pressing 'c' (constant) or 'r' (replicate)
+    用户通过输入“c”(constant)和“r”(replicate)来切换选项。
 
-    * The program finishes when the user presses 'ESC'
+    * 当用户按下“ESC”键后，程序停止运行。
