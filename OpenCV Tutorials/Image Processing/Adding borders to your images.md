@@ -14,17 +14,17 @@
 
 2.What most of OpenCV functions do is to copy a given image onto another slightly larger image and then automatically pads the boundary (by any of the methods explained in the sample code just below). This way, the convolution can be performed over the needed pixels without problems (the extra padding is cut after the operation is done).
 
-3.In this tutorial, we will briefly explore two ways of defining the extra padding (border) for an image:
+3.在这篇教程中，我们将简单使用两种确认图像额外边界的方法：
 
-    * BORDER_CONSTANT: Pad the image with a constant value (i.e. black or 0
-    * BORDER_REPLICATE: The row or column at the very edge of the original is replicated to the extra border.
+    * BORDER_CONSTANT: 图像边界使用常量值进行操作（例如黑色或0）
+    * BORDER_REPLICATE: 原始图像的行或列通过额外边界来进行复制。
     
-This will be seen more clearly in the Code section.
+这些概念在代码部分可以更加直观的感受到。
 
-* What does this program do?
+* 这些代码能做什么？
 
-    * Load an image
-    * Let the user choose what kind of padding use in the input image. There are two options:
+    * 加载一张图片
+    * 允许用户使用各种各样的值来对图像的边界进行边框处理。这里有两个选项：
         
         1.Constant value border: Applies a padding of a constant value for the whole border. This value will be updated randomly each 0.5 seconds.
         2.Replicated border: The border will be replicated from the pixel values at the edges of the original image.
