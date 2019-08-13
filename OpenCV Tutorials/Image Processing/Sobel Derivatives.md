@@ -1,18 +1,18 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function Sobel() to calculate the derivatives from an image.
-* Use the OpenCV function Scharr() to calculate a more accurate derivative for a kernel of size 3⋅3
+* 使用OpenCV中的Sobel()函数来计算图像的派生值。
+* 使用OpenCV中的Scharr()函数通过3*3的核函数来计算更为精确的派生值。
 
-Theory
+理论
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 本教程的例子选自Richard Szeliski的《机器视觉：算法和应用》一书以及OpenCV入门教程。
 
-1.In the last two tutorials we have seen applicative examples of convolutions. One of the most important convolutions is the computation of derivatives in an image (or an approximation to them).
-2.Why may be important the calculus of the derivatives in an image? Let's imagine we want to detect the edges present in the image. For instance:
+1.在前两篇教程中我们已经看到了一些实际的卷积例子。一个特别重要的卷积例子是计算图片的派生值（或近似的派生值）。
+2.为什么计算图像的派生值特别重要？想象一下，我们想检测显示在图像中的边界。例如：
 
 ![](https://docs.opencv.org/4.1.0/Sobel_Derivatives_Tutorial_Theory_0.jpg)
 
