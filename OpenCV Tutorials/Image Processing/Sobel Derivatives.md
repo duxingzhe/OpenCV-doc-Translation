@@ -8,27 +8,29 @@
 理论
 
 > 注意
->
-> 本教程的例子选自Richard Szeliski的《机器视觉：算法和应用》一书以及OpenCV入门教程。
+> 
+> 以下内容来自Bradski和Kaehler的《OpenCV》入门一书。
 
 1.在前两篇教程中我们已经看到了一些实际的卷积例子。一个特别重要的卷积例子是计算图片的派生值（或近似的派生值）。
+
 2.为什么计算图像的派生值特别重要？想象一下，我们想检测显示在图像中的边界。例如：
 
 ![](https://docs.opencv.org/4.1.0/Sobel_Derivatives_Tutorial_Theory_0.jpg)
 
-You can easily notice that in an edge, the pixel intensity changes in a notorious way. A good way to express changes is by using derivatives. A high change in gradient indicates a major change in the image.
+你可以清楚地看到在边缘上，像素颜色有非常明显的变化。一个非常好的方法来描述这个变化便是衍生值。在图像中，径向上有高度变化值表示有显著的变化。
 
-3.To be more graphical, let's assume we have a 1D-image. An edge is shown by the "jump" in intensity in the plot below:
+3.为了能更形象一点，我们假设一张1维图形。在下图中，强度值跳跃的地方表示的便是边界：
 
 ![](https://docs.opencv.org/4.1.0/Sobel_Derivatives_Tutorial_Theory_Intensity_Function.jpg)
 
-4.The edge "jump" can be seen more easily if we take the first derivative (actually, here appears as a maximum)
+4.边界条约如果我们使用了派生值的话会更加明显（实际上，这里是最大值）
 
 ![](https://docs.opencv.org/4.1.0/Sobel_Derivatives_Tutorial_Theory_dIntensity_Function.jpg)
 
-5.So, from the explanation above, we can deduce that a method to detect edges in an image can be performed by locating pixel locations where the gradient is higher than its neighbors (or to generalize, higher than a threshold).
+5.因此，通过上述解释，我们可以得出一种检测边界的方法，图像可以通过检测固定像素位置的径向变化，要是大于其领域像素的径向变化，就有可能是边界（或者更一半的情况，比阈值高）。
 
-6.More detailed explanation, please refer to Learning OpenCV by Bradski and Kaehler
+6.更多详细内容，请参阅Bradski和Kaehler的《OpenCV》入门一书。
+
 Sobel Operator
 
 1.The Sobel Operator is a discrete differentiation operator. It computes an approximation of the gradient of an image intensity function.
