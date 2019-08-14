@@ -31,23 +31,23 @@
 
 6.更多详细内容，请参阅Bradski和Kaehler的《OpenCV》入门一书。
 
-Sobel Operator
+索贝尔算法
 
-1.The Sobel Operator is a discrete differentiation operator. It computes an approximation of the gradient of an image intensity function.
+1.索贝尔算法是离散微积分算子。他是近似估计图片像素的径向变化值的函数。
 
-2.The Sobel Operator combines Gaussian smoothing and differentiation.
+2.索贝算子结合了高斯模糊和微分。
 
-Formulation
+公式化处理
 
-Assuming that the image to be operated is I:
+我们把需要处理的图像记做I：
 
-1.We calculate two derivatives:
+1.计算两个派生值：
 
-    a.Horizontal changes: This is computed by convolving I with a kernel Gx with odd size. For example for a kernel size of 3, Gx would be computed as:
+    a.水平变化：这会将I用一个奇数大小的核函数Gx来进行卷积处理。例如对于一大小为三的核函数，Gx会用如下公式表是：
     
     ![](http://latex.codecogs.com/gif.latex?G_%7Bx%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-1%20%26%200%20%26%20+1%20%5C%5C%20-2%20%26%200%20%26%20+2%20%5C%5C%20-1%20%26%200%20%26%20+1%20%5Cend%7Bbmatrix%7D%20*%20I)
 
-    b.Vertical changes: This is computed by convolving I with a kernel Gy with odd size. For example for a kernel size of 3, Gy would be computed as:
+    b.垂直变化：这会将I用一个奇数大小的核函数Gy来进行卷积处理。例如对于一大小为三的核函数，Gy会用如下公式表是：
     
     ![](http://latex.codecogs.com/gif.latex?G_%7By%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-1%20%26%20-2%20%26%20-1%20%5C%5C%200%20%26%200%20%26%200%20%5C%5C%20+1%20%26%20+2%20%26%20+1%20%5Cend%7Bbmatrix%7D%20*%20I)
 
