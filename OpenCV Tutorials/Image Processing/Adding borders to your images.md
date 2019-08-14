@@ -12,7 +12,7 @@
 
 1.在之前的教程中，我们学会了如何使用卷积的方式处理图片。但是，很自然地我们还有其他问题，如何处理图像的边框？如果我们需要处理的图像像素位于图像的边界上，我们应该如何处理？
 
-2.What most of OpenCV functions do is to copy a given image onto another slightly larger image and then automatically pads the boundary (by any of the methods explained in the sample code just below). This way, the convolution can be performed over the needed pixels without problems (the extra padding is cut after the operation is done).
+2.OpenCV的大部分函数是将输入的图片放置到一张更大的图片当中，然后增加边框（下面代码提及任何一种的情况）。这样，卷积函数便可以在任何一个需要的像素上进行处理，并没有什么问题（额外的边框在操作结束后将他去除掉）。
 
 3.在这篇教程中，我们将简单使用两种确认图像额外边界的方法：
 
