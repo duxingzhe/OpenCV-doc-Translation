@@ -13,7 +13,7 @@
 
 > 注意
 > 
-> 以下内容来自Bradski and Kaehler的《OpenCV》入门一书。
+> 以下内容来自Bradski和Kaehler的《OpenCV》入门一书。
 
 在之前的教程中，我们介绍了两种基本的形态学操作：
 
