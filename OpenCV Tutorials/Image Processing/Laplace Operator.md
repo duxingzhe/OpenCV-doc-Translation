@@ -1,10 +1,10 @@
-Goal
+目标
 
-In this tutorial you will learn how to:
+在这篇文章中，你将会学到：
 
-Use the OpenCV function Laplacian() to implement a discrete analog of the Laplacian operator.
+使用OpenCV中的Laplacian()函数用拉普拉斯算子进行离散相似物操作。
 
-Theory
+理论
 
 In the previous tutorial we learned how to use the Sobel Operator. It was based on the fact that in the edge area, the pixel intensity shows a "jump" or a high variation of intensity. Getting the first derivative of the intensity, we observed that an edge is characterized by a maximum, as it can be seen in the figure:
 

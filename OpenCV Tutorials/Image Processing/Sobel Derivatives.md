@@ -67,4 +67,4 @@
 >
 > ![](http://latex.codecogs.com/gif.download?G_%7By%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-3%20%26%20-10%20%26%20-3%20%5C%5C%200%20%26%200%20%26%200%20%5C%5C%20+3%20%26%20+10%20%26%20+3%20%5Cend%7Bbmatrix%7D)
 > 
-> You can check out more information of this function in the OpenCV reference - Scharr() . Also, in the sample code below, you will notice that above the code for Sobel() function there is also code for the Scharr() function commented. Uncommenting it (and obviously commenting the Sobel stuff) should give you an idea of how this function works.
+> 你可以在OpenCV专门介绍Scharr()函数的页面了解更多的信息。同样的，在下面的代码中，你可以注意到，上面写的是Sobel()函数代码，同时Scharr()函数被屏蔽掉了。你可以取消对Scharr()的注释（然后注释掉Sobel()函数）将看到Scharr()函数运行结果的差别。
