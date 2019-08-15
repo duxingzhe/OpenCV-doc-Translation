@@ -51,17 +51,17 @@
     
     ![](http://latex.codecogs.com/gif.latex?G_%7By%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-1%20%26%20-2%20%26%20-1%20%5C%5C%200%20%26%200%20%26%200%20%5C%5C%20+1%20%26%20+2%20%26%20+1%20%5Cend%7Bbmatrix%7D%20*%20I)
 
-At each point of the image we calculate an approximation of the gradient in that point by combining both results above:
+    在图像每一个点上，我们可以通过计算所有的结果来估计这个点上的径向改变值：
 
-![](http://latex.codecogs.com/gif.latex?G%20%3D%20%5Csqrt%7B%20G_%7Bx%7D%5E%7B2%7D%20+%20G_%7By%7D%5E%7B2%7D%20%7D)
+    ![](http://latex.codecogs.com/gif.latex?G%20%3D%20%5Csqrt%7B%20G_%7Bx%7D%5E%7B2%7D%20+%20G_%7By%7D%5E%7B2%7D%20%7D)
 
-2.Although sometimes the following simpler equation is used:
+2.有的时候公式可以适当简化一下：
 
 ![](http://latex.codecogs.com/gif.download?G%20%3D%20%7CG_%7Bx%7D%7C%20+%20%7CG_%7By%7D%7C)
 
-> Note
+> 注意
 > 
-> When the size of the kernel is 3, the Sobel kernel shown above may produce noticeable inaccuracies (after all, Sobel is only an approximation of the derivative). OpenCV addresses this inaccuracy for kernels of size 3 by using the Scharr() function. This is as fast but more accurate than the standard Sobel function. It implements the following kernels:
+> 当核的大小为3的时候，上面所提及的索贝尔算子可能会造成相当大的误差（尽管如此，索贝尔算子是唯一可使用的派生值算法）。如果在OpenCV中使用了Scharr()函数，那么OpenCV会在你设置核函数大小为3的时候提示这函数的结果可能是不准确的。我们有另外的快速而且精确的方法来实现索贝尔算子函数。它使用了以下核函数：
 >
 > ![](http://latex.codecogs.com/gif.download?G_%7Bx%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-3%20%26%200%20%26%20+3%20%5C%5C%20-10%20%26%200%20%26%20+10%20%5C%5C%20-3%20%26%200%20%26%20+3%20%5Cend%7Bbmatrix%7D)
 >
