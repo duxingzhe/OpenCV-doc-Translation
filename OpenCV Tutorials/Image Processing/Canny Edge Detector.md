@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+你在本篇教程中将会学到：
 
-* Use the OpenCV function cv::Canny to implement the Canny Edge Detector.
+* 使用OpenCV中的cv::Canny函数来实现肯尼边缘检测算法。
 
-Theory
+理论
 
-The Canny Edge detector [34] was developed by John F. Canny in 1986. Also known to many as the optimal detector, the Canny algorithm aims to satisfy three main criteria:
+肯尼边缘检测算法于1986年由约翰·F·肯尼发明。和其他已知的优化检测算法一样，肯尼检测算法主要是满足以下三方面需求：
 
-* Low error rate: Meaning a good detection of only existent edges.
-* Good localization: The distance between edge pixels detected and real edge pixels have to be minimized.
-* Minimal response: Only one detector response per edge.
+* 低错误率：意味着对于已知边界有较好的检测效果。
+* 良好的定位：边缘像素检测和真实像素值之间可以缩短误差。
+* 专注性强：一个检测器检测一条边界。
 
 Steps
 
@@ -19,6 +19,7 @@ Steps
 ![](http://latex.codecogs.com/gif.latex?K%20%3D%20%5Cdfrac%7B1%7D%7B159%7D%5Cbegin%7Bbmatrix%7D%202%20%26%204%20%26%205%20%26%204%20%26%202%20%5C%5C%204%20%26%209%20%26%2012%20%26%209%20%26%204%20%5C%5C%205%20%26%2012%20%26%2015%20%26%2012%20%26%205%20%5C%5C%204%20%26%209%20%26%2012%20%26%209%20%26%204%20%5C%5C%202%20%26%204%20%26%205%20%26%204%20%26%202%20%5Cend%7Bbmatrix%7D)
 
 2.Find the intensity gradient of the image. For this, we follow a procedure analogous to Sobel:
+
     a.Apply a pair of convolution masks (in x and y directions:
 
     ![](http://latex.codecogs.com/gif.latex?G_%7Bx%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20-1%20%26%200%20%26%20+1%20%5C%5C%20-2%20%26%200%20%26%20+2%20%5C%5C%20-1%20%26%200%20%26%20+1%20%5Cend%7Bbmatrix%7D)
