@@ -18,10 +18,10 @@
 
 拉普拉斯算子
 
-From the explanation above, we deduce that the second derivative can be used to detect edges. Since images are "\*2D\*", we would need to take the derivative in both dimensions. Here, the Laplacian operator comes handy.
+有上面的解释可知，我们可以使用第二个派生值来检测边界。因为图像都是“二维”的，我们需要对每一个维度都要进行派生值处理。这里的拉普拉斯算子计算则非常方便。
 
-The Laplacian operator is defined by:
+拉普拉斯算子可以定义如下：
 
 ![](http://latex.codecogs.com/gif.latex?Laplace(f)=\dfrac{\partial^{2}f}{\partialx^{2}}+\dfrac{\partial^{2}f}{\partial{y}^{2}})
 
-The Laplacian operator is implemented in OpenCV by the function Laplacian() . In fact, since the Laplacian uses the gradient of images, it calls internally the Sobel operator to perform its computation.
+OpenCV用函数Laplacian()来实现拉普拉斯算子。实际上，自从拉普拉斯算子可以用应用于图像中后，我们可以直接在索贝尔算子中使用拉普拉斯计算。
