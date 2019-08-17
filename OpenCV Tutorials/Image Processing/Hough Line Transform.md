@@ -1,18 +1,18 @@
-Goal
+目标
 
-In this tutorial you will learn how to:
+在本篇教程中，你将会学到：
 
-* Use the OpenCV functions HoughLines() and HoughLinesP() to detect lines in an image.
+* 使用OpenCV的HoughLines()和HoughLinesP()来检测图像的线条。
 
-Theory
+理论介绍
 
-> Note
+> 注意
 >
-> The explanation below belongs to the book Learning OpenCV by Bradski and Kaehler.
+> 这些例子来自Bradski和Kaehler所著的Learning OpenCV一书。
 
-Hough Line Transform
+霍夫线条变换
 
-1.The Hough Line Transform is a transform used to detect straight lines.
+1.霍夫线条变换是用于检测直线的。
 
 2.To apply the Transform, first an edge detection pre-processing is desirable.
 
