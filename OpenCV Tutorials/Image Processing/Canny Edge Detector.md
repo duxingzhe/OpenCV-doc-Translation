@@ -32,12 +32,12 @@
 
 3.应用非最大值抑制操作。这将会去除那些认为不是边界的像素。因此，只有比较细的线会留下来（可能的边界）留下来。
 
-4.Hysteresis: The final step. Canny does use two thresholds (upper and lower):
+4.滞后现象: 这是最后一步。肯尼边界检测算法使用了两个阈值（高阈值和地阈值）：
 
-    a.If a pixel gradient is higher than the upper threshold, the pixel is accepted as an edge
-    b.If a pixel gradient value is below the lower threshold, then it is rejected.
-    c.If the pixel gradient is between the two thresholds, then it will be accepted only if it is connected to a pixel that is above the upper threshold.
+    a.如果像素的径向改变值高于阈值，像素确认为边界。
+    b.如果像素的径向改变值低于阈值，像素将被舍弃。
+    c.如果像素的径向改变值在高阈值和低阈值之间，他只有在与高于高阈值相连接的像素连接的时候才能被认为是边界。
 
-Canny recommended a upper:lower ratio between 2:1 and 3:1.
+肯尼边界检测算法推荐高阈值和低阈值的的比为2:1和3:1。
 
-5.For more details, you can always consult your favorite Computer Vision book.
+5.更多的详细内容，你可以查看你的机器视觉书籍。
