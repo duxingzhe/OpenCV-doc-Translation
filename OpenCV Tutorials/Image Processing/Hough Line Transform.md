@@ -47,15 +47,15 @@
 
 ![](https://docs.opencv.org/4.1.0/Hough_Lines_Tutorial_Theory_2.jpg)
 
-The three plots intersect in one single point (0.925,9.6), these coordinates are the parameters ( θ,r) or the line in which ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29), ![](http://latex.codecogs.com/gif.latex?%28x_%7B1%7D%2C%20y_%7B1%7D%29) and ![](http://latex.codecogs.com/gif.latex?%28x_%7B2%7D%2C%20y_%7B2%7D%29) lay.
+这三条线交于一个点(0.925, 9.6)，这三条线使用极坐标变量(θ,r)来表示线便是：![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29)，![](http://latex.codecogs.com/gif.latex?%28x_%7B1%7D%2C%20y_%7B1%7D%29)和![](http://latex.codecogs.com/gif.latex?%28x_%7B2%7D%2C%20y_%7B2%7D%29).
 
-4.What does all the stuff above mean? It means that in general, a line can be detected by finding the number of intersections between curves.The more curves intersecting means that the line represented by that intersection have more points. In general, we can define a threshold of the minimum number of intersections needed to detect a line.
+4.上面的这些信息说明了什么？他说明，一般而言，直线可以被曲线相交的交点个数来检测出来。更多的曲线交点意味着直线可以用更多的交点所表示。通常而言，我们需要一个最低阈值来确定表示直线的交点个数。
 
-5.This is what the Hough Line Transform does. It keeps track of the intersection between curves of every point in the image. If the number of intersections is above some threshold, then it declares it as a line with the parameters ![](http://latex.codecogs.com/gif.latex?%28%5Ctheta%2C%20r_%7B%5Ctheta%7D%29) of the intersection point.
+5.这就是霍夫直线变换所做的内容。他对图像中的各点曲线交点持续追踪。如果交点的个数大于阈值，那么他就表示了一条直线，直线是用交点坐标![](http://latex.codecogs.com/gif.latex?%28%5Ctheta%2C%20r_%7B%5Ctheta%7D%29)表示的。
 
-Standard and Probabilistic Hough Line Transform
+标准霍夫直线变换和概率霍夫直线变换
 
-OpenCV implements two kind of Hough Line Transforms:
+OpenCV实现了两种霍夫直线变换：
 
 a. The Standard Hough Transform
 
