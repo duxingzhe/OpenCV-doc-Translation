@@ -31,19 +31,19 @@
 
 我们有如下公式：r=xcosθ+ysinθ
 
-1.In general for each point ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29), we can define the family of lines that goes through that point as:
+1.通常而言，对于每一个点，![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29)，我们可以定义 这一定点的直线为：
 
 ![](http://latex.codecogs.com/gif.latex?r_%7B%5Ctheta%7D%20%3D%20x_%7B0%7D%20%5Ccdot%20%5Ccos%20%5Ctheta%20+%20y_%7B0%7D%20%5Ccdot%20%5Csin%20%5Ctheta)
 
-Meaning that each pair ![](http://latex.codecogs.com/gif.latex?%28r_%7B%5Ctheta%7D%2C%5Ctheta%29) represents each line that passes by ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29).
+意味着每一对坐标![](http://latex.codecogs.com/gif.latex?%28r_%7B%5Ctheta%7D%2C%5Ctheta%29)代表了通过![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29)的每一条直线。
 
-2.If for a given ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29) we plot the family of lines that goes through it, we get a sinusoid. For instance, for x0=8 and y0=6 we get the following plot (in a plane θ - r):
+2.给定点![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29)，我们将经过这个地方的直线全部画出来，我们会得到正弦波。例如x0=8 and y0=6，我们会得到一下图形(在极坐标θ-r情况下)：
 
 ![](https://docs.opencv.org/4.1.0/Hough_Lines_Tutorial_Theory_1.jpg)
 
-We consider only points such that r>0 and 0<θ<2π.
+我们只考虑r>0且0<θ<2π的情况。
 
-3.We can do the same operation above for all the points in an image. If the curves of two different points intersect in the plane θ - r, that means that both points belong to a same line. For instance, following with the example above and drawing the plot for two more points: ![](http://latex.codecogs.com/gif.latex?x_%7B1%7D%20%3D%204), ![](http://latex.codecogs.com/gif.latex?y_%7B1%7D%20%3D%209) and ![](http://latex.codecogs.com/gif.latex?x_%7B2%7D%20%3D%2012), ![](http://latex.codecogs.com/gif.latex?y_%7B2%7D%20%3D%203), we get:
+3.在图像里，我们可以对所有的点进行同样的操作。如果经过两个点的曲线在极坐标θ-r情况下有相交的情况，意味着他们是在同一条直线上。例如，下面的例子中，前者表示的是多个点之间连线：![](http://latex.codecogs.com/gif.latex?x_%7B1%7D%20%3D%204)，![](http://latex.codecogs.com/gif.latex?y_%7B1%7D%20%3D%209)和![](http://latex.codecogs.com/gif.latex?x_%7B2%7D%20%3D%2012)，![](http://latex.codecogs.com/gif.latex?y_%7B2%7D%20%3D%203)，我们得到了：
 
 ![](https://docs.opencv.org/4.1.0/Hough_Lines_Tutorial_Theory_2.jpg)
 
