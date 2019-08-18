@@ -14,22 +14,22 @@
 
 1.霍夫线条变换是用于检测直线的。
 
-2.To apply the Transform, first an edge detection pre-processing is desirable.
+2.为了能使用这个变换，首先，我们应该先执行边界检测。
 
-How does it work?
+他是怎么做的？
 
-1.As you know, a line in the image space can be expressed with two variables. For example:
+1.正如你知道的，图像空间中，直线可以用两个变量来表示。例如：
 
-    a.In the Cartesian coordinate system: Parameters: (m,b).
-    b.In the Polar coordinate system: Parameters: (r,θ)
+    a.直角坐标系：变量为：(m,b)。
+    b.极坐标系：变量为：(r,θ)。
 
 ![](https://docs.opencv.org/4.1.0/Hough_Lines_Tutorial_Theory_0.jpg)
 
-For Hough Transforms, we will express lines in the Polar system. Hence, a line equation can be written as:
+在霍夫变换中，我们将用极坐标方式处理。因此，直线的方程可以用如下公式表示：
 
 ![](http://latex.codecogs.com/gif.latex?y%20%3D%20%5Cleft%20%28%20-%5Cdfrac%7B%5Ccos%20%5Ctheta%7D%7B%5Csin%20%5Ctheta%7D%20%5Cright%20%29%20x%20+%20%5Cleft%20%28%20%5Cdfrac%7Br%7D%7B%5Csin%20%5Ctheta%7D%20%5Cright%20%29)
 
-Arranging the terms: r=xcosθ+ysinθ
+我们有如下公式：r=xcosθ+ysinθ
 
 1.In general for each point ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%29), we can define the family of lines that goes through that point as:
 
