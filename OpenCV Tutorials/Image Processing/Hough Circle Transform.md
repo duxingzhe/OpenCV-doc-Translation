@@ -1,15 +1,15 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function HoughCircles() to detect circles in an image.
+* 使用OpenCV的HoughCircles()函数来检测图像中的圆圈。
 
-Theory
+理论
 
-Hough Circle Transform
+霍夫圆形变换
 
-* The Hough Circle Transform works in a roughly analogous way to the Hough Line Transform explained in the previous tutorial.
-* In the line detection case, a line was defined by two parameters (r,θ). In the circle case, we need three parameters to define a circle:
+* 霍夫圆形变换和之前教程中所提及的霍夫线性变换相类似。
+* 在线条检测案例中，线条使用的坐标是(r,θ)。在圆形检测中，我们用一下坐标来定义一个圆：
 
 ![](http://latex.codecogs.com/gif.latex?C:(x_{center},y_{center},r))
 
