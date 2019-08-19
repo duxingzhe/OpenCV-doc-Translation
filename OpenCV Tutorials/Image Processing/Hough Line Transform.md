@@ -67,8 +67,8 @@ b.概率型霍夫变换
 * 这是霍夫直线变换中更有效率的一种实现。他可以输出检测直线的极值![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%2C%20x_%7B1%7D%2C%20y_%7B1%7D%29)
 * 在OpenCV里，我们可以使用HoughLinesP()来实现这种变换。
 
-What does this program do?
+这个程序有什么作用？
 
-* Loads an image
-* Applies a Standard Hough Line Transform and a Probabilistic Line Transform.
-* Display the original image and the detected line in three windows.
+* 加载一张图片
+* 使用标准霍夫变换和概率型霍夫变换。
+* 在三个窗口中显示原始图片和检测的线条。
