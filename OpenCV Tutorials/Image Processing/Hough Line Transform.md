@@ -57,15 +57,15 @@
 
 OpenCV实现了两种霍夫直线变换：
 
-a. The Standard Hough Transform
+a.标准霍夫变换
 
-* It consists in pretty much what we just explained in the previous section. It gives you as result a vector of couples ![](http://latex.codecogs.com/gif.latex?%28%5Ctheta%2C%20r_%7B%5Ctheta%7D%29)
-* In OpenCV it is implemented with the function HoughLines()
+* 它包括了许多我们之前谈到的变换。它可以产生一对对变量集合![](http://latex.codecogs.com/gif.latex?%28%5Ctheta%2C%20r_%7B%5Ctheta%7D%29)
+* 在OpenCV里，我们可以使用HoughLines()来实现这种变换。
 
-b. The Probabilistic Hough Line Transform
+b.概率型霍夫变换
 
-* A more efficient implementation of the Hough Line Transform. It gives as output the extremes of the detected lines ![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%2C%20x_%7B1%7D%2C%20y_%7B1%7D%29)
-* In OpenCV it is implemented with the function HoughLinesP()
+* 这是霍夫直线变换中更有效率的一种实现。他可以输出检测直线的极值![](http://latex.codecogs.com/gif.latex?%28x_%7B0%7D%2C%20y_%7B0%7D%2C%20x_%7B1%7D%2C%20y_%7B1%7D%29)
+* 在OpenCV里，我们可以使用HoughLinesP()来实现这种变换。
 
 What does this program do?
 
