@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-a. Use the OpenCV function cv::remap to implement simple remapping routines.
+a. 使用OpenCV的cv::remap函数实现简单的重映射路径。
 
-Theory
+理论
 
-What is remapping?
+什么叫重映射？
 
-* It is the process of taking pixels from one place in the image and locating them in another position in a new image.
-* To accomplish the mapping process, it might be necessary to do some interpolation for non-integer pixel locations, since there will not always be a one-to-one-pixel correspondence between source and destination images.
-* We can express the remap for every pixel location (x,y) as:
+* 这是将图像中取出一个像素，并对应到另外一张新图片的对应位置。
+* 为了能完成这种映射过程，我们需要对非整型像素区域进行插值处理，因为往往源图像和目标图像的图像并非一一对应。
+* 我们可以用以下公式来表示对每一个像素点（x,y）的重映射：
 
 g(x,y)=f(h(x,y))
 
