@@ -13,14 +13,14 @@
 
 ![](http://latex.codecogs.com/gif.latex?C:(x_{center},y_{center},r))
 
-where ![](http://latex.codecogs.com/gif.latex?xcenter,ycenter) define the center position (green point) and r is the radius, which allows us to completely define a circle, as it can be seen below:
+其中![](http://latex.codecogs.com/gif.latex?x_{center},y_{center})定义了圆的圆心（绿色的点）并且r代表的是半径，这样我们就能定义一个圆，如下所示：
 
 ![](https://docs.opencv.org/4.1.0/Hough_Circle_Tutorial_Theory_0.jpg)
 
-For sake of efficiency, OpenCV implements a detection method slightly trickier than the standard Hough Transform: The Hough gradient method, which is made up of two main stages. The first stage involves edge detection and finding the possible circle centers and the second stage finds the best radius for each candidate center. For more details, please check the book Learning OpenCV or your favorite Computer Vision bibliography
+处于性能的考虑，OpenCV用了一个比较机智一点的算了，这个算法相比于标准霍夫变换耍了一点小花招：霍夫径向方法，由两个基本阶段组成。第一步是进行边界检测并找到可能的圆心位置，第二步是确定每一个候选圆的半径。更多内容，请参阅《OpenCV入门》或者是其他你喜欢的OpenCV参考书目。
 
-What does this program do?
+这个程序的主要目的：
 
-* Loads an image and blur it to reduce the noise
-* Applies the Hough Circle Transform to the blurred image .
-* Display the detected circle in a window
+* 加载一张图片，并模糊处理以减少噪声
+* 对模糊处理后的图像进行霍夫圆形变换操作
+* 在窗口中显示检测到的圆
