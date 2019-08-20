@@ -10,22 +10,22 @@ a. 使用OpenCV的cv::remap函数实现简单的重映射路径。
 
 * 这是将图像中取出一个像素，并对应到另外一张新图片的对应位置。
 * 为了能完成这种映射过程，我们需要对非整型像素区域进行插值处理，因为往往源图像和目标图像的图像并非一一对应。
-* 我们可以用以下公式来表示对每一个像素点（x,y）的重映射：
+* 我们可以用以下公式来表示对每一个像素点(x,y)的重映射：
 
 g(x,y)=f(h(x,y))
 
-where g() is the remapped image, f() the source image and h(x,y) is the mapping function that operates on (x,y).
+其中，g()重映射图像, f()是源图像，h(x,y)对(x,y)进行操作的映射函数。
 
-* Let's think in a quick example. Imagine that we have an image I and, say, we want to do a remap such that:
+* 我们来看一个简单的例子。假如我们有一张图像I，并且我们有以下映射方式：
 
 h(x,y)=(I.cols-x,y)
 
-What would happen? It is easily seen that the image would flip in the x direction. For instance, consider the input image:
+那么我们会得到什么结果？我们很容易便会看到，图像将会绕x轴旋转。例如，以下看到输入图片：
 
 ![](https://docs.opencv.org/4.1.0/Remap_Tutorial_Theory_0.jpg)
 
-observe how the red circle changes positions with respect to x (considering x the horizontal direction):
+观察一下红圈位置相对于x轴的变化（把x轴看成水平位置）：
 
 ![](https://docs.opencv.org/4.1.0/Remap_Tutorial_Theory_1.jpg)
 
-In OpenCV, the function cv::remap offers a simple remapping implementation.
+在OpenCV中，函数cv::remap提供了一个简单的重映射实现方式。
