@@ -36,13 +36,13 @@
 
 我们如何得到一个仿射变换？
 
-1.We mentioned that an Affine Transformation is basically a relation between two images. The information about this relation can come, roughly, in two ways:
+1.我们提到了，一个仿射变换通常把两张图片之间建立了联系。简单来说，这个关系可以用两个方法来体现：
 
-    a.We know both X and T and we also know that they are related. Then our task is to find M
-    b.We know M and X. To obtain T we only need to apply T=M⋅X. Our information for M may be explicit (i.e. have the 2-by-3 matrix) or it can come as a geometric relation between points.
+    a.我们都知道X和T，我们也直到他们是有关系的。所以，我们的任务是找到M；
+    b.我们知道M和X。获得T，我们只需要实现T=M*X。我们对于M的信息可以更为直观（例如有一个2x3矩阵）或者是点与点之间的几何关系。
 
-2.Let's explain this in a better way (b). Since M relates 2 images, we can analyze the simplest case in which it relates three points in both images. Look at the figure below:
+2.让我们用更好的方式来解释（b）。如果M建立了两张图片的关系，我们就能分析这两张图片中三个点的关系。看看下面的图片：
 
 ![](https://docs.opencv.org/4.1.0/Warp_Affine_Tutorial_Theory_0.jpg)
 
-the points 1, 2 and 3 (forming a triangle in image 1) are mapped into image 2, still forming a triangle, but now they have changed notoriously. If we find the Affine Transformation with these 3 points (you can choose them as you like), then we can apply this found relation to all the pixels in an image.
+上面的1、2、3（在图像一中组成了一个三角形）向图像二映射，这样也组成了一个三角形。但是这两个三角形的形状有了巨大的改变。如果我们能找到这三个点的关系（你可以用你的喜欢的关系），我们就能用这个关系来找到一个图片里所有像素的关系。
