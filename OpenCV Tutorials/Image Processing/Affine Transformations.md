@@ -16,20 +16,25 @@
     b.平移（向量加法）
     c.按比例扩大（线性变换）
 
-you can see that, in essence, an Affine Transformation represents a relation between two images.
+由此，你也看出来了，实际上，放射变换表示了两张图片之间的关系。
 
-3.The usual way to represent an Affine Transformation is by using a 2×3 matrix.
+3.通常情况下，我们会用一个2x3矩阵来表示一个仿射变换。
 
 ![](http://latex.codecogs.com/gif.latex?A%20%3D%20%5Cbegin%7Bbmatrix%7D%20a_%7B00%7D%20%26%20a_%7B01%7D%20%5C%5C%20a_%7B10%7D%20%26%20a_%7B11%7D%20%5Cend%7Bbmatrix%7D_%7B2%20%5Ctimes%202%7D%20B%20%3D%20%5Cbegin%7Bbmatrix%7D%20b_%7B00%7D%20%5C%5C%20b_%7B10%7D%20%5Cend%7Bbmatrix%7D_%7B2%20%5Ctimes%201%7D)
 
 ![](http://latex.codecogs.com/gif.latex?M%20%3D%20%5Cbegin%7Bbmatrix%7D%20A%20%26%20B%20%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20a_%7B00%7D%20%26%20a_%7B01%7D%20%26%20b_%7B00%7D%20%5C%5C%20a_%7B10%7D%20%26%20a_%7B11%7D%20%26%20b_%7B10%7D%20%5Cend%7Bbmatrix%7D_%7B2%20%5Ctimes%203%7D)
 
-Considering that we want to transform a 2D vector ![](http://latex.codecogs.com/gif.download?X%20%3D%20%5Cbegin%7Bbmatrix%7Dx%20%5C%5C%20y%5Cend%7Bbmatrix%7D) by using A and B, we can do the same with:
+考虑一下，我们想用A和B来转换一个2D向量![](http://latex.codecogs.com/gif.download?X%20%3D%20%5Cbegin%7Bbmatrix%7Dx%20%5C%5C%20y%5Cend%7Bbmatrix%7D)， 我们可以用以下公式来做同样的事情：
 
-![](http://latex.codecogs.com/gif.latex?T%20%3D%20A%20%5Ccdot%20%5Cbegin%7Bbmatrix%7Dx%20%5C%5C%20y%5Cend%7Bbmatrix%7D%20+%20B) or ![](http://latex.codecogs.com/gif.latex?T%20%3D%20M%20%5Ccdot%20%5Bx%2C%20y%2C%201%5D%5E%7BT%7D)
+![](http://latex.codecogs.com/gif.latex?T%20%3D%20A%20%5Ccdot%20%5Cbegin%7Bbmatrix%7Dx%20%5C%5C%20y%5Cend%7Bbmatrix%7D%20+%20B)
+
+或
+
+![](http://latex.codecogs.com/gif.latex?T%20%3D%20M%20%5Ccdot%20%5Bx%2C%20y%2C%201%5D%5E%7BT%7D)
+
 ![](http://latex.codecogs.com/gif.latex?T%20%3D%20%5Cbegin%7Bbmatrix%7D%20a_%7B00%7Dx%20+%20a_%7B01%7Dy%20+%20b_%7B00%7D%20%5C%5C%20a_%7B10%7Dx%20+%20a_%7B11%7Dy%20+%20b_%7B10%7D%20%5Cend%7Bbmatrix%7D)
 
-How do we get an Affine Transformation?
+我们如何得到一个仿射变换？
 
 1.We mentioned that an Affine Transformation is basically a relation between two images. The information about this relation can come, roughly, in two ways:
 
