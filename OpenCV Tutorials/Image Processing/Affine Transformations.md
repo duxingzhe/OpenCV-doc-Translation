@@ -1,20 +1,21 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function cv::warpAffine to implement simple remapping routines.
-* Use the OpenCV function cv::getRotationMatrix2D to obtain a 2×3 rotation matrix
+* 使用OpenCV的cv::warpAffine函数来实现简单的重映射路径。
+* 使用OpenCV的cv::getRotationMatrix2D实现一个2x3旋转矩阵。
 
-Theory
+理论
 
-What is an Affine Transformation?
+什么是仿射变换？
 
-1.A transformation that can be expressed in the form of a matrix multiplication (linear transformation) followed by a vector addition (translation).
-2.From the above, we can use an Affine Transformation to express:
+1.这种变换可以用矩阵乘法的形式表达（线性变换），这个算法是在加了向量以后实现的（平移）。
+2.综上所述，我们可以把仿射变换归为以下几类：
 
-    a.Rotations (linear transformation)
-    b.Translations (vector addition)
-    c.Scale operations (linear transformation)
+    a.旋转（线性变换）
+    b.平移（向量加法）
+    c.按比例扩大（线性变换）
+
 you can see that, in essence, an Affine Transformation represents a relation between two images.
 
 3.The usual way to represent an Affine Transformation is by using a 2×3 matrix.
