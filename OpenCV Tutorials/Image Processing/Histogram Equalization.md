@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn:
+在这篇教程中，你将会学到：
 
-* What an image histogram is and why it is useful
-* To equalize histograms of images by using the OpenCV function cv::equalizeHist
+* 什么是图片的直方图？为什么他很有用？
+* 使用OpenCV的cv::equalizeHist函数来显示图像的直方图。
 
-Theory
+理论
 
-What is an Image Histogram?
+什么是图片的直方图？
 
-* It is a graphical representation of the intensity distribution of an image.
-* It quantifies the number of pixels for each intensity value considered.
+* 它代表的是图像强度分布的几何展示。
+* 他对图像中的各个考虑的像素强度值进行数量化处理。
 
 ![](https://docs.opencv.org/4.1.0/Histogram_Equalization_Theory_0.jpg)
 
