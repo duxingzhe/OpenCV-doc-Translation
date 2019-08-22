@@ -23,15 +23,15 @@
 
 它是怎么实现的？
 
-* Equalization implies mapping one distribution (the given histogram) to another distribution (a wider and more uniform distribution of intensity values) so the intensity values are spread over the whole range.
-* To accomplish the equalization effect, the remapping should be the cumulative distribution function (cdf) (more details, refer to Learning OpenCV). For the histogram H(i), its cumulative distribution H′(i) is:
+* 方程其实表示的是对一种分布的映射（我们提供的直方图）到另一种分布（强度值范围更宽更统一的分布），因此强度值可以完全分布于整个范围。
+* 为了完善公式的效果，重映射应该进行累积分布函数的计算（cumulative distribution function，cdf）（更多内容请参阅《Learning OpenCV》一书）。对于直方方程H(i)，其累积分布函数为：
 
 ![](http://latex.codecogs.com/gif.latex?H%5E%7B%27%7D%28i%29%20%3D%20%5Csum_%7B0%20%5Cle%20j%20%3C%20i%7D%20H%28j%29)
 
-To use this as a remapping function, we have to normalize H′(i) such that the maximum value is 255 ( or the maximum value for the intensity of the image ). From the example above, the cumulative function is:
+为了将他用成一个重映射函数，我们需要对H′(i)进行归一化处理，以确保最大值为255（或者图像强度值的最大值）。对于之前的例子，累计函数为：
 
 ![](https://docs.opencv.org/4.1.0/Histogram_Equalization_Theory_2.jpg)
 
-* Finally, we use a simple remapping procedure to obtain the intensity values of the equalized image:
+* 最终，我们对已经通过直方方程处理过后的图像使用了简单的重映射生成函数。
 
 ![](http://latex.codecogs.com/gif.latex?equalized%28%20x%2C%20y%20%29%20%3D%20H%5E%7B%27%7D%28%20src%28x%2Cy%29%20%29)
