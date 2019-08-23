@@ -1,16 +1,16 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function cv::split to divide an image into its correspondent planes.
-* To calculate histograms of arrays of images by using the OpenCV function cv::calcHist
-* To normalize an array by using the function cv::normalize
+* 使用OpenCV中的cv::split函数来将图片分成几块。
+* 使用OpenCV重点的cv::calcHist函数来计算图像中直方柱的个数。
+* 使用cv::normalize函数对图像的直方数组进行归一化处理。
 
-> Note
+> 注意
 > 
-> In the last tutorial (Histogram Equalization) we talked about a particular kind of histogram called Image histogram. Now we will considerate it in its more general concept. Read on!
+> 在上一篇教程中（直方图方程）我们讨论了直方图的一种形式叫做图片直方图。现在我们考虑一下他更广泛的概念。继续阅读一下。
 
-What are histograms?
+什么叫直方图？
 
 * Histograms are collected counts of data organized into a set of predefined bins
 * When we say data we are not restricting it to be intensity values (as we saw in the previous Tutorial Histogram Equalization). The data collected can be whatever feature you find useful to describe your image.
