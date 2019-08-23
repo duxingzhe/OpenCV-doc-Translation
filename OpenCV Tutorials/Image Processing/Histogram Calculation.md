@@ -12,21 +12,21 @@
 
 什么叫直方图？
 
-* Histograms are collected counts of data organized into a set of predefined bins
-* When we say data we are not restricting it to be intensity values (as we saw in the previous Tutorial Histogram Equalization). The data collected can be whatever feature you find useful to describe your image.
-* Let's see an example. Imagine that a Matrix contains information of an image (i.e. intensity in the range 0−255):
+* 直方图是将数据进行统计并放置到预定义的二值柱中。
+* 我们所说的数据，并不是仅限制在强度值中（正如我们之前的教程直方图方程中看到的那样）。数据可以是任何你认为可以很好描述图片的内容。
+* 让我们来看看一个例子。想象一下这样一个包含图片信息的矩阵（比如强度值在0~255之间）：
 
 ![](https://docs.opencv.org/Histogram_Calculation_Theory_Hist0.jpg)
 
-* What happens if we want to count this data in an organized way? Since we know that the range of information value for this case is 256 values, we can segment our range in subparts (called bins) like:
+* 如果我们将数据进行整合统计会有什么情况呢？既然在这个例子当中，我们的数据会有大概256种值，我们可以将这个范围细分一下（叫做小集合），就比如：
 
 ![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Barray%7D%7Bl%7D%20%5B0%2C%20255%5D%20%3D%20%7B%20%5B0%2C%2015%5D%20%5Ccup%20%5B16%2C%2031%5D%20%5Ccup%20....%5Ccup%20%5B240%2C255%5D%20%7D%20%5C%5C%20range%20%3D%20%7B%20bin_%7B1%7D%20%5Ccup%20bin_%7B2%7D%20%5Ccup%20....%5Ccup%20bin_%7Bn%20%3D%2015%7D%20%7D%20%5Cend%7Barray%7D)
 
-and we can keep count of the number of pixels that fall in the range of each bini. Applying this to the example above we get the image below ( axis x represents the bins and axis y the number of pixels in each of them).
+并且，我们会计算在预定义子集(![](http://latex.codecogs.com/gif.latex?bin_{i})中每一个像素点的数量。对上述图片应用我们介绍的方法，我们就能得到下面这张图片（x轴是子集，y轴是子集的数量）。
 
 ![](https://docs.opencv.org/Histogram_Calculation_Theory_Hist1.jpg)
 
-* This was just a simple example of how an histogram works and why it is useful. An histogram can keep count not only of color intensities, but of whatever image features that we want to measure (i.e. gradients, directions, etc).
+* 这就是一个简单的例子，他告诉直方图的使用和它的重要性。直方图不仅保留了颜色强度值，还显示了我们想分析的图像信息（比如，径向、方向等）。
 * Let's identify some parts of the histogram:
 
     1.dims: The number of parameters you want to collect data of. In our example, dims = 1 because we are only counting the intensity values of each pixel (in a greyscale image).
