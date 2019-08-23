@@ -22,19 +22,19 @@
 
 ![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Barray%7D%7Bl%7D%20%5B0%2C%20255%5D%20%3D%20%7B%20%5B0%2C%2015%5D%20%5Ccup%20%5B16%2C%2031%5D%20%5Ccup%20....%5Ccup%20%5B240%2C255%5D%20%7D%20%5C%5C%20range%20%3D%20%7B%20bin_%7B1%7D%20%5Ccup%20bin_%7B2%7D%20%5Ccup%20....%5Ccup%20bin_%7Bn%20%3D%2015%7D%20%7D%20%5Cend%7Barray%7D)
 
-并且，我们会计算在预定义子集(![](http://latex.codecogs.com/gif.latex?bin_{i})中每一个像素点的数量。对上述图片应用我们介绍的方法，我们就能得到下面这张图片（x轴是子集，y轴是子集的数量）。
+并且，我们会计算在预定义子集(![](http://latex.codecogs.com/gif.latex? (![](http://latex.codecogs.com/gif.latex?)中每一个像素点的数量。对上述图片应用我们介绍的方法，我们就能得到下面这张图片（x轴是子集，y轴是子集的数量）。
 
 ![](https://docs.opencv.org/Histogram_Calculation_Theory_Hist1.jpg)
 
 * 这就是一个简单的例子，他告诉直方图的使用和它的重要性。直方图不仅保留了颜色强度值，还显示了我们想分析的图像信息（比如，径向、方向等）。
-* Let's identify some parts of the histogram:
+* 让我们来看看直方图的每一个部分：
 
-    1.dims: The number of parameters you want to collect data of. In our example, dims = 1 because we are only counting the intensity values of each pixel (in a greyscale image).
-    2.bins: It is the number of subdivisions in each dim. In our example, bins = 16
-    3.range: The limits for the values to be measured. In this case: range = [0,255]
+    1.dims：你想将你收集的数据分成几个区。例如，在我们给出的例子当中，dims=1表示我们只是想计算每个像素的强度值（在一个灰阶图中）。
+    2.bins：分区中子集的个数。在我们给出的例子中，bins=16。
+    3.range：值的范围。以这个例子为例：range=[0,255]
 
-* What if you want to count two features? In this case your resulting histogram would be a 3D plot (in which x and y would be binx and biny for each feature and z would be the number of counts for each combination of (![](http://latex.codecogs.com/gif.latex?%28bin_%7Bx%7D%2C%20bin_%7By%7D%29)). The same would apply for more features (of course it gets trickier).
+* 那么如果你想分析两个特征呢？在这个例子中你可以将直方图画成3D的样式（x和y代表的是(![](http://latex.codecogs.com/gif.latex?bin_{x})和(![](http://latex.codecogs.com/gif.latex?bin_{y})，而z则是各个特征的数量(![](http://latex.codecogs.com/gif.latex?%28bin_%7Bx%7D%2C%20bin_%7By%7D%29)）。如果你需要更多的特征，那么就使用相同的方法（当然要更有技巧性）。
 
-What OpenCV offers you
+OpenCV提供的功能
 
-For simple purposes, OpenCV implements the function cv::calcHist , which calculates the histogram of a set of arrays (usually images or image planes). It can operate with up to 32 dimensions. We will see it in the code below!
+简单而言，OpenCV实现了cv::calcHist函数，它能够计算一组数组的直方图（通常是图像或图像的一部分）。它可以分析32个维度。我们将在下面的代码中知道这个函数的用法。
