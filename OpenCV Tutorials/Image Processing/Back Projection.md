@@ -1,14 +1,14 @@
-Goal
+目的
 
-In this tutorial you will learn:
+在本教程中，你将会学到：
 
-* What is Back Projection and why it is useful
-* How to use the OpenCV function cv::calcBackProject to calculate Back Projection
-* How to mix different channels of an image by using the OpenCV function cv::mixChannels
+* 什么是反向映射，他为什么那么重要
+* 如何使用OpenCV的cv::calcBackProject函数来计算反向映射
+* 通过OpenCV的cv::mixChannels函数来混合不同的色彩通道
 
-Theory
+理论
 
-What is Back Projection?
+什么是反向映射？
 
 * Back Projection is a way of recording how well the pixels of a given image fit the distribution of pixels in a histogram model.
 * To make it simpler: For Back Projection, you calculate the histogram model of a feature and then use it to find this feature in an image.
