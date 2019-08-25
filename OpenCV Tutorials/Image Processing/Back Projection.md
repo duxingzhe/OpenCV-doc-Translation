@@ -10,14 +10,14 @@
 
 什么是反向映射？
 
-* Back Projection is a way of recording how well the pixels of a given image fit the distribution of pixels in a histogram model.
-* To make it simpler: For Back Projection, you calculate the histogram model of a feature and then use it to find this feature in an image.
-* Application example: If you have a histogram of flesh color (say, a Hue-Saturation histogram ), then you can use it to find flesh color areas in an image:
+* 反向映射是一种能够在直方图模式下显示给定图片的像素与像素分布之间的相似程度的算法。
+* 简而言之：对于反向映射，你可以将一个图形特征进行直方图显示，并通过它在一个图像中找到某种特征。
+* 应用层例子：如果你在肉色中显示直方图（或者说色调——饱和度直方图），你就可以通过反向映射的方式找到图像中的皮肤：
 
-How does it work?
+他是如何工作的？
 
-* We explain this by using the skin example:
-* Let's say you have gotten a skin histogram (Hue-Saturation) based on the image below. The histogram besides is going to be our model histogram (which we know represents a sample of skin tonality). You applied some mask to capture only the histogram of the skin area:
+* 我们通过检测皮肤的例子来说明情况：
+* 假如，你获得了一张肉色（色调饱和度）图片，就像下图这样的。我们的标准直方图就是旁边所展示的那样（我们由此可以知道，这是皮肤调性图片样例）。你可以用一些蒙版来获得只属于皮肤区域的直方图：
 
 ![](https://docs.opencv.org/4.1.0/Back_Projection_Theory0.jpg)
 T0
