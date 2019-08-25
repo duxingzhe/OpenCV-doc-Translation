@@ -25,20 +25,20 @@ T0
 ![](https://docs.opencv.org/4.1.0/Back_Projection_Theory1.jpg)
 T1
 
-* Now, let's imagine that you get another hand image (Test Image) like the one below: (with its respective histogram):
+* 现在，就像假设一下，你获得了另外一张手的照片（测试照片），就像下图那样：（还有他的直方图）
 
 ![](https://docs.opencv.org/4.1.0/Back_Projection_Theory2.jpg)
 T2
 ![](https://docs.opencv.org/4.1.0/Back_Projection_Theory3.jpg)
 T3
 
-* What we want to do is to use our model histogram (that we know represents a skin tonality) to detect skin areas in our Test Image. Here are the steps
+* 当前我们需要做的便是用我们的直方图模型（这是代表手的直方图）去检测在测试图片中的批复区域范围。我们有以下步骤：
     
-    1.In each pixel of our Test Image (i.e. p(i,j) ), collect the data and find the correspondent bin location for that pixel (i.e. (hi,j,si,j) ).
-    2.Lookup the model histogram in the correspondent bin - (hi,j,si,j) - and read the bin value.
-    3.Store this bin value in a new image (BackProjection). Also, you may consider to normalize the model histogram first, so the output for the Test Image can be visible for you.
-    4.Applying the steps above, we get the following BackProjection image for our Test Image:
+    1.在我们测试图片的每个像素（p(i,j)）中，我们将这些数据都收集起来，并找到对应像素的二值位置 ((![](http://latex.codecogs.com/gif.latex?h_{i,j},s_{i,j)) )。
+    2.查看标准直方图的对应二值位置(![](http://latex.codecogs.com/gif.latex?h_{i,j},s_{i,j))并读取二值位置。
+    3.在新的图片中保存二值（反向映射）。同时，你可以考虑先将标准直方图进行归一化处理，这样对于测试图片而言，输出的像素之都在可见范围内。
+    4.经过了上述步骤，我们就测试图片得到了以下反向映射图片：
 
     ![](https://docs.opencv.org/4.1.0/Back_Projection_Theory4.jpg)
 
-    5.In terms of statistics, the values stored in BackProjection represent the probability that a pixel in Test Image belongs to a skin area, based on the model histogram that we use. For instance in our Test image, the brighter areas are more probable to be skin area (as they actually are), whereas the darker areas have less probability (notice that these "dark" areas belong to surfaces that have some shadow on it, which in turns affects the detection).
+    5.在统计学中，反向映射图中存储的值表示的是测试图片中一个像素属于皮肤区域的概率，这个概率基于我们使用的标准直方图。例如，在我们的测试用例中，更亮的部分可能是测试图片中的皮肤区域（他们也确实是），而较暗的部分则可能不是（注意到，一些“较暗”部分可能是皮肤的阴影部分，这会影响监测的效果）。
