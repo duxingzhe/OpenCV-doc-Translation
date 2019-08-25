@@ -1,15 +1,15 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function matchTemplate() to search for matches between an image patch and an input image
-* Use the OpenCV function minMaxLoc() to find the maximum and minimum values (as well as their positions) in a given array.
+* 使用OpenCV的matchTemplate()函数来搜索输入图像和一小块图片的联系。
+* 使用OpenCV的minMaxLoc()函数在找到给定数组的最大值和最小值（以及他们的索引值）。
 
-Theory
+理论
 
-What is template matching?
+什么是模板匹配？
 
-Template matching is a technique for finding areas of an image that match (are similar) to a template image (patch).
+模板匹配是寻找输入图片的一部分，用以确定是否与模板图片（一个小块）相匹配的技术。
 
 While the patch must be a rectangle it may be that not all of the rectangle is relevant. In such a case, a mask can be used to isolate the portion of the patch that should be used to find the match.
 
@@ -57,28 +57,28 @@ Good question. OpenCV implements Template matching in the function matchTemplate
 
     1.method=TM_SQDIFF
 
-R(x,y)=∑x′,y′(T(x′,y′)−I(x+x′,y+y′))2
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Csum%20_%7Bx%27%2Cy%27%7D%20%28T%28x%27%2Cy%27%29-I%28x+x%27%2Cy+y%27%29%29%5E2)
     
     2. method=TM_SQDIFF_NORMED
 
-R(x,y)=∑x′,y′(T(x′,y′)−I(x+x′,y+y′))2∑x′,y′T(x′,y′)2⋅∑x′,y′I(x+x′,y+y′)2−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−√
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Cfrac%7B%5Csum_%7Bx%27%2Cy%27%7D%20%28T%28x%27%2Cy%27%29-I%28x+x%27%2Cy+y%27%29%29%5E2%7D%7B%5Csqrt%7B%5Csum_%7Bx%27%2Cy%27%7DT%28x%27%2Cy%27%29%5E2%20%5Ccdot%20%5Csum_%7Bx%27%2Cy%27%7D%20I%28x+x%27%2Cy+y%27%29%5E2%7D%7D)
 
     3.method=TM_CCORR
 
-R(x,y)=∑x′,y′(T(x′,y′)⋅I(x+x′,y+y′))
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Csum%20_%7Bx%27%2Cy%27%7D%20%28T%28x%27%2Cy%27%29%20%5Ccdot%20I%28x+x%27%2Cy+y%27%29%29)
 
     4.method=TM_CCORR_NORMED
 
-R(x,y)=∑x′,y′(T(x′,y′)⋅I(x+x′,y+y′))∑x′,y′T(x′,y′)2⋅∑x′,y′I(x+x′,y+y′)2−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−√
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Cfrac%7B%5Csum_%7Bx%27%2Cy%27%7D%20%28T%28x%27%2Cy%27%29%20%5Ccdot%20I%28x+x%27%2Cy+y%27%29%29%7D%7B%5Csqrt%7B%5Csum_%7Bx%27%2Cy%27%7DT%28x%27%2Cy%27%29%5E2%20%5Ccdot%20%5Csum_%7Bx%27%2Cy%27%7D%20I%28x+x%27%2Cy+y%27%29%5E2%7D%7D)
 
     5.method=TM_CCOEFF
 
-R(x,y)=∑x′,y′(T′(x′,y′)⋅I′(x+x′,y+y′))
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Csum%20_%7Bx%27%2Cy%27%7D%20%28T%27%28x%27%2Cy%27%29%20%5Ccdot%20I%27%28x+x%27%2Cy+y%27%29%29)
 
     where
 
-T′(x′,y′)=T(x′,y′)−1/(w⋅h)⋅∑x′′,y′′T(x′′,y′′)I′(x+x′,y+y′)=I(x+x′,y+y′)−1/(w⋅h)⋅∑x′′,y′′I(x+x′′,y+y′′)
+    ![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Barray%7D%7Bl%7D%20T%27%28x%27%2Cy%27%29%3DT%28x%27%2Cy%27%29%20-%201/%28w%20%5Ccdot%20h%29%20%5Ccdot%20%5Csum%20_%7Bx%27%27%2Cy%27%27%7D%20T%28x%27%27%2Cy%27%27%29%20%5C%5C%20I%27%28x+x%27%2Cy+y%27%29%3DI%28x+x%27%2Cy+y%27%29%20-%201/%28w%20%5Ccdot%20h%29%20%5Ccdot%20%5Csum%20_%7Bx%27%27%2Cy%27%27%7D%20I%28x+x%27%27%2Cy+y%27%27%29%20%5Cend%7Barray%7D)
 
     6.method=TM_CCOEFF_NORMED
 
-R(x,y)=∑x′,y′(T′(x′,y′)⋅I′(x+x′,y+y′))∑x′,y′T′(x′,y′)2⋅∑x′,y′I′(x+x′,y+y′)2−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−√
+    ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Cfrac%7B%20%5Csum_%7Bx%27%2Cy%27%7D%20%28T%27%28x%27%2Cy%27%29%20%5Ccdot%20I%27%28x+x%27%2Cy+y%27%29%29%20%7D%7B%20%5Csqrt%7B%5Csum_%7Bx%27%2Cy%27%7DT%27%28x%27%2Cy%27%29%5E2%20%5Ccdot%20%5Csum_%7Bx%27%2Cy%27%7D%20I%27%28x+x%27%2Cy+y%27%29%5E2%7D%20%7D)
