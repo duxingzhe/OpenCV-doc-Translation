@@ -11,22 +11,22 @@
 
 模板匹配是寻找输入图片的一部分，用以确定是否与模板图片（一个小块）相匹配的技术。
 
-While the patch must be a rectangle it may be that not all of the rectangle is relevant. In such a case, a mask can be used to isolate the portion of the patch that should be used to find the match.
+当图片小块必须是一个矩形的时候，可能并不是所有的矩形都是合适的。在这个情况下，为了能够找到相匹配的模板，我们可以使用蒙版将小块的一部分隔离开来。
 
-How does it work?
+工作原理
 
-* We need two primary components:
+* 我们需要两大部分：
 
-    1.Source image (I): The image in which we expect to find a match to the template image
-    2.Template image (T): The patch image which will be compared to the template image
+    1.原图片(I)：这是为了和模板图片进行对比，以找到匹配的地方
+    2.模板图片(T)：图片小块会和模板图片进行对比
 
-our goal is to detect the highest matching area:
+我们的目的是为了能够检测到高度匹配的区域：
 
-Template_Matching_Template_Theory_Summary.jpg
+![](https://docs.opencv.org/Template_Matching_Template_Theory_Summary.jpg)
 
-* To identify the matching area, we have to compare the template image against the source image by sliding it:
+* 为了识别出匹配区域，我们通过滑动的方式比较模板图片和原图片：
 
-Template_Matching_Template_Theory_Sliding.jpg
+![](https://docs.opencv.org/Template_Matching_Template_Theory_Sliding.jpg)
 
 * By sliding, we mean moving the patch one pixel at a time (left to right, up to down). At each location, a metric is calculated so it represents how "good" or "bad" the match at that location is (or how similar the patch is to that particular area of the source image).
 * For each location of T over I, you store the metric in the result matrix R. Each location (x,y) in R contains the match metric:
