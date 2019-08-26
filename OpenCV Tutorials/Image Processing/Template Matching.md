@@ -37,19 +37,19 @@
 
 * 在实际应用中，我们使用minMaxLoc()函数来确定矩阵R中的最大值（或者最小值，这取决于我们使用匹配方法）。
 
-How does the mask work?
+蒙版的应用
 
-* If masking is needed for the match, three components are required:
+* 如果匹配的时候我们需要蒙版的帮助，那么我们就需要三个部分：
 
-    1.Source image (I): The image in which we expect to find a match to the template image
-    2.Template image (T): The patch image which will be compared to the template image
-    3.Mask image (M): The mask, a grayscale image that masks the template
+    1.原图片(I)：这是为了和模板图片进行对比，以找到匹配的地方
+    2.模板图片(T)：图片小块会和模板图片进行对比
+    3.蒙版图片(M)：蒙版，灰阶图片，用蒙住模板图片
 
-* Only two matching methods currently accept a mask: TM_SQDIFF and TM_CCORR_NORMED (see below for explanation of all the matching methods available in opencv).
-* The mask must have the same dimensions as the template
-* The mask should have a CV_8U or CV_32F depth and the same number of channels as the template image. In CV_8U case, the mask values are treated as binary, i.e. zero and non-zero. In CV_32F case, the values should fall into [0..1] range and the template pixels will be multiplied by the corresponding mask pixel values. Since the input images in the sample have the CV_8UC3 type, the mask is also read as color image.
+* 目前只有两种方法被认为是蒙版：TM_SQDIFF和TM_CCORR_NORMEDO（下面是所有OpenCV提供的匹配方法，会对这个知识进行详细解释）。
+* 蒙板必须和模板有相同的维度
+* 蒙版必须有CV_8U或者CV_32F的深度，和模板图片有同样的通道。在CV_8U情况下，蒙版的值会进行二值化处理，例如零和非零。在CV_32F情况下，值必须在[0..1]之间，模板像素必须与对应的蒙版像素值进行相乘。由于输入图片同样是CV_8UC3类型，蒙版同样会被认为是彩色图片。
 
-Template_Matching_Mask_Example.jpg
+![](https://docs.opencv.org/Template_Matching_Mask_Example.jpg)
 
 Which are the matching methods available in OpenCV?
 
