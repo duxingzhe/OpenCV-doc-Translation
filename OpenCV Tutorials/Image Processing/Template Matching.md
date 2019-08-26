@@ -28,14 +28,14 @@
 
 ![](https://docs.opencv.org/Template_Matching_Template_Theory_Sliding.jpg)
 
-* By sliding, we mean moving the patch one pixel at a time (left to right, up to down). At each location, a metric is calculated so it represents how "good" or "bad" the match at that location is (or how similar the patch is to that particular area of the source image).
-* For each location of T over I, you store the metric in the result matrix R. Each location (x,y) in R contains the match metric:
+* 不停的滑动，我们将小块一次移动一个像素（从左往右，从上往下）。在每一个区域，都会将矩阵代入公式中进行计算用来确定和相关区域匹配度的“好坏”（与原图片相比较，小块图片对于这个区域的匹配度如何）。
+* 对于I的区域和T之间的比较，你会将矩阵存储到矩阵R中。R矩阵中的每一个区域(x,y)包含了匹配矩阵：
 
-Template_Matching_Template_Theory_Result.jpg
+![](https://docs.opencv.org/Template_Matching_Template_Theory_Result.jpg)
 
-the image above is the result R of sliding the patch with a metric TM_CCORR_NORMED. The brightest locations indicate the highest matches. As you can see, the location marked by the red circle is probably the one with the highest value, so that location (the rectangle formed by that point as a corner and width and height equal to the patch image) is considered the match.
+上面的图片是通过一个叫做TM_CCORR_NORMED的矩阵进行小块平移得到的结果R。最亮的部分表示是最匹配的部分。正如你看到的那样，用红色圆圈标出的地方是值最高的地方，所以在这一区域（矩形是以点为连接、长宽与图片小块一致生成的）被认为是最匹配的地方。
 
-* In practice, we locate the highest value (or lower, depending of the type of matching method) in the R matrix, using the function minMaxLoc()
+* 在实际应用中，我们使用minMaxLoc()函数来确定矩阵R中的最大值（或者最小值，这取决于我们使用匹配方法）。
 
 How does the mask work?
 
