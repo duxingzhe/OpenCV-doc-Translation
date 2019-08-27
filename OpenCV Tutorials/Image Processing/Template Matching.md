@@ -51,9 +51,9 @@
 
 ![](https://docs.opencv.org/Template_Matching_Mask_Example.jpg)
 
-Which are the matching methods available in OpenCV?
+OpenCV支持什么模型匹配方法？
 
-Good question. OpenCV implements Template matching in the function matchTemplate(). The available methods are 6:
+这个问题提得非常好。OpenCV实现的方法都在matchTemplate()函数中。一共六种方法：
 
     1.method=TM_SQDIFF
 
@@ -75,7 +75,7 @@ Good question. OpenCV implements Template matching in the function matchTemplate
 
     ![](http://latex.codecogs.com/gif.latex?R%28x%2Cy%29%3D%20%5Csum%20_%7Bx%27%2Cy%27%7D%20%28T%27%28x%27%2Cy%27%29%20%5Ccdot%20I%27%28x+x%27%2Cy+y%27%29%29)
 
-    where
+    其中
 
     ![](http://latex.codecogs.com/gif.latex?%5Cbegin%7Barray%7D%7Bl%7D%20T%27%28x%27%2Cy%27%29%3DT%28x%27%2Cy%27%29%20-%201/%28w%20%5Ccdot%20h%29%20%5Ccdot%20%5Csum%20_%7Bx%27%27%2Cy%27%27%7D%20T%28x%27%27%2Cy%27%27%29%20%5C%5C%20I%27%28x+x%27%2Cy+y%27%29%3DI%28x+x%27%2Cy+y%27%29%20-%201/%28w%20%5Ccdot%20h%29%20%5Ccdot%20%5Csum%20_%7Bx%27%27%2Cy%27%27%7D%20I%28x+x%27%27%2Cy+y%27%27%29%20%5Cend%7Barray%7D)
 
