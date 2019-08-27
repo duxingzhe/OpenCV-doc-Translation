@@ -1,6 +1,6 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+本教程你将会学到：
 
-* Use the OpenCV function cv::findContours
-* Use the OpenCV function cv::drawContours
+* 使用OpenCV的cv::findContours函数
+* 使用OpenCV的cv::drawContours函数

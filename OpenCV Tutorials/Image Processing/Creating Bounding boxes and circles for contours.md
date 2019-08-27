@@ -1,6 +1,6 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在本教程中，你将会学到：
 
-* Use the OpenCV function cv::boundingRect
-* Use the OpenCV function cv::minEnclosingCircle
+* 使用OpenCV的cv::boundingRect函数
+* 使用OpenCV的cv::minEnclosingCircle函数

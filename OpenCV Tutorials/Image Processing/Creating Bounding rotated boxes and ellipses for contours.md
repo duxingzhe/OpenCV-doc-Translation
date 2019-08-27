@@ -1,6 +1,6 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+本教程中，你将会学到：
 
-* Use the OpenCV function cv::minAreaRect
-* Use the OpenCV function cv::fitEllipse
+* 使用OpenCV的cv::minAreaRect函数
+* 使用OpenCV的cv::fitEllipse函数
