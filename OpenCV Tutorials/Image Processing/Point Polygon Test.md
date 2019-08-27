@@ -1,5 +1,5 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在本教程中，你将会学到：
 
-* Use the OpenCV function cv::pointPolygonTest
+* 使用OpenCV的cv::pointPolygonTest函数

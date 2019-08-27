@@ -1,7 +1,7 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+本教程中，你将会学到：
 
-* Use the OpenCV function cv::moments
-* Use the OpenCV function cv::contourArea
-* Use the OpenCV function cv::arcLength
+* 使用OpenCV的function cv::moments函数
+* 使用OpenCV的cv::contourArea函数
+* 使用OpenCV的cv::arcLength函数
