@@ -3,25 +3,25 @@
 在这篇文章中，你将会学到：
 
 * 什么叫退化图像模型
-* 什么是失去焦点图片的PSF（point spread function，扩散函数）
+* 什么是失去焦点图片的PSF（point spread function，点扩散函数）
 * 如何将一张模糊的图片恢复清晰
 * 介绍维纳滤镜
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation is based on the books [79] and [256]. Also, you can refer to Matlab's tutorial Image Deblurring in Matlab and the article SmartDeblur.
+> 本教程例子说明主要基于[79]和[256]两本书。同时你可以查阅Matlab的教程《图像去模糊》和文章《智能去模糊》。
 >
-> The out-of-focus image on this page is a real world image. The out-of-focus was achieved manually by camera optics.
+> 本教程提及的失焦图片是一张现实世界图片。失焦图片是通过相机调节手动生成的。
 
-What is a degradation image model?
+什么是退化图像模型？
 
-Here is a mathematical model of the image degradation in frequency domain representation:
+这是在图像频域表示的图像退化算法数学模型：
 
 S=H⋅U+N
 
-where S is a spectrum of blurred (degraded) image, U is a spectrum of original true (undegraded) image, H is a frequency response of point spread function (PSF), N is a spectrum of additive noise.
+其中，S是模糊化（退化的）图像频谱，U是原来真实（未退化）的图片，H是点扩散函数（PSF）的频率反馈，N是额外噪声的频谱。
 
 The circular PSF is a good approximation of out-of-focus distortion. Such a PSF is specified by only one parameter - radius R. Circular PSF is used in this work.
 
