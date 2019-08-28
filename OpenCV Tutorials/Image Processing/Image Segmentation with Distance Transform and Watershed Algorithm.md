@@ -1,7 +1,7 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在本教程，你将会学到：
 
-* Use the OpenCV function cv::filter2D in order to perform some laplacian filtering for image sharpening
-* Use the OpenCV function cv::distanceTransform in order to obtain the derived representation of a binary image, where the value of each pixel is replaced by its distance to the nearest background pixel
-* Use the OpenCV function cv::watershed in order to isolate objects in the image from the background
+* 使用OpenCV的cv::filter2D函数来实现拉普拉斯滤镜以实现图像的锐化
+* 使用OpenCV的cv::distanceTransform函数来实现二值图的派生展示，将二值图的每一个像素值都由他和最近背景像素值之间的距离代替
+* 使用OpenCV的cv::watershed函数来将图像中的物体与背景之间进行分离
