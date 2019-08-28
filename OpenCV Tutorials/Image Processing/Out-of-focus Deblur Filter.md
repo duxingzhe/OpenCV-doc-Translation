@@ -23,19 +23,19 @@ S=H⋅U+N
 
 其中，S是模糊化（退化的）图像频谱，U是原来真实（未退化）的图片，H是点扩散函数（PSF）的频率反馈，N是额外噪声的频谱。
 
-The circular PSF is a good approximation of out-of-focus distortion. Such a PSF is specified by only one parameter - radius R. Circular PSF is used in this work.
+环形点扩散函数是对失焦扭曲计算的一种比较好的估算方法。这个估算方法只有一个变量——半径，R。环形点扩散函数是本教程中用到的例子。
 
-psf.png
+![](https://docs.opencv.org/4.1.0/psf.png)
 
-Circular point spread function
+环形点扩散函数
 
-How to restore a blurred image?
+如何恢复一张被模糊滤镜处理过的函数？
 
-The objective of restoration (deblurring) is to obtain an estimate of the original image. The restoration formula in frequency domain is:
+恢复物体（去模糊）的方法是去估计原来图片的像素值。在图像的频域，恢复函数为：
 
-U′=Hw⋅S
+![](http://latex.codecogs.com/gif.latex?U%27%20%3D%20H_w%5Ccdot%20S)
 
-where U′ is the spectrum of estimation of original image U, and Hw is the restoration filter, for example, the Wiener filter.
+其中U′是原来的图片U的预计频谱，而![](http://latex.codecogs.com/gif.latex?H_w)恢复滤镜，如维纳滤镜。
 
 What is the Wiener filter?
 
