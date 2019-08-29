@@ -37,12 +37,12 @@ S=H⋅U+N
 
 其中U′是原来的图片U的预计频谱，而![](http://latex.codecogs.com/gif.latex?H_w)恢复滤镜，如维纳滤镜。
 
-What is the Wiener filter?
+什么是维纳滤镜？
 
-The Wiener filter is a way to restore a blurred image. Let's suppose that the PSF is a real and symmetric signal, a power spectrum of the original true image and noise are not known, then a simplified Wiener formula is:
+维纳滤镜是一种恢复已经被模糊化的图片。我们假设点扩散函数是一个真实的对称的信号，对于原始真实图片而言，是有效的频谱，噪声是未知的，于是一个简化的维纳滤镜如下所示：
 
-Hw=H|H|2+1SNR
+![](http://latex.codecogs.com/gif.latex?H_w%20%3D%20%5Cfrac%7BH%7D%7B%7CH%7C%5E2+%5Cfrac%7B1%7D%7BSNR%7D%7D)
 
-where SNR is signal-to-noise ratio.
+其中，SNR是信号与噪声比。
 
-So, in order to recover an out-of-focus image by Wiener filter, it needs to know the SNR and R of the circular PSF.
+因此，为了能通过维纳滤镜来恢复失焦图片，我们需要圆形点扩散函数的信号与噪声比和半径。
