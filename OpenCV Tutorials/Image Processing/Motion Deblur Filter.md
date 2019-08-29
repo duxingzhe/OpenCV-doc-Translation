@@ -1,13 +1,13 @@
-Goal
+目标
 
-In this tutorial you will learn:
+这篇教程中，你将会学到：
 
-* what the PSF of a motion blur image is
-* how to restore a motion blur image
+* 什么是运动模糊图中的点扩散函数
+* 如何让运动模糊图变得清晰
 
-Theory
+理论
 
-For the degradation image model theory and the Wiener filter theory you can refer to the tutorial Out-of-focus Deblur Filter. On this page only a linear motion blur distortion is considered. The motion blur image on this page is a real world image. The blur was caused by a moving subject.
+对于退化图形模型理论和维纳滤镜理论，你可以查看失焦去模糊滤镜。在这篇教程中，我们只考虑线性运动模糊恢复算法。本文中的线性模糊图像是我们亲自拍照获得的。模糊的原因是因为物体的运动。
 
 What is the PSF of a motion blur image?
 
