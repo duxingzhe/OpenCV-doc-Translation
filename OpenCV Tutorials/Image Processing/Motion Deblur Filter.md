@@ -9,14 +9,14 @@
 
 对于退化图形模型理论和维纳滤镜理论，你可以查看失焦去模糊滤镜。在这篇教程中，我们只考虑线性运动模糊恢复算法。本文中的线性模糊图像是我们亲自拍照获得的。模糊的原因是因为物体的运动。
 
-What is the PSF of a motion blur image?
+什么是运动模糊图片的点扩算函数？
 
-The point spread function (PSF) of a linear motion blur distortion is a line segment. Such a PSF is specified by two parameters: LEN is the length of the blur and THETA is the angle of motion.
+线性移动模糊扭曲的点扩算函数(PSF)是线性部分。点扩散函数有两个变量确定：LEN是模糊的长度，THETA是运动的角度。
 
 ![](https://docs.opencv.org/4.1.0/motion_psf.png)
 
-Point spread function of a linear motion blur distortion
+线性移动模糊扭曲的点扩散函数
 
-How to restore a blurred image?
+如何恢复这张模糊的图片？
 
-On this page the Wiener filter is used as the restoration filter, for details you can refer to the tutorial Out-of-focus Deblur Filter. In order to synthesize the Wiener filter for a motion blur case, it needs to specify the signal-to-noise ratio ( SNR), LEN and THETA of the PSF.
+在本教程中，维纳滤镜用于恢复图像，具体内容你可以参阅失焦去模糊滤镜。为了能和当下运动模糊案例的维纳滤镜一致，我们需要指明信号与噪声比（SNR），点扩散函数的LEN、THETA。
