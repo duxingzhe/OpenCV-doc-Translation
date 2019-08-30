@@ -13,13 +13,13 @@
 > 本文理论知识引用自参考书目[100]、[18]和[220]。对径向结构张量分析得比较好的书是参考书目[241]。同时，你可以参考结构张量的维基百科页面。
 > 本教程中的各向异向图片取自真实图片。
 
-What is the gradient structure tensor?
+什么是径向结构张量？
 
-In mathematics, the gradient structure tensor (also referred to as the second-moment matrix, the second order moment tensor, the inertia tensor, etc.) is a matrix derived from the gradient of a function. It summarizes the predominant directions of the gradient in a specified neighborhood of a point, and the degree to which those directions are coherent (coherency). The gradient structure tensor is widely used in image processing and computer vision for 2D/3D image segmentation, motion detection, adaptive filtration, local image features detection, etc.
+在数学上，径向结构张量（同样被称为矩矩阵、二阶矩张量、惯性张量等）是一个函数的径向展开矩阵。它代表了一个点特定临界的主要径向，各个角度之间的关联度。，径向结构张量被广泛应用在二维和三维的图像处理和机器视觉中的图像分离、运动检测、适应性过滤和本地图片特征检测等当中。
 
-Important features of anisotropic images include orientation and coherency of a local anisotropy. In this paper we will show how to estimate orientation and coherency, and how to segment an anisotropic image with a single local orientation by a gradient structure tensor.
+各向异向图片的重要特征包括了本身异向的方向和相关度。在这篇教程中，我们将介绍如何预测方向和相关度、如何通过径向结构张量使用单一本地方向来将各向异向图片区分开来。I
 
-The gradient structure tensor of an image is a 2x2 symmetric matrix. Eigenvectors of the gradient structure tensor indicate local orientation, whereas eigenvalues give coherency (a measure of anisotropism).
+图像的径向结构张量是一个2x2对称矩阵。径向结构张量的特征值表明了图像本身的方向，特征向量则提供了相关型（对各向异向特征的衡量有一定帮助）。
 
 The gradient structure tensor J of an image Z can be written as:
 
