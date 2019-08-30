@@ -1,18 +1,17 @@
-Goal
+目的
 
-In this tutorial you will learn:
+在本教程中，你将会学到：
 
+* 径向结构张量
+* 如何使用径向结构张量来预测各向异向图像的方向和相关性
+* 通过径向结构张量使用单一本地方向来将各向异向图片区分开来
 
-* hat the gradient structure tensor is
-* how to estimate orientation and coherency of an anisotropic image by a gradient structure tensor
-* how to segment an anisotropic image with a single local orientation by a gradient structure tensor
+理论
 
-Theory
-
-> Note
+> 注意
 > 
-> The explanation is based on the books [100], [18] and [220]. Good physical explanation of a gradient structure tensor is given in [241]. Also, you can refer to a wikipedia page Structure tensor.
-> A anisotropic image on this page is a real world image.
+> 本文理论知识引用自参考书目[100]、[18]和[220]。对径向结构张量分析得比较好的书是参考书目[241]。同时，你可以参考结构张量的维基百科页面。
+> 本教程中的各向异向图片取自真实图片。
 
 What is the gradient structure tensor?
 
