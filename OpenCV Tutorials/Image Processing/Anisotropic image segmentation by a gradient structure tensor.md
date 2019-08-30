@@ -21,17 +21,17 @@
 
 图像的径向结构张量是一个2x2对称矩阵。径向结构张量的特征值表明了图像本身的方向，特征向量则提供了相关型（对各向异向特征的衡量有一定帮助）。
 
-The gradient structure tensor J of an image Z can be written as:
+对于一张图片Z的径向结构张量可以用如下式子表示：
 
 ![](http://latex.codecogs.com/gif.latex?J%20%3D%20%5Cbegin%7Bbmatrix%7D%20J_%7B11%7D%20%26%20J_%7B12%7D%20%5C%5C%20J_%7B12%7D%20%26%20J_%7B22%7D%20%5Cend%7Bbmatrix%7D)
 
-where ![](http://latex.codecogs.com/gif.latex?J_%7B11%7D%20%3D%20M%5BZ_%7Bx%7D%5E%7B2%7D%5D) , ![](http://latex.codecogs.com/gif.latex?J_%7B22%7D%20%3D%20M%5BZ_%7By%7D%5E%7B2%7D%5D) , ![](http://latex.codecogs.com/gif.latex?J_%7B12%7D%20%3D%20M%5BZ_%7Bx%7DZ_%7By%7D%5D) - components of the tensor, M[] is a symbol of mathematical expectation (we can consider this operation as averaging in a window w), Zx and Zy are partial derivatives of an image Z with respect to x and y.
+其中![](http://latex.codecogs.com/gif.latex?J_%7B11%7D%20%3D%20M%5BZ_%7Bx%7D%5E%7B2%7D%5D) , ![](http://latex.codecogs.com/gif.latex?J_%7B22%7D%20%3D%20M%5BZ_%7By%7D%5E%7B2%7D%5D) , ![](http://latex.codecogs.com/gif.latex?J_%7B12%7D%20%3D%20M%5BZ_%7Bx%7DZ_%7By%7D%5D)张量的组成部分，M[]则是数学期望的符号（我们将认为这个符号能够在某一个窗口上取一个平均值），![](http://latex.codecogs.com/gif.latex?Z_x)和![](http://latex.codecogs.com/gif.latex?Z_y)是Z在x和y方向的展开式。
 
-The eigenvalues of the tensor can be found in the below formula:
+通过以下公式，我们能够计算出张量的特征值：
 
 ![](http://latex.codecogs.com/gif.latex?%5Clambda_%7B1%2C2%7D%20%3D%20J_%7B11%7D%20+%20J_%7B22%7D%20%5Cpm%20%5Csqrt%7B%28J_%7B11%7D%20-%20J_%7B22%7D%29%5E%7B2%7D%20+%204J_%7B12%7D%5E%7B2%7D%7D)
 
-where ![](http://latex.codecogs.com/gif.latex?\lambda_1) - largest eigenvalue, ![](http://latex.codecogs.com/gif.latex?\lambda_2) - smallest eigenvalue.
+其中![](http://latex.codecogs.com/gif.latex?\lambda_1)是最大的特征值，![](http://latex.codecogs.com/gif.latex?\lambda_2)是最小的特征值。
 
 How to estimate orientation and coherency of an anisotropic image by gradient structure tensor?
 The orientation of an anisotropic image:
