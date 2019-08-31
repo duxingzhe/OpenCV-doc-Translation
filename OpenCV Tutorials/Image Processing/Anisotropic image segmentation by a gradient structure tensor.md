@@ -33,13 +33,14 @@
 
 其中![](http://latex.codecogs.com/gif.latex?\lambda_1)是最大的特征值，![](http://latex.codecogs.com/gif.latex?\lambda_2)是最小的特征值。
 
-How to estimate orientation and coherency of an anisotropic image by gradient structure tensor?
-The orientation of an anisotropic image:
+如何用径向结构张量分析一张各向异向图的方向和相关度？
+
+各向异向图的方向：
 
 ![](http://latex.codecogs.com/gif.latex?%5Calpha%20%3D%200.5arctg%5Cfrac%7B2J_%7B12%7D%7D%7BJ_%7B22%7D%20-%20J_%7B11%7D%7D)
 
-Coherency:
+相关性
 
 ![](http://latex.codecogs.com/gif.latex?C%20%3D%20%5Cfrac%7B%5Clambda_1%20-%20%5Clambda_2%7D%7B%5Clambda_1%20+%20%5Clambda_2%7D)
 
-The coherency ranges from 0 to 1. For ideal local orientation ( ![](http://latex.codecogs.com/gif.latex?\lambda_2) = 0, ![](http://latex.codecogs.com/gif.latex?\lambda_1) > 0) it is one, for an isotropic gray value structure ( λ1 = λ2 > 0) it is zero.
+相关性的范围是0到1。对于自身方向（![](http://latex.codecogs.com/gif.latex?\lambda_2) = 0, ![](http://latex.codecogs.com/gif.latex?\lambda_1) > 0）是一，对于同向灰阶结构而言，（ ![](http://latex.codecogs.com/gif.latex?\lambda_1) = ![](http://latex.codecogs.com/gif.latex?\lambda_2) > 0）它是零。  it is zero.
