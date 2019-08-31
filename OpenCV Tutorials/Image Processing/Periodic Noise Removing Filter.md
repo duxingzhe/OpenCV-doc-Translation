@@ -10,8 +10,8 @@
 > 
 > 本文来自参考书目[79]。图片取自真实场景。
 
-Periodic noise produces spikes in the Fourier domain that can often be detected by visual analysis.
+周期性噪声可以通过可视化分析发现，它一般在傅里叶域的顶端。
 
-How to remove periodic noise in the Fourier domain?
+如何去除傅里叶域的周期性噪声？
 
-Periodic noise can be reduced significantly via frequency domain filtering. On this page we use a notch reject filter with an appropriate radius to completely enclose the noise spikes in the Fourier domain. The notch filter rejects frequencies in predefined neighborhoods around a center frequency. The number of notch filters is arbitrary. The shape of the notch areas can also be arbitrary (e.g. rectangular or circular). On this page we use three circular shape notch reject filters. Power spectrum densify of an image is used for the noise spike’s visual detection.
+周期性噪声可以通过频域滤波器进行大幅度降低。在这篇文章中，我们将使用陷波抑制滤波器，这个滤波器有一个适当的半径，用以覆盖傅里叶域中的噪声尖端。陷波抑制滤波器会在中心频域附近将邻近频域给去掉。陷波抑制滤波器的数量是任意的，陷波区域的形状也可以是任意的（例如矩形和圆形）。在这篇文章中，我们有三个圆形形状的陷波抑制滤波器。图像的波段频谱强度将用来检测噪声尖端的可视化检测。
