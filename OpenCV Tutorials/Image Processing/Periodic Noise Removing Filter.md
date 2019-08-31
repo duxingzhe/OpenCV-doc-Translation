@@ -1,14 +1,14 @@
-Goal
+目的
 
-In this tutorial you will learn:
+本教程你将学到：
 
-* how to remove periodic noise in the Fourier domain
+* 如何去除傅里叶域的周期性噪声
 
-Theory
+理论
 
-> Note
+> 注意
 > 
-> The explanation is based on the book [79]. The image on this page is a real world image.
+> 本文来自参考书目[79]。图片取自真实场景。
 
 Periodic noise produces spikes in the Fourier domain that can often be detected by visual analysis.
 
