@@ -38,7 +38,7 @@ Author: Ana Huamán
 
 我们来改变一下图像物体的形状
 
-More Morphology Transformations
+更多形态学上的操作
 
 Languages: C++, Java, Python
 
@@ -46,9 +46,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Here we investigate different morphology operators
+我们将学习更多不同的形态学操作
 
-Hit-or-Miss
+击中或未击中
 
 Languages: C++, Java, Python
 
@@ -56,9 +56,9 @@ Compatibility: > OpenCV 2.4
 
 Author: Lorena García
 
-Learn how to find patterns in binary images using the Hit-or-Miss operation
+使用击中或未击中的方法来找到二值图中的模式
 
-Extract horizontal and vertical lines by using morphological operations
+使用形态学操作来延展水平和竖直方向的直线
 
 Languages: C++, Java, Python
 
@@ -66,7 +66,7 @@ Compatibility: > OpenCV 2.0
 
 Author: Theodore Tsesmelis
 
-Here we will show how we can use different morphological operators to extract horizontal and vertical lines
+使用不同的形态学操作来扩展水平和数值方向的直线
 
 Image Pyramids
 
