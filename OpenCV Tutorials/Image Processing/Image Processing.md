@@ -68,7 +68,7 @@ Author: Theodore Tsesmelis
 
 使用不同的形态学操作来扩展水平和数值方向的直线
 
-Image Pyramids
+图片金字塔
 
 Languages: C++, Java, Python
 
@@ -76,9 +76,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-What if I need a bigger/smaller image?
+获得更大/更小的图片
 
-Basic Thresholding Operations
+基本阈值处理
 
 Languages: C++, Java, Python
 
@@ -86,9 +86,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-After so much processing, it is time to decide which pixels stay
+分析了这么多的操作，我们现在分析一下如何决定哪些元素留下来
 
-Thresholding Operations using inRange
+使用inRange进行阈值操作
 
 Languages: C++, Java, Python
 
@@ -96,19 +96,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Rishiraj Surti
 
-Thresholding operations using inRange function.
+使用inRange函数进行阈值操作
 
-Making your own linear filters!
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn to design our own filters by using OpenCV functions
-
-Adding borders to your images
+自定义一个线性滤镜
 
 Languages: C++, Java, Python
 
@@ -116,9 +106,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to pad our images
+使用OpencV函数来设计我们自己的滤镜
 
-Sobel Derivatives
+为你的图片增加边框
 
 Languages: C++, Java, Python
 
@@ -126,7 +116,17 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to calculate gradients and use them to detect edges
+学习增加图片的边距
+
+索贝尔算子
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+学习计算径向并检测边界
 
 Laplace Operator
 
