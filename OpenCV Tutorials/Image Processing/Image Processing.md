@@ -128,7 +128,7 @@ Author: Ana Huamán
 
 学习计算径向并检测边界
 
-Laplace Operator
+拉普拉斯算子
 
 Languages: C++, Java, Python
 
@@ -136,19 +136,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn about the Laplace operator and how to detect edges with it
+了解拉普拉斯算子，并学习如何用它检测边界
 
-Canny Edge Detector
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn a sophisticated alternative to detect edges
-
-Hough Line Transform
+肯尼边界检测
 
 Languages: C++, Java, Python
 
@@ -156,19 +146,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to detect lines
+我们多学一种检测边界的方法
 
-Hough Circle Transform
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn how to detect circles
-
-Remapping
+霍夫直线变换
 
 Languages: C++, Java, Python
 
@@ -176,9 +156,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to manipulate pixels locations
+检测直线的方法
 
-Affine Transformations
+霍夫圆形变换
 
 Languages: C++, Java, Python
 
@@ -186,7 +166,27 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to rotate, translate and scale our images
+检测圆形的方法
+
+重映射
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+学习如何控制像素位置
+
+仿射变换
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+学习旋转、平移并且按比例放大缩小图片
 
 Histogram Equalization
 
