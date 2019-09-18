@@ -188,7 +188,7 @@ Author: Ana Huamán
 
 学习旋转、平移并且按比例放大缩小图片
 
-Histogram Equalization
+直方方程
 
 Languages: C++, Java, Python
 
@@ -196,19 +196,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to improve the contrast in our images
+增加图片的对比度
 
-Histogram Calculation
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn how to create and generate histograms
-
-Histogram Comparison
+直方图计算
 
 Languages: C++, Java, Python
 
@@ -216,19 +206,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn to calculate metrics between histograms
+创建和产生直方图
 
-Back Projection
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn how to use histograms to find similar objects in images
-
-Template Matching
+对比直方图
 
 Languages: C++, Java, Python
 
@@ -236,9 +216,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to match templates in an image
+对比直方图之间的矩阵
 
-Finding contours in your image
+反向映射
 
 Languages: C++, Java, Python
 
@@ -246,7 +226,27 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to find contours of objects in our image
+使用直方图找到图片中相似的物体
+
+模式匹配
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+学习在图像中匹配模型
+
+画出图片物体的轮廓
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+在图像中画出物体的轮廓
 
 Convex Hull
 
