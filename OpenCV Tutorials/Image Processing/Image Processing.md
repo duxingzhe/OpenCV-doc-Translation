@@ -248,7 +248,7 @@ Author: Ana Huamán
 
 在图像中画出物体的轮廓
 
-Convex Hull
+画等高轮廓线
 
 Languages: C++, Java, Python
 
@@ -256,19 +256,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to get hull contours and draw them
+获得等高线并画等高轮廓线
 
-Creating Bounding boxes and circles for contours
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn how to obtain bounding boxes and circles for our contours
-
-Creating Bounding rotated boxes and ellipses for contours
+在轮廓线上创建方框和圆圈
 
 Languages: C++, Java, Python
 
@@ -276,19 +266,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to obtain rotated bounding boxes and ellipses for our contours
+学习如何创建方框和圆圈
 
-Image Moments
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Where we learn to calculate the moments of an image
-
-Point Polygon Test
+为轮廓线画出旋转的方框和椭圆
 
 Languages: C++, Java, Python
 
@@ -296,9 +276,29 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we learn how to calculate distances from the image to contours
+学习在轮廓线上画出旋转的方框和椭圆
 
-Image Segmentation with Distance Transform and Watershed Algorithm
+图像矩
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+计算图像矩
+
+点与多边形位置测试
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+测试点到轮廓的距离
+
+用距离变换与分水岭算法进行图片分离
 
 Languages: C++, Java, Python
 
@@ -306,7 +306,7 @@ Compatibility: > OpenCV 2.0
 
 Author: Theodore Tsesmelis
 
-Where we learn to segment objects using Laplacian filtering, the Distance Transformation and the Watershed algorithm.
+使用拉普拉斯滤镜再通过距离变换与分水岭算法进行图片中的物体分离。
 
 Out-of-focus Deblur Filter
 
