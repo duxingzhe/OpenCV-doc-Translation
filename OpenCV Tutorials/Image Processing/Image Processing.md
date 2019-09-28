@@ -308,7 +308,7 @@ Author: Theodore Tsesmelis
 
 使用拉普拉斯滤镜再通过距离变换与分水岭算法进行图片中的物体分离。
 
-Out-of-focus Deblur Filter
+失焦去模糊滤镜
 
 Languages: C++
 
@@ -316,19 +316,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Karpushin Vladislav
 
-You will learn how to recover an out-of-focus image by Wiener filter.
+你将学会使用温娜滤镜来将失焦模糊图片去模糊处理。
 
-Motion Deblur Filter
-
-Languages: C++
-
-Compatibility: > OpenCV 2.0
-
-Author: Karpushin Vladislav
-
-You will learn how to recover an image with motion blur distortion using a Wiener filter.
-
-Anisotropic image segmentation by a gradient structure tensor
+动态模糊滤镜
 
 Languages: C++
 
@@ -336,9 +326,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Karpushin Vladislav
 
-You will learn how to segment an anisotropic image with a single local orientation by a gradient structure tensor.
+你将学会使用温娜滤镜来将动态模糊图片去模糊处理。
 
-Periodic Noise Removing Filter
+通过径向结构张量来将各向异向图片分区
 
 Languages: C++
 
@@ -346,4 +336,14 @@ Compatibility: > OpenCV 2.0
 
 Author: Karpushin Vladislav
 
-You will learn how to remove periodic noise in the Fourier domain.
+你讲学习到如何使用径向结构张量通过单一局部定向来将各向异向图片分区。
+
+周期噪声去除滤镜
+
+Languages: C++
+
+Compatibility: > OpenCV 2.0
+
+Author: Karpushin Vladislav
+
+你会知道如何去除傅里叶频域中的周期噪声滤镜。
