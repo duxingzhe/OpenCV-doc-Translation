@@ -1,6 +1,6 @@
-This section contains tutorials about how to use the built-in graphical user interface of the library.
+这部分教程会告诉你如何使用OpenCV库中内建的控件设计一个用户交互界面。
 
-Adding a Trackbar to our applications!
+在我们的应用界面上加一个滑动条！
 
 Languages: C++, Java, Python
 
@@ -8,4 +8,4 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-We will learn how to add a Trackbar to our applications
+我们将学习如何在我们的应用上加一个滑动条
