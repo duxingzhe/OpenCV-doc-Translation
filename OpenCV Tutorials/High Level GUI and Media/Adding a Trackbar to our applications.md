@@ -1,15 +1,15 @@
-### Adding a Trackbar to our applications
+### 添加一个滑动条
 
-* In the previous tutorials (about Adding (blending) two images using OpenCV and the Changing the contrast and brightness of an image!) you might have noted that we needed to give some input to our programs, such as α and beta. We accomplished that by entering this data using the Terminal.
+* 在之前的模块中（也就是使用OpenCV对两张图片进行混合和改变图像的对比度和亮度教程中）你注意到我们的教程中提供了一些输入模块，比如α和β。我们是在终端中完成输入数据的这些步骤的。
 
-* Well, it is time to use some fancy GUI tools. OpenCV provides some GUI utilities (highgui module) for you. An example of this is a Trackbar.
+* 现在，我们应该用一些好玩的图像界面工具了。Ope为你nCV提供了一些图像界面模块（highgui module）。下面便是提供了一个滑动条的例子。
 
 ![](https://docs.opencv.org/Adding_Trackbars_Tutorial_Trackbar.png)
 
-* In this tutorial we will just modify our two previous programs so that they get the input information from the trackbar.
+* 在本篇教程中，我们只是更改一下我们之前的两个程序，这样他们就可以通过滑动条得到输入信息。
 
-#### Goals
+#### 目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将学到:
 
-* Add a Trackbar in an OpenCV window by using cv::createTrackbar
+* 在OpenCV窗口中使用cv::creaetTrackbar添加一个滑动条。
