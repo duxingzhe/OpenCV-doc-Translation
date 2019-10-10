@@ -1,13 +1,13 @@
-Geospatial raster data is a heavily used product in Geographic Information Systems and Photogrammetry. Raster data typically can represent imagery and Digital Elevation Models (DEM). The standard library for loading GIS imagery is the Geographic Data Abstraction Library (GDAL). In this example, we will show techniques for loading GIS raster formats using native OpenCV functions. In addition, we will show some an example of how OpenCV can use this data for novel and interesting purposes.
+地理空间光栅数据在地理信息系统和图像遥感处理中十分重要的数据文件。光栅数据通常可以显示图像学和数据评估模型（DEM）。Geographic Data Abstraction Library是读取GIS图片的标准库。例如，在本文例子当中，我们将告诉各位读者如何使用OpenCV的内建函数来加载GIS光栅格式数据。另外，我们还将通过一个例子学到如何使用OpenCV来处理这些数据，以便达到一些模拟的但是又非常好玩的目的。
 
-Goals
+目的
 
-The primary objectives for this tutorial:
+这篇教程的主要目的有：
 
-* How to use OpenCV imread to load satellite imagery.
-* How to use OpenCV imread to load SRTM Digital Elevation Models
-* Given the corner coordinates of both the image and DEM, correllate the elevation data to the image to find elevations for each pixel.
-* Show a basic, easy-to-implement example of a terrain heat map.
-* Show a basic use of DEM data coupled with ortho-rectified imagery.
+* 如何使用OpenCV imread函数加载卫星图片。
+* 如何使用OpenCV imread函数加载SRTM Digital Elevation Models
+* 给定了图片和DEM的角点坐标， 将海拔高度和图像联系起来来找到每一个像素点的海拔。
+* 告诉读者如何使用基本方法，用比较简单的方式画出一个地形热力图。
+* 告诉读者使用DEM数据并将其和正射整流图联系在一起。
 
-To implement these goals, the following code takes a Digital Elevation Model as well as a GeoTiff image of San Francisco as input. The image and DEM data is processed and generates a terrain heat map of the image as well as labels areas of the city which would be affected should the water level of the bay rise 10, 50, and 100 meters.
+为了能达到上述目的，我们是用了一张数据化海拔模型数据图片和一张旧金山的GeoTiff图片作为输入图片。经过对图片和DEM数据的处理，我们生成了一张地形热力图片，并且将如果海平面上升10、50、100米之后会受到影响的每一座城市都标注出来。

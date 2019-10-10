@@ -1,9 +1,9 @@
-This section contains tutorials about how to read/save your image files.
+这篇教程告诉你如何读取/保存的你的图像文件。
 
-Reading Geospatial Raster files with GDAL
+通过GDAL读取地理光栅数据
 
 Compatibility: > OpenCV 2.0
 
 Author: Marvin Smith
 
-Read common GIS Raster and DEM files to display and manipulate geographic data.
+读取普通的地理信息系统的光栅格式数据和DEM文件来展示和处理地理数据。
