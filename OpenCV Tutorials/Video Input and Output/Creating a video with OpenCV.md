@@ -1,18 +1,18 @@
-Goal
+目的
 
-Whenever you work with video feeds you may eventually want to save your image processing result in a form of a new video file. For simple video outputs you can use the OpenCV built-in cv::VideoWriter class, designed for this.
+每次你对视频进行处理的时候，你最后都会将你的图像处理结果都通过新的视频形式保存起来。简单的视频输出方式你可以通过OpenCV内置的cv::VideoWriter类来处理，这个类就是为了解决这个问题而设置的。
 
-* How to create a video file with OpenCV
-* What type of video files you can create with OpenCV
-* How to extract a given color channel from a video
+* 通过OpenCV来创建视频文件
+* 可以通过OpenCV创建什么样的视频文件
+* 从视频中抽取特定的色彩通道
 
-As a simple demonstration I'll just extract one of the BGR color channels of an input video file into a new video. You can control the flow of the application from its console line arguments:
+作为一个简单的示例程序，我将从一个视频作为输入端，抽取出BGR色彩通道中的一个做为输出端，保存到新的视频中。你可以通过控制台输入的参数来控制应用的数据流：
 
-* The first argument points to the video file to work on
-* The second argument may be one of the characters: R G B. This will specify which of the channels to extract.
-*The last argument is the character Y (Yes) or N (No). If this is no, the codec used for the input video file will be the same as for the output. Otherwise, a window will pop up and allow you to select yourself the codec to use.
+* 第一个变量是我们需要处理的视频文件
+* 第二个参数必须是R G B的其中一个字符。它指明了我们需要抽取的色彩通道。
+* 最后一个参数代表的是Y (Yes)或N (No)。如果是no，表明输入视频文件的编码器和输出端的编码器是一样的。否则，将会弹出一个窗口来选择你自己的编码器来编码输出文件。
 
-For example, a valid command line would look like:
+例如，一个有效的命令行应该如下所示：
 
 ```
 video-write.exe video/Megamind.avi R Y
