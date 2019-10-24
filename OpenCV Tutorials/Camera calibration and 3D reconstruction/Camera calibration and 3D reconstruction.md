@@ -1,41 +1,41 @@
-Although we get most of our images in a 2D format they do come from a 3D world. Here you will learn how to find out 3D world information from 2D images.
+尽管我们的二维图片都取材于三维世界，但在本教程中，你讲学习如何通过二维照片获得三维信息。
 
-Create calibration pattern
+获取摄像头矫正信息
 
 Compatibility: > OpenCV 2.0
 
 Author: Laurent Berger
 
-You will learn how to create some calibration pattern.
+你将学习到创建一些矫正模型。
 
-Camera calibration with square chessboard
+通过方格棋盘进行摄像头矫正
 
 Compatibility: > OpenCV 2.0
 
 Author: Victor Eruhimov
 
-You will use some chessboard images to calibrate your camera.
+你可以是用一些棋盘图形来矫正你的摄像头。
 
-Camera calibration With OpenCV
+使用OpenCV进行摄像头校正
 
 Compatibility: > OpenCV 4.0
 
 Author: Bernát Gábor
 
-Camera calibration by using either the chessboard, circle or the asymmetrical circle pattern. Get the images either from a camera attached, a video file or from an image collection.
+通过使用棋盘、圆或者对称圆模式来进行摄像头矫正。通过摄像头、收集到的视频或者图片中获取图像。
 
-Real Time pose estimation of a textured object
+实时处理纹理对象的形态预测
 
 Compatibility: > OpenCV 2.0
 
 Author: Edgar Riba
 
-Real time pose estimation of a textured object using ORB features, FlannBased matcher, PnP approach plus Ransac and Linear Kalman Filter to reject possible bad poses.
+使用ORB、FlannBased匹配，PnP方法加上Ransc和线性卡尔曼滤镜来实时处理纹理对象的形态，以便将不合适的形态进行过滤。
 
-Interactive camera calibration application
+与相机矫正应用进行交互
 
 Compatibility: > OpenCV 3.1
 
 Author: Vladislav Sovrasov
 
-Camera calibration by using either the chessboard, chAruco, asymmetrical circle or dual asymmetrical circle pattern. Calibration process is continuous, so you can see results after each new pattern shot. As an output you get average reprojection error, intrinsic camera parameters, distortion coefficients and confidence intervals for all of evaluated variables.
+通过使用棋盘、chAruco方式、对称圆模式和双对称圆模式来进行摄像头矫正。摄像头矫正是一个持续不断的过程，因此你当你应用了不同的模式时，你能看到不同的结果。在结果里，你能看到每一个变量的平均重投影误差，摄像头本身的变量值，扭曲参数和置信区间。
