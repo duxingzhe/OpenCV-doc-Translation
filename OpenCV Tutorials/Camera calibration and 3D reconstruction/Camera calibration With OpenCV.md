@@ -1,4 +1,4 @@
-Cameras have been around for a long-long time. However, with the introduction of the cheap pinhole cameras in the late 20th century, they became a common occurrence in our everyday life. Unfortunately, this cheapness comes with its price: significant distortion. Luckily, these are constants and with a calibration and some remapping we can correct this. Furthermore, with calibration you may also determine the relation between the camera's natural units (pixels) and the real world units (for example millimeters).
+摄像机已经发明面世有一段时间了。然而直到20世纪后期针孔摄像机发明之后，摄像机才进入我们的日常生活当中。不幸的是，便宜也意味着性能不会太好：有明显的扭曲。幸运的是，他们通常是一个定值，并且通过修正和简单的重映射，我们就能修复它。另外，通过修正，你可以确定相机自然单位（像素）和真实世界单位（比如，毫米）之间的换算关系。
 
 Theory
 
