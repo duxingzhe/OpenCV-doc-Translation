@@ -16,7 +16,7 @@
 
 ![](http://latex.codecogs.com/gif.latex?distortion%5C_coefficients%3D%28k_1%20%5Chspace%7B10pt%7D%20k_2%20%5Chspace%7B10pt%7D%20p_1%20%5Chspace%7B10pt%7D%20p_2%20%5Chspace%7B10pt%7D%20k_3%29)
 
-Now for the unit conversion we use the following formula:
+为了有统一的变换，我们有以下公式：
 
 ![](http://latex.codecogs.com/gif.latex?%5Cleft%20%5B%20%5Cbegin%7Bmatrix%7D%20x%20%5C%5C%20y%20%5C%5C%20w%20%5Cend%7Bmatrix%7D%20%5Cright%20%5D%20%3D%20%5Cleft%20%5B%20%5Cbegin%7Bmatrix%7D%20f_x%20%26%200%20%26%20c_x%20%5C%5C%200%20%26%20f_y%20%26%20c_y%20%5C%5C%200%20%26%200%20%26%201%20%5Cend%7Bmatrix%7D%20%5Cright%20%5D%20%5Cleft%20%5B%20%5Cbegin%7Bmatrix%7D%20X%20%5C%5C%20Y%20%5C%5C%20Z%20%5Cend%7Bmatrix%7D%20%5Cright%20%5D)
 
