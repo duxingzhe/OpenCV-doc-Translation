@@ -1,18 +1,18 @@
 摄像机已经发明面世有一段时间了。然而直到20世纪后期针孔摄像机发明之后，摄像机才进入我们的日常生活当中。不幸的是，便宜也意味着性能不会太好：有明显的扭曲。幸运的是，他们通常是一个定值，并且通过修正和简单的重映射，我们就能修复它。另外，通过修正，你可以确定相机自然单位（像素）和真实世界单位（比如，毫米）之间的换算关系。
 
-Theory
+理论
 
-For the distortion OpenCV takes into account the radial and tangential factors. For the radial factor one uses the following formula:
+对于扭曲，OpenCV通过半径和正切值做为参数来进行修正。对于半径参数，可以用以下公式：
 
 ![](http://latex.codecogs.com/gif.latex?x_%7Bdistorted%7D%20%3D%20x%28%201%20+%20k_1%20r%5E2%20+%20k_2%20r%5E4%20+%20k_3%20r%5E6%29%20%5C%5C%20y_%7Bdistorted%7D%20%3D%20y%28%201%20+%20k_1%20r%5E2%20+%20k_2%20r%5E4%20+%20k_3%20r%5E6%29)
 
-So for an undistorted pixel point at (x,y) coordinates, its position on the distorted image will be (![](http://latex.codecogs.com/gif.latex?x_%7Bdistorted%7D%2C%20y_%7Bdistorted%7D)). The presence of the radial distortion manifests in form of the "barrel" or "fish-eye" effect.
+对于在未扭曲的图像中像素点的坐标值为（x,y）,其在已经扭曲的图像中对应的坐标将是 (![](http://latex.codecogs.com/gif.latex?x_%7Bdistorted%7D%2C%20y_%7Bdistorted%7D)). 辐射扭曲的效果就好像“圆柱”和“鱼眼”特效一样。
 
-Tangential distortion occurs because the image taking lenses are not perfectly parallel to the imaging plane. It can be represented via the formulas:
+正切扭曲是在图像在晶状体面前的时候不再和成像面平行了。它的效果由下式表达：
 
 ![](http://latex.codecogs.com/gif.latex?x_%7Bdistorted%7D%20%3D%20x%20+%20%5B%202p_1xy%20+%20p_2%28r%5E2+2x%5E2%29%5D%20%5C%5C%20y_%7Bdistorted%7D%20%3D%20y%20+%20%5B%20p_1%28r%5E2+%202y%5E2%29+%202p_2xy%5D)
 
-So we have five distortion parameters which in OpenCV are presented as one row matrix with 5 columns:
+因此我们就有了五个扭曲变量，这五个变量在OpenCV中用一行五列的矩阵表示：
 
 ![](http://latex.codecogs.com/gif.latex?distortion%5C_coefficients%3D%28k_1%20%5Chspace%7B10pt%7D%20k_2%20%5Chspace%7B10pt%7D%20p_1%20%5Chspace%7B10pt%7D%20p_2%20%5Chspace%7B10pt%7D%20k_3%29)
 
@@ -31,6 +31,7 @@ The process of determining these two matrices is the calibration. Calculation of
 Basically, you need to take snapshots of these patterns with your camera and let OpenCV find them. Each found pattern results in a new equation. To solve the equation you need at least a predetermined number of pattern snapshots to form a well-posed equation system. This number is higher for the chessboard pattern and less for the circle ones. For example, in theory the chessboard pattern requires at least two snapshots. However, in practice we have a good amount of noise present in our input images, so for good results you will probably need at least 10 good snapshots of the input pattern in different positions.
 
 Goal
+
 The sample application will:
 
 * Determine the distortion matrix
