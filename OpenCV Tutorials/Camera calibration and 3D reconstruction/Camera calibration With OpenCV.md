@@ -22,11 +22,11 @@
 
 在这里，w代表的是在单应性坐标系统的使用（并且w=Z）。未知参数是![](http://latex.codecogs.com/gif.latex?f_x) and ![](http://latex.codecogs.com/gif.latex?f_y) （相机焦距）和![](http://latex.codecogs.com/gif.latex?(c_x,c_y)) 这个表示的是像素坐标系中的视觉中心。如果所有的坐标轴都有一个共同的焦距，焦距使用的纵横比（通常为一），然后![](http://latex.codecogs.com/gif.latex?f_y=f_x*a)以及之前的公式中，我们将会使用一个单焦距f来计算。这个矩阵包含了四个变量，这四变量被认为是相机矩阵。当无论相机使用了什么分辨率，扭曲参数都不变的时候，那么当前分辨率和修正分辨率之间是成比率关系。
 
-The process of determining these two matrices is the calibration. Calculation of these parameters is done through basic geometrical equations. The equations used depend on the chosen calibrating objects. Currently OpenCV supports three types of objects for calibration:
+在这两个矩阵之间确定某种联系的过程就叫做图像纠正。这些变量的纠正通过基本几何方程来完成的。方程的选定取决于选取的纠正物体。目前OpenCV支持一下物体的纠正：
 
-* Classical black-white chessboard
-* Symmetrical circle pattern
-* Asymmetrical circle pattern
+* 传统的黑白棋盘
+* 对称圆模型
+* 非对称圆模型
 
 Basically, you need to take snapshots of these patterns with your camera and let OpenCV find them. Each found pattern results in a new equation. To solve the equation you need at least a predetermined number of pattern snapshots to form a well-posed equation system. This number is higher for the chessboard pattern and less for the circle ones. For example, in theory the chessboard pattern requires at least two snapshots. However, in practice we have a good amount of noise present in our input images, so for good results you will probably need at least 10 good snapshots of the input pattern in different positions.
 
