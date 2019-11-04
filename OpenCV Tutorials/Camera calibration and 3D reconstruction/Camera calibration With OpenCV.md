@@ -28,15 +28,15 @@
 * 对称圆模型
 * 非对称圆模型
 
-Basically, you need to take snapshots of these patterns with your camera and let OpenCV find them. Each found pattern results in a new equation. To solve the equation you need at least a predetermined number of pattern snapshots to form a well-posed equation system. This number is higher for the chessboard pattern and less for the circle ones. For example, in theory the chessboard pattern requires at least two snapshots. However, in practice we have a good amount of noise present in our input images, so for good results you will probably need at least 10 good snapshots of the input pattern in different positions.
+你基本上需要通过相机先拍一张快照，然后通过OpenCV来确定模型。每一种确定的模型都是一条新的公式。为了确定这些公式中的参数，你至少需要在一个已经处理好的公示系统中预先确定公式中的一个参数。如果这个数字越大，说明我们应该选择棋盘模型，反之，应该选择圆形模型。例如，棋盘模型至少要两张图片。然而，实际上在我们的输入图片中会有大量的噪声，因此为了得到最好的结果，你至少要在不同的地方拍十张照片。
 
-Goal
+目的
 
-The sample application will:
+这个简单的程序将会:
 
-* Determine the distortion matrix
-* Determine the camera matrix
-* Take input from Camera, Video and Image file list
-* Read configuration from XML/YAML file
-* Save the results into XML/YAML file
-* Calculate re-projection error
+* 确定扭曲矩阵
+* 确定相机矩阵
+* 从相机、视频和图片文件中获得图像
+* 从XML/YAML文件中获取配置
+* 将结果存储到XML/YAML文件中
+* 计算重投影的误差
