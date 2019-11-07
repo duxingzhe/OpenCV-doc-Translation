@@ -1,16 +1,6 @@
-Learn about how to use the feature points detectors, descriptors and matching framework found inside OpenCV.
+学习如何使用OpenCV进行特征点的检测，描述和匹配这些特征点。
 
-Harris corner detector
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-Why is it a good idea to track corners? We learn how to use the Harris method to detect corners.
-
-Shi-Tomasi corner detector
+哈尔斯边角检测
 
 Languages: C++, Java, Python
 
@@ -18,9 +8,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Where we use an improved method to detect corners more accurately.
+为什么我们要追踪边角？我们将使用哈尔斯方法来检测边角。
 
-Creating your own corner detector
+Shi-Tomasi边角检测
 
 Languages: C++, Java, Python
 
@@ -28,7 +18,17 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Here you will learn how to use OpenCV functions to make your personalized corner detector!
+比哈尔斯边角检测方法更准确。
+
+创造你自己的边角检测器
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+这里你将学会如何使用OpenCV的函数来写自己的边角检测器！
 
 Languages: C++, Java, Python
 
