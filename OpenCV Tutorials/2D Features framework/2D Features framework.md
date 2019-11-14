@@ -32,7 +32,7 @@ Author: Ana Huamán
 
 Languages: C++, Java, Python
 
-Detecting corners location in subpixels
+用子像素检测边角位置
 
 Languages: C++, Java, Python
 
@@ -40,19 +40,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-Is pixel resolution enough? Here we learn a simple method to improve our corner location accuracy.
+像素分辨率是否满足要求？我们又一种简单的方法提高检测边角位置的准确性。
 
-Feature Detection
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-In this tutorial, you will use features2d to detect interest points.
-
-Feature Description
+特征检测
 
 Languages: C++, Java, Python
 
@@ -60,19 +50,9 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-In this tutorial, you will use features2d to calculate feature vectors.
+在这篇教程中，你会学到如何使用features2d来分析有趣的点。
 
-Feature Matching with FLANN
-
-Languages: C++, Java, Python
-
-Compatibility: > OpenCV 2.0
-
-Author: Ana Huamán
-
-In this tutorial, you will use the FLANN library to make a fast matching.
-
-Features2D + Homography to find a known object
+特征描述
 
 Languages: C++, Java, Python
 
@@ -80,7 +60,27 @@ Compatibility: > OpenCV 2.0
 
 Author: Ana Huamán
 
-In this tutorial, you will use features2d and calib3d to detect an object in a scene.
+在这篇教程中，你会学到如何使用features2d来分析特征向量。
+
+用FLANN进行特征匹配
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+在这篇教程中，你会学到如何使用FLANN进行快速的匹配。
+
+Features2D和Homography找到已知的物体
+
+Languages: C++, Java, Python
+
+Compatibility: > OpenCV 2.0
+
+Author: Ana Huamán
+
+在这篇教程中，你会学到如何使用features2d和calib3d在场景中检测物体。
 
 Detection of planar objects
 
