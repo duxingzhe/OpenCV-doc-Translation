@@ -82,15 +82,15 @@ Author: Ana Huamán
 
 在这篇教程中，你会学到如何使用features2d和calib3d在场景中检测物体。
 
-Detection of planar objects
+检测平面物体
 
 Compatibility: > OpenCV 2.0
 
 Author: Victor Eruhimov
 
-You will use features2d and calib3d modules for detecting known planar objects in scenes.
+在这篇教程中，你会学到如何使用features2d和calib3d来检测场景中已知的平面物体。
 
-AKAZE local features matching
+AKAZE本地特征匹配
 
 Languages: C++, Java, Python
 
@@ -98,18 +98,18 @@ Compatibility: > OpenCV 3.0
 
 Author: Fedor Morozov
 
-Using AKAZE local features to find correspondence between two images.
+用AKAZE本地特征来寻找两张图片的匹配度。
 
-AKAZE and ORB planar tracking
+AKAZE和ORB平面追踪
 
 Compatibility: > OpenCV 3.0
 
 Author: Fedor Morozov
 
-Using AKAZE and ORB for planar object tracking.
+使用AKAZE和ORB来进行平面物体追踪。
 
-Basic concepts of the homography explained with code
+代码同源性的基本概念阐释
 
 Compatibility: > OpenCV 3.0
 
-This tutorial will explain the basic concepts of the homography with some demonstration codes.
+本教程将介绍基本示例代码的同源性概念
