@@ -1,7 +1,7 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中，你将会学到：
 
-* Use the OpenCV function cv::cornerEigenValsAndVecs to find the eigenvalues and eigenvectors to determine if a pixel is a corner.
-* Use the OpenCV function cv::cornerMinEigenVal to find the minimum eigenvalues for corner detection.
-* Implement our own version of the Harris detector as well as the Shi-Tomasi detector, by using the two functions above.
+* 使用OpenCV的cv::cornerEigenValsAndVecs函数去寻找特征值和特征向量，这两个值用来确定边角的像素。
+* 使用OpenCV的cv::cornerMinEigenVal函数去寻找边角检测的最小特征值。
+* 使用上面两个函数来实现我们自己的哈里斯检测器和斯·托马斯检测器。
