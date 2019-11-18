@@ -1,17 +1,19 @@
-Goal
-In this tutorial you will learn:
+目的
 
-* What features are and why they are important
-* Use the function cv::cornerHarris to detect corners using the Harris-Stephens method.
+在这篇教程中你将学到：
 
-Theory
+* 什么叫特征，为什么它很重要
+* 使用cv::cornerHarris函数来用哈里斯——史蒂芬斯方法来检测边角
 
-What is a feature?
+理论
 
-* In computer vision, usually we need to find matching points between different frames of an environment. Why? If we know how two images relate to each other, we can use both images to extract information of them.
-* When we say matching points we are referring, in a general sense, to characteristics in the scene that we can recognize easily. We call these characteristics features.
-* So, what characteristics should a feature have?
-    * It must be uniquely recognizable
+什么是特征？
+
+* 在机器视觉中，通常我们需要在一个环境中不同的框架中找到匹配的点。为什么？因为，如果我们知道了两张图片之间是如何联系的，我们就能扩展这两张图片的信息。
+* 当我们说我们在匹配点的时候，通常情况下，当我们能够容易发现的时候我们会说这张图具有特点。我们会说这张图片有明显的特点。
+* 所以，图片的特点需要有什么特点呢？
+    
+    * 特点必须非常独特
 
 Types of Image Features
 
