@@ -15,21 +15,21 @@
     
     * 特点必须非常独特
 
-Types of Image Features
+图像特点的类型
 
-To mention a few:
+本文主要涉及以下类型：
 
-* Edges
-* Corners (also known as interest points)
-* Blobs (also known as regions of interest )
+* 边
+* 角（同样被称之为兴趣点）
+* 连通区域（同样被称之为感兴趣区域）
 
-In this tutorial we will study the corner features, specifically.
+在这篇博文中，我们重点关注角的特性。
 
-Why is a corner so special?
+为什么角会如此特别？
 
-* Because, since it is the intersection of two edges, it represents a point in which the directions of these two edges change. Hence, the gradient of the image (in both directions) have a high variation, which can be used to detect it.
+* 因为他是两条边的交点，它代表着两条边因此发生了方向改变。因此，图像的径向（在各个方向上）有了巨大的变化，由此就可以被检测到。
 
-How does it work?
+他是如何工作的？
 
 * Let's look for corners. Since corners represents a variation in the gradient in the image, we will look for this "variation".
 * Consider a grayscale image I. We are going to sweep a window w(x,y) (with displacements u in the x direction and v in the y direction) I and will calculate the variation of intensity.
