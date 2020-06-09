@@ -31,16 +31,16 @@
 
 他是如何工作的？
 
-* Let's look for corners. Since corners represents a variation in the gradient in the image, we will look for this "variation".
-* Consider a grayscale image I. We are going to sweep a window w(x,y) (with displacements u in the x direction and v in the y direction) I and will calculate the variation of intensity.
+* 我们来看看边角。边角代表的是图片中径向的变化，我们就会去寻找这个“变量”。
+* 先考虑一张灰阶图I。我们将会将他平铺到窗口上w(x,y)（通过覆盖x方向的u和y方向的v）I，并计算强度的变化值。
 
 ![](http://latex.codecogs.com/gif.latex?E%28u%2Cv%29%20%3D%20%5Csum%20_%7Bx%2Cy%7D%20w%28x%2Cy%29%5B%20I%28x+u%2Cy+v%29%20-%20I%28x%2Cy%29%5D%5E%7B2%7D)
 
-where:
+其中:
 
-    * w(x,y) is the window at position (x,y)
-    * I(x,y) is the intensity at (x,y)
-    * I(x+u,y+v) is the intensity at the moved window (x+u,y+v)
+    * w(x,y) 窗体的位置 (x,y)
+    * I(x,y) (x,y)的强度值
+    * I(x+u,y+v) 是移动窗口w(x+u,y+v)的强度
 
 * Since we are looking for windows with corners, we are looking for windows with a large variation in intensity. Hence, we have to maximize the equation above, specifically the term:
 
