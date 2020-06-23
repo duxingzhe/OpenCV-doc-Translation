@@ -1,5 +1,5 @@
-Goal
+目的
 
-In this tutorial you will learn how to:
+在这篇教程中你将会学到如何：
 
-* Use the function cv::goodFeaturesToTrack to detect corners using the Shi-Tomasi method ([191]).
+* 使用cv::goodFeaturesToTrack函数来用史·汤马斯方法检测边角。
