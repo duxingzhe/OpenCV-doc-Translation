@@ -42,27 +42,27 @@
     * I(x,y) (x,y)的强度值
     * I(x+u,y+v) 是移动窗口w(x+u,y+v)的强度
 
-* Since we are looking for windows with corners, we are looking for windows with a large variation in intensity. Hence, we have to maximize the equation above, specifically the term:
+* 由于我们是在窗口中寻找边角，我们要在窗口中寻找到强度的突变地方。因此，我们必须求出上述等式的最大值，首先限制在以下位置中：
 
 ![](http://latex.codecogs.com/gif.latex?%5Csum%20_%7Bx%2Cy%7D%5B%20I%28x+u%2Cy+v%29%20-%20I%28x%2Cy%29%5D%5E%7B2%7D)
 
-* Using Taylor expansion:
+* 使用泰勒展开:
 
 ![](http://latex.codecogs.com/gif.latex?E%28u%2Cv%29%20%5Capprox%20%5Csum%20_%7Bx%2Cy%7D%5B%20I%28x%2Cy%29%20+%20u%20I_%7Bx%7D%20+%20vI_%7By%7D%20-%20I%28x%2Cy%29%5D%5E%7B2%7D)
 
-* Expanding the equation and cancelling properly:
+* 展开等式并正确地化简：
 
 ![](http://latex.codecogs.com/gif.latex?E%28u%2Cv%29%20%5Capprox%20%5Csum%20_%7Bx%2Cy%7D%20u%5E%7B2%7DI_%7Bx%7D%5E%7B2%7D%20+%202uvI_%7Bx%7DI_%7By%7D%20+%20v%5E%7B2%7DI_%7By%7D%5E%7B2%7D)
 
-* Which can be expressed in a matrix form as:
+* 我们可以通过以下矩阵来表示：
 
 ![](http://latex.codecogs.com/gif.latex?E%28u%2Cv%29%20%5Capprox%20%5Cbegin%7Bbmatrix%7D%20u%20%26%20v%20%5Cend%7Bbmatrix%7D%20%5Cleft%20%28%20%5Cdisplaystyle%20%5Csum_%7Bx%2Cy%7D%20w%28x%2Cy%29%20%5Cbegin%7Bbmatrix%7D%20I_x%5E%7B2%7D%20%26%20I_%7Bx%7DI_%7By%7D%20%5C%5C%20I_xI_%7By%7D%20%26%20I_%7By%7D%5E%7B2%7D%20%5Cend%7Bbmatrix%7D%20%5Cright%20%29%20%5Cbegin%7Bbmatrix%7D%20u%20%5C%5C%20v%20%5Cend%7Bbmatrix%7D)
 
-* Let's denote:
+* 进行符号抽象化描述：
 
 ![](http://latex.codecogs.com/gif.latex?M%20%3D%20%5Cdisplaystyle%20%5Csum_%7Bx%2Cy%7D%20w%28x%2Cy%29%20%5Cbegin%7Bbmatrix%7D%20I_x%5E%7B2%7D%20%26%20I_%7Bx%7DI_%7By%7D%20%5C%5C%20I_xI_%7By%7D%20%26%20I_%7By%7D%5E%7B2%7D%20%5Cend%7Bbmatrix%7D)
 
-* So, our equation now is:
+* 所以，最终式子如下：
 
 ![](http://latex.codecogs.com/gif.download?E%28u%2Cv%29%20%5Capprox%20%5Cbegin%7Bbmatrix%7D%20u%20%26%20v%20%5Cend%7Bbmatrix%7D%20M%20%5Cbegin%7Bbmatrix%7D%20u%20%5C%5C%20v%20%5Cend%7Bbmatrix%7D)
 
