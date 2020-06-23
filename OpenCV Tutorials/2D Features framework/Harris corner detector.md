@@ -66,7 +66,7 @@
 
 ![](http://latex.codecogs.com/gif.download?E%28u%2Cv%29%20%5Capprox%20%5Cbegin%7Bbmatrix%7D%20u%20%26%20v%20%5Cend%7Bbmatrix%7D%20M%20%5Cbegin%7Bbmatrix%7D%20u%20%5C%5C%20v%20%5Cend%7Bbmatrix%7D)
 
-A score is calculated for each window, to determine if it can possibly contain a corner:
+我们会得到这个窗口中的分值，来判断是否包含了这个点：
 
 ![](http://latex.codecogs.com/gif.download?R%20%3D%20det%28M%29%20-%20k%28trace%28M%29%29%5E%7B2%7D)
 
