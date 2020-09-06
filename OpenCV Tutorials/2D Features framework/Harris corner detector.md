@@ -70,9 +70,9 @@
 
 ![](http://latex.codecogs.com/gif.download?R%20%3D%20det%28M%29%20-%20k%28trace%28M%29%29%5E%7B2%7D)
 
-    where:
+    其中:
 
     * det(M) = ![](http://latex.codecogs.com/gif.download?%5Clambda_%7B1%7D%5Clambda_%7B2%7D)
     * trace(M) = ![](http://latex.codecogs.com/gif.download?%5Clambda_%7B1%7D+%5Clambda_%7B2%7D)
 
-    a window with a score R greater than a certain value is considered a "corner"
+    在一个区域内，如果值R大于某个确定的值，我们会认为他是一个“角”。
